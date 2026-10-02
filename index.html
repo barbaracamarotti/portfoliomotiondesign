@@ -415,11 +415,11 @@
        PLAYERS DE VÍDEO SEGUROS & 100% RESPONSIVOS
        (Elimina problemas de toque, tela escura e botões desalinhados)
        ======================================================= */
-    /* Container 16:9 Padrão */
+        /* Container 16:9 Padrão */
     .video-wrapper {
       position: relative;
       width: 100%;
-      padding-top: 56.25%; /* Proporção 16:9 nativa sem cortes */
+      aspect-ratio: 16 / 9;
       border-radius: 12px;
       overflow: hidden;
       background: #000;
@@ -435,18 +435,19 @@
       border: 0;
     }
 
-    /* Container 1080x1920 (9:16 Vertical) Perfeitamente Proporcional */
+    /* Container Vertical (9:16 Proporção Real) - Perfeitamente Centralizado */
     .video-wrapper.portrait {
       position: relative;
       width: 100%;
-      max-width: 280px;
-      margin: 0 auto 16px;
-      padding-top: 177.77%; /* Proporção 1920 / 1080 exata */
+      max-width: 300px;
+      aspect-ratio: 9 / 16;
+      margin: 0 auto 16px auto !important;
       border-radius: 14px;
       overflow: hidden;
       background: #000;
       border: 1px solid rgba(124, 58, 237, 0.4);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+      display: block;
     }
     .video-wrapper.portrait iframe {
       position: absolute;
@@ -703,7 +704,8 @@
       .nav-slider-btn { padding: 8px 16px; font-size: 0.82rem; }
 
       .video-wrapper.portrait {
-        max-width: 250px; /* Alinhamento e encaixe perfeito no celular */
+        max-width: 260px;
+        margin: 0 auto 16px auto !important;
       }
 
       .video-wrapper-led { aspect-ratio: auto; height: 130px; }
@@ -1037,17 +1039,17 @@
         
         <!-- G&S Logo Reveal (1080x1920 Vertical) -->
         <div class="bento-card card-vertical col-6">
-          <span class="card-tag tag-vert">Brand Motion • 1080x1920</span>
+          <span class="card-tag tag-vert">Brand Motion</span>
           <div class="video-wrapper portrait">
             <iframe src="https://drive.google.com/file/d/1V5qf3jr2tyDam9Y4klgECmjEVzAKncdJ/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
           </div>
           <h3 class="card-title">G&S — Revelação de Marca (Logo Reveal)</h3>
           <p class="card-desc">
-            Vinheta vertical de abertura com reveal refinado de logotipo, enfatizando elegância, profundidade visual e curvas de aceleração orgânicas em 1080x1920.
+            Vinheta vertical de abertura com reveal refinado de logotipo, enfatizando elegância, profundidade visual e curvas de aceleração orgânicas.
           </p>
           <div class="card-meta">
             <span class="pill">After Effects</span>
-            <span class="pill">Vertical 1080x1920</span>
+            <span class="pill">Vertical Video</span>
             <span class="pill">Logo Reveal</span>
           </div>
           <div class="card-links">
@@ -1057,16 +1059,16 @@
 
         <!-- Seleção de IMpressos (1080x1920 Vertical) -->
         <div class="bento-card card-vertical col-6">
-          <span class="card-tag tag-vert">Alta Performance & IA • 1080x1920</span>
+          <span class="card-tag tag-ai">Alta Performance & IA</span>
           <div class="video-wrapper portrait">
             <iframe src="https://drive.google.com/file/d/1f72Cf3WlEbYGNh0K2CAQHWWYfQVEVmbX/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
           </div>
           <h3 class="card-title">Seleção de IMpressos (FuturaIM)</h3>
           <p class="card-desc">
-            Apresentação dinâmica dos produtos mais vendidos da gráfica em clima esportivo em 1080x1920, conciliando After Effects e suporte de ferramentas de IA generativa.
+            Apresentação dinâmica dos produtos mais vendidos da gráfica em clima esportivo, conciliando After Effects e suporte de ferramentas de IA generativa.
           </p>
           <div class="card-meta">
-            <span class="pill">Vertical 1080x1920</span>
+            <span class="pill">Vertical Video</span>
             <span class="pill">After Effects</span>
             <span class="pill">IA Generativa</span>
           </div>
@@ -1168,16 +1170,16 @@
         
         <!-- Graficamente Chuteira Rosa (1080x1920 Vertical) -->
         <div class="bento-card card-vertical col-6">
-          <span class="card-tag tag-vert">Marketing Visual • 1080x1920</span>
+          <span class="card-tag tag-vert">Marketing Visual & Teoria</span>
           <div class="video-wrapper portrait">
             <iframe src="https://drive.google.com/file/d/1_MvazwuF9JuZhno8BU_SyE9Abdhxh5QY/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
           </div>
           <h3 class="card-title">Graficamente: Chuteira Rosa</h3>
           <p class="card-desc">
-            Análise visual e ritmo dinâmico demonstrando em formato vertical 1080x1920 como o contraste das marcas esportivas na Copa do Mundo se traduz em atenção e conversão gráfica.
+            Análise visual e ritmo dinâmico demonstrando como o contraste das marcas esportivas na Copa do Mundo se traduz em atenção e conversão gráfica.
           </p>
           <div class="card-meta">
-            <span class="pill">Formato 1080x1920</span>
+            <span class="pill">Social Media</span>
             <span class="pill">Tipografia Cinética</span>
             <span class="pill">After Effects</span>
           </div>
@@ -1219,16 +1221,16 @@
         
         <!-- Story Comunidade (Proporção 1080x1920 Vertical) -->
         <div class="bento-card card-vertical col-6">
-          <span class="card-tag tag-vert">Social Media Motion • 1080x1920</span>
+          <span class="card-tag tag-vert">Social Media Motion</span>
           <div class="video-wrapper portrait">
             <iframe src="https://drive.google.com/file/d/1ixce0OQ_ebdKmrf3GYuRHR54BhSjQbuA/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
           </div>
           <h3 class="card-title">Story — Participe da Comunidade</h3>
           <p class="card-desc">
-            Peça vertical em 1080x1920 com animação de cards de interface, transições ágeis e microinterações de engajamento para redes sociais.
+            Peça vertical com animação de cards de interface, transições ágeis e microinterações de engajamento para redes sociais.
           </p>
           <div class="card-meta">
-            <span class="pill">Formato 1080x1920</span>
+            <span class="pill">Social Media</span>
             <span class="pill">Motion para Social</span>
           </div>
           <div class="card-links">
