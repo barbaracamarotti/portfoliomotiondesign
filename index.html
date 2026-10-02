@@ -458,6 +458,41 @@
     .slider-dot:hover { background: rgba(255, 255, 255, 0.6); transform: scale(1.2); }
     .slider-dot.active { width: 22px; border-radius: 4px; background: var(--accent); box-shadow: 0 0 10px var(--accent-glow); }
 
+
+    /* Setas laterais do carrossel */
+    .slider-viewport {
+      position: relative;
+      margin-bottom: 14px;
+    }
+    .slider-viewport .video-wrapper,
+    .slider-viewport .video-wrapper-led { margin-bottom: 0; }
+
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(9, 10, 15, 0.72);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .slider-arrow.prev { left: -22px; }
+    .slider-arrow.next { right: -22px; }
+    .slider-arrow:hover { background: var(--accent); border-color: var(--accent); }
+    .slider-arrow:focus-visible { outline: 2px solid #c4b5fd; outline-offset: 2px; }
+
+    .slider-dots-container { margin: 0 auto 14px; }
+
     .slider-controls {
       display: flex; justify-content: center; align-items: center; gap: 16px;
       margin-top: 10px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -537,7 +572,14 @@
 
       .slider-controls { gap: 12px; padding-top: 10px; }
       .nav-slider-btn { padding: 8px 18px; font-size: 0.8rem; }
-      .slider-dots-container { gap: 6px; margin: 12px auto 8px; max-width: 95%; padding: 4px 8px; }
+      .slider-dots-container { gap: 6px; margin: 0 auto 10px; max-width: 95%; padding: 4px 8px; }
+      /* Setas por cima das bordas do vídeo no celular */
+      .slider-arrow { width: 34px; height: 34px; }
+      .slider-arrow svg { width: 18px; height: 18px; }
+      .slider-arrow.prev { left: 6px; }
+      .slider-arrow.next { right: 6px; }
+      .slider-viewport { margin-bottom: 12px; }
+
       .slider-dot { width: 7px; height: 7px; }
       .slider-dot.active { width: 20px; }
 
@@ -875,9 +917,15 @@
           <div class="slider-counter counter-enobrecimento">Acabamento 1 de 12</div>
         </div>
 
+        <div class="slider-dots-container dots-enobrecimento"></div>
+
         <div class="slider-stage">
-          <div class="video-wrapper">
-            <iframe class="iframe-enobrecimento" src="https://drive.google.com/file/d/1PMN73iRKX_MB5fHzJ7ODH5Ww76e0a5nZ/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+          <div class="slider-viewport">
+            <button class="slider-arrow prev" onclick="prevSlide('enobrecimento')" aria-label="Vídeo anterior"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="video-wrapper">
+              <iframe class="iframe-enobrecimento" src="https://drive.google.com/file/d/1PMN73iRKX_MB5fHzJ7ODH5Ww76e0a5nZ/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <button class="slider-arrow next" onclick="nextSlide('enobrecimento')" aria-label="Próximo vídeo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
           <div class="slider-video-meta">
             <h4 class="slider-v-title title-enobrecimento">Laminação Fosca com Verniz Localizado</h4>
@@ -887,13 +935,6 @@
               <a class="card-link-btn link-enobrecimento" href="https://drive.google.com/file/d/1PMN73iRKX_MB5fHzJ7ODH5Ww76e0a5nZ/view?usp=drivesdk" target="_blank">Abrir Vídeo em Alta Resolução ↗</a>
             </div>
           </div>
-        </div>
-
-        <div class="slider-dots-container dots-enobrecimento"></div>
-
-        <div class="slider-controls">
-          <button class="nav-slider-btn" onclick="prevSlide('enobrecimento')">❮ Anterior</button>
-          <button class="nav-slider-btn" onclick="nextSlide('enobrecimento')">Próximo ❯</button>
         </div>
       </div>
 
@@ -910,9 +951,15 @@
           <div class="slider-counter counter-telao">Vídeo 1 de 13</div>
         </div>
 
+        <div class="slider-dots-container dots-telao"></div>
+
         <div class="slider-stage">
-          <div class="video-wrapper-led">
-            <iframe class="iframe-telao" src="https://drive.google.com/file/d/11_qmfi-Vp6K2fdOjxmYmcDyaZk4Jscix/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+          <div class="slider-viewport">
+            <button class="slider-arrow prev" onclick="prevSlide('telao')" aria-label="Vídeo anterior"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="video-wrapper-led">
+              <iframe class="iframe-telao" src="https://drive.google.com/file/d/11_qmfi-Vp6K2fdOjxmYmcDyaZk4Jscix/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <button class="slider-arrow next" onclick="nextSlide('telao')" aria-label="Próximo vídeo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
           <div class="slider-video-meta">
             <h4 class="slider-v-title title-telao">#TELAO JOVEM PAN - 28/05 (MEIO MILHÃO)</h4>
@@ -921,13 +968,6 @@
               <a class="card-link-btn link-telao" href="https://drive.google.com/file/d/11_qmfi-Vp6K2fdOjxmYmcDyaZk4Jscix/view?usp=drivesdk" target="_blank">Abrir Vídeo em Alta Resolução ↗</a>
             </div>
           </div>
-        </div>
-
-        <div class="slider-dots-container dots-telao"></div>
-
-        <div class="slider-controls">
-          <button class="nav-slider-btn" onclick="prevSlide('telao')">❮ Anterior</button>
-          <button class="nav-slider-btn" onclick="nextSlide('telao')">Próximo ❯</button>
         </div>
       </div>
 
@@ -944,9 +984,15 @@
           <div class="slider-counter counter-fiocruz">Episódio 1 de 7</div>
         </div>
 
+        <div class="slider-dots-container dots-fiocruz"></div>
+
         <div class="slider-stage">
-          <div class="video-wrapper">
-            <iframe class="iframe-fiocruz" src="https://drive.google.com/file/d/1hoGjJV3ItYBgjT4dHegpMLz3evaGrNgD/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+          <div class="slider-viewport">
+            <button class="slider-arrow prev" onclick="prevSlide('fiocruz')" aria-label="Vídeo anterior"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="video-wrapper">
+              <iframe class="iframe-fiocruz" src="https://drive.google.com/file/d/1hoGjJV3ItYBgjT4dHegpMLz3evaGrNgD/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <button class="slider-arrow next" onclick="nextSlide('fiocruz')" aria-label="Próximo vídeo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
           <div class="slider-video-meta">
             <h4 class="slider-v-title title-fiocruz">Biodiversidade — Vídeo 01: Introdução aos Ecossistemas</h4>
@@ -955,13 +1001,6 @@
               <a class="card-link-btn link-fiocruz" href="https://drive.google.com/file/d/1hoGjJV3ItYBgjT4dHegpMLz3evaGrNgD/view?usp=drivesdk" target="_blank">Abrir Vídeo em Alta Resolução ↗</a>
             </div>
           </div>
-        </div>
-
-        <div class="slider-dots-container dots-fiocruz"></div>
-
-        <div class="slider-controls">
-          <button class="nav-slider-btn" onclick="prevSlide('fiocruz')">❮ Anterior</button>
-          <button class="nav-slider-btn" onclick="nextSlide('fiocruz')">Próximo ❯</button>
         </div>
       </div>
 
@@ -1139,9 +1178,15 @@
           <div class="slider-counter counter-comerciais">Vídeo 1 de 29</div>
         </div>
 
+        <div class="slider-dots-container dots-comerciais"></div>
+
         <div class="slider-stage">
-          <div class="video-wrapper">
-            <iframe class="iframe-comerciais" src="https://www.youtube.com/embed/K5JGDsgCqSY" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+          <div class="slider-viewport">
+            <button class="slider-arrow prev" onclick="prevSlide('comerciais')" aria-label="Vídeo anterior"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="video-wrapper">
+              <iframe class="iframe-comerciais" src="https://www.youtube.com/embed/K5JGDsgCqSY" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <button class="slider-arrow next" onclick="nextSlide('comerciais')" aria-label="Próximo vídeo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
           <div class="slider-video-meta">
             <h4 class="slider-v-title title-comerciais">Comercial — 17/07/2024</h4>
@@ -1150,13 +1195,6 @@
               <a class="card-link-btn link-comerciais" href="https://www.youtube.com/watch?v=K5JGDsgCqSY" target="_blank">Assistir no YouTube ↗</a>
             </div>
           </div>
-        </div>
-
-        <div class="slider-dots-container dots-comerciais"></div>
-
-        <div class="slider-controls">
-          <button class="nav-slider-btn" onclick="prevSlide('comerciais')">❮ Anterior</button>
-          <button class="nav-slider-btn" onclick="nextSlide('comerciais')">Próximo ❯</button>
         </div>
       </div>
 
@@ -1173,9 +1211,15 @@
           <div class="slider-counter counter-materias">Vídeo 1 de 9</div>
         </div>
 
+        <div class="slider-dots-container dots-materias"></div>
+
         <div class="slider-stage">
-          <div class="video-wrapper">
-            <iframe class="iframe-materias" src="https://www.youtube.com/embed/vhuQgJuOO_c" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+          <div class="slider-viewport">
+            <button class="slider-arrow prev" onclick="prevSlide('materias')" aria-label="Vídeo anterior"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="video-wrapper">
+              <iframe class="iframe-materias" src="https://www.youtube.com/embed/vhuQgJuOO_c" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <button class="slider-arrow next" onclick="nextSlide('materias')" aria-label="Próximo vídeo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
           <div class="slider-video-meta">
             <h4 class="slider-v-title title-materias">História de Ganhador 01</h4>
@@ -1184,13 +1228,6 @@
               <a class="card-link-btn link-materias" href="https://www.youtube.com/watch?v=vhuQgJuOO_c" target="_blank">Assistir no YouTube ↗</a>
             </div>
           </div>
-        </div>
-
-        <div class="slider-dots-container dots-materias"></div>
-
-        <div class="slider-controls">
-          <button class="nav-slider-btn" onclick="prevSlide('materias')">❮ Anterior</button>
-          <button class="nav-slider-btn" onclick="nextSlide('materias')">Próximo ❯</button>
         </div>
       </div>
 
@@ -1207,9 +1244,15 @@
           <div class="slider-counter counter-zeluiz">Vídeo 1 de 3</div>
         </div>
 
+        <div class="slider-dots-container dots-zeluiz"></div>
+
         <div class="slider-stage">
-          <div class="video-wrapper">
-            <iframe class="iframe-zeluiz" src="https://drive.google.com/file/d/1doXZ7n5A1fpmwVkoUo3rI0GWs80Rezb7/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+          <div class="slider-viewport">
+            <button class="slider-arrow prev" onclick="prevSlide('zeluiz')" aria-label="Vídeo anterior"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="video-wrapper">
+              <iframe class="iframe-zeluiz" src="https://drive.google.com/file/d/1doXZ7n5A1fpmwVkoUo3rI0GWs80Rezb7/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <button class="slider-arrow next" onclick="nextSlide('zeluiz')" aria-label="Próximo vídeo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
           <div class="slider-video-meta">
             <h4 class="slider-v-title title-zeluiz">Zé Luiz nos Bairros (Edição Especial)</h4>
@@ -1218,13 +1261,6 @@
               <a class="card-link-btn btn-highlight link-zeluiz" href="https://drive.google.com/file/d/1doXZ7n5A1fpmwVkoUo3rI0GWs80Rezb7/view?usp=drivesdk" target="_blank">Abrir Vídeo no Drive ↗</a>
             </div>
           </div>
-        </div>
-
-        <div class="slider-dots-container dots-zeluiz"></div>
-
-        <div class="slider-controls">
-          <button class="nav-slider-btn" onclick="prevSlide('zeluiz')">❮ Anterior</button>
-          <button class="nav-slider-btn" onclick="nextSlide('zeluiz')">Próximo ❯</button>
         </div>
       </div>
 
@@ -1371,9 +1407,15 @@
           <div class="slider-counter counter-telao">Vídeo 1 de 13</div>
         </div>
 
+        <div class="slider-dots-container dots-telao"></div>
+
         <div class="slider-stage">
-          <div class="video-wrapper-led">
-            <iframe class="iframe-telao" src="https://drive.google.com/file/d/11_qmfi-Vp6K2fdOjxmYmcDyaZk4Jscix/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+          <div class="slider-viewport">
+            <button class="slider-arrow prev" onclick="prevSlide('telao')" aria-label="Vídeo anterior"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="video-wrapper-led">
+              <iframe class="iframe-telao" src="https://drive.google.com/file/d/11_qmfi-Vp6K2fdOjxmYmcDyaZk4Jscix/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <button class="slider-arrow next" onclick="nextSlide('telao')" aria-label="Próximo vídeo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
           <div class="slider-video-meta">
             <h4 class="slider-v-title title-telao">#TELAO JOVEM PAN - 28/05 (MEIO MILHÃO)</h4>
@@ -1382,13 +1424,6 @@
               <a class="card-link-btn link-telao" href="https://drive.google.com/file/d/11_qmfi-Vp6K2fdOjxmYmcDyaZk4Jscix/view?usp=drivesdk" target="_blank">Abrir Vídeo em Alta Resolução ↗</a>
             </div>
           </div>
-        </div>
-
-        <div class="slider-dots-container dots-telao"></div>
-
-        <div class="slider-controls">
-          <button class="nav-slider-btn" onclick="prevSlide('telao')">❮ Anterior</button>
-          <button class="nav-slider-btn" onclick="nextSlide('telao')">Próximo ❯</button>
         </div>
       </div>
 
@@ -1405,9 +1440,15 @@
           <div class="slider-counter counter-comerciais">Vídeo 1 de 29</div>
         </div>
 
+        <div class="slider-dots-container dots-comerciais"></div>
+
         <div class="slider-stage">
-          <div class="video-wrapper">
-            <iframe class="iframe-comerciais" src="https://www.youtube.com/embed/K5JGDsgCqSY" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+          <div class="slider-viewport">
+            <button class="slider-arrow prev" onclick="prevSlide('comerciais')" aria-label="Vídeo anterior"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="video-wrapper">
+              <iframe class="iframe-comerciais" src="https://www.youtube.com/embed/K5JGDsgCqSY" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <button class="slider-arrow next" onclick="nextSlide('comerciais')" aria-label="Próximo vídeo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
           <div class="slider-video-meta">
             <h4 class="slider-v-title title-comerciais">Comercial — 17/07/2024</h4>
@@ -1416,13 +1457,6 @@
               <a class="card-link-btn link-comerciais" href="https://www.youtube.com/watch?v=K5JGDsgCqSY" target="_blank">Assistir no YouTube ↗</a>
             </div>
           </div>
-        </div>
-
-        <div class="slider-dots-container dots-comerciais"></div>
-
-        <div class="slider-controls">
-          <button class="nav-slider-btn" onclick="prevSlide('comerciais')">❮ Anterior</button>
-          <button class="nav-slider-btn" onclick="nextSlide('comerciais')">Próximo ❯</button>
         </div>
       </div>
 
@@ -1439,9 +1473,15 @@
           <div class="slider-counter counter-materias">Vídeo 1 de 9</div>
         </div>
 
+        <div class="slider-dots-container dots-materias"></div>
+
         <div class="slider-stage">
-          <div class="video-wrapper">
-            <iframe class="iframe-materias" src="https://www.youtube.com/embed/vhuQgJuOO_c" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+          <div class="slider-viewport">
+            <button class="slider-arrow prev" onclick="prevSlide('materias')" aria-label="Vídeo anterior"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="video-wrapper">
+              <iframe class="iframe-materias" src="https://www.youtube.com/embed/vhuQgJuOO_c" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <button class="slider-arrow next" onclick="nextSlide('materias')" aria-label="Próximo vídeo"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </div>
           <div class="slider-video-meta">
             <h4 class="slider-v-title title-materias">História de Ganhador 01</h4>
@@ -1450,13 +1490,6 @@
               <a class="card-link-btn link-materias" href="https://www.youtube.com/watch?v=vhuQgJuOO_c" target="_blank">Assistir no YouTube ↗</a>
             </div>
           </div>
-        </div>
-
-        <div class="slider-dots-container dots-materias"></div>
-
-        <div class="slider-controls">
-          <button class="nav-slider-btn" onclick="prevSlide('materias')">❮ Anterior</button>
-          <button class="nav-slider-btn" onclick="nextSlide('materias')">Próximo ❯</button>
         </div>
       </div>
 
