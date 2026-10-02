@@ -305,7 +305,7 @@
 
     /* Números de Impacto */
     .big-stats-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 20px 0 28px;
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin: 20px 0 28px;
     }
     .big-stat-box {
       background: var(--card-bg); border: 1px solid var(--card-border);
@@ -410,7 +410,7 @@
        PLAYERS DE VÍDEO (16:9, VERTICAL 9:16 E TELÃO LED)
        COM CORTE EXATO DA MARGEM ESQUERDA DO GOOGLE DRIVE
        ======================================================= */
-    /* Container 16:9 Padrão */
+    /* Container de Vídeo 16:9 Padrão - 100% Centralizado */
     .video-wrapper {
       position: relative;
       width: 100%;
@@ -418,8 +418,9 @@
       border-radius: 12px;
       overflow: hidden;
       background: #000;
-      margin-bottom: 14px;
+      margin: 0 auto 14px auto;
       border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
     }
     .video-wrapper iframe {
       position: absolute;
@@ -430,7 +431,7 @@
       border: 0;
     }
 
-    /* Container Vertical (9:16 Nativo) - Perfeitamente Centralizado */
+    /* Container Vertical (9:16) - 100% Centralizado e Proporcional */
     .video-wrapper.portrait {
       position: relative;
       width: 100%;
@@ -447,33 +448,33 @@
     .video-wrapper.portrait iframe {
       position: absolute;
       top: 0;
-      left: -15px; /* Elimina a barra preta da margem esquerda nativa do Google Drive */
-      width: calc(100% + 30px); /* Compensa a largura mantendo o vídeo 100% centralizado */
+      left: 0;
+      width: 100%;
       height: 100%;
       border: 0;
     }
 
-    /* Telão LED Ultra-Wide (4.800 x 768 px) com scaleX(1.20) */
+    /* Telão LED Panorâmico - Visível, Centralizado e Nítido */
     .video-wrapper-led {
       position: relative;
       width: 100%;
-      aspect-ratio: 4800 / 768;
+      aspect-ratio: 21 / 9;
+      min-height: 220px;
       overflow: hidden;
       border-radius: 10px;
       background: #000;
-      margin-bottom: 14px;
+      margin: 0 auto 14px auto;
       border: 1px solid rgba(124, 58, 237, 0.4);
       box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(124, 58, 237, 0.25);
     }
     .video-wrapper-led iframe {
       position: absolute;
-      top: -56px;
+      top: 0;
       left: 0;
       width: 100%;
-      height: calc(100% + 56px);
+      height: 100%;
       border: 0;
-      transform: scaleX(1.20); /* scaleX(1.20) solicitado */
-      transform-origin: center center;
+      transform: none;
     }
 
     /* Bento Grid */
@@ -619,14 +620,15 @@
     /* Bolinhas de Indicador (Estilo Instagram) */
     .slider-dots-container {
       display: flex;
-      justify-content: center;
       align-items: center;
       gap: 7px;
       margin: 16px auto 14px;
-      max-width: 80%;
+      width: fit-content;
+      max-width: 90%;
       overflow-x: auto;
-      padding: 4px 0;
+      padding: 6px 12px;
       scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
     }
     .slider-dots-container::-webkit-scrollbar { display: none; }
 
@@ -711,20 +713,52 @@
         padding: 3px 7px;
       }
 
-      /* Hero Pitch */
+      /* Hero Pitch no Mobile - Centralizado e Equilibrado */
       .hero-pitch-card {
-        padding: 20px 16px;
-        margin-bottom: 16px;
+        padding: 24px 18px;
+        margin-bottom: 18px;
+        text-align: center !important;
       }
-      .pitch-tag { font-size: 0.72rem; letter-spacing: 1.5px; margin-bottom: 6px; }
-      .pitch-title { font-size: 1.38rem; line-height: 1.25; margin-bottom: 10px; }
-      .pitch-text { font-size: 0.88rem; line-height: 1.5; margin-bottom: 14px; }
+      .pitch-tag {
+        font-size: 0.72rem;
+        letter-spacing: 1.5px;
+        margin: 0 auto 8px auto !important;
+        display: table !important;
+      }
+      .pitch-title {
+        font-size: 1.4rem;
+        line-height: 1.25;
+        margin-bottom: 10px;
+        text-align: center !important;
+      }
+      .pitch-text {
+        font-size: 0.88rem;
+        line-height: 1.52;
+        margin: 0 auto 16px auto !important;
+        text-align: center !important;
+        max-width: 95%;
+      }
+      .learn-more-link {
+        display: inline-flex !important;
+        justify-content: center !important;
+        margin: 0 auto 18px auto !important;
+      }
+      .hero-actions-bar {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center !important;
+        width: 100%;
+      }
 
-      /* Números / Stats */
+      /* Números / Stats (5 boxes harmoniosas no Mobile) */
       .big-stats-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 8px;
         margin: 16px 0 22px;
+      }
+      .big-stats-grid .big-stat-box:last-child {
+        grid-column: span 2;
       }
       .big-stat-box { padding: 14px 8px; }
       .big-stat-num { font-size: 1.6rem; margin-bottom: 4px; }
@@ -737,66 +771,142 @@
       .service-title { font-size: 0.98rem; }
       .service-desc { font-size: 0.82rem; line-height: 1.45; }
 
-      /* Carrosséis */
-      .slider-section {
-        padding: 18px 14px;
+      /* Bento Card no Mobile - 100% Centralizado e Alinhado */
+      .bento-card {
+        padding: 18px 16px;
         border-radius: 12px;
-        margin-bottom: 20px;
+        text-align: center !important;
+        align-items: center !important;
       }
-      .slider-header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 12px;
-        padding-bottom: 10px;
-        gap: 8px;
+      .bento-card .card-tag {
+        margin: 0 auto 10px auto !important;
       }
-      .slider-title {
-        font-size: 1.12rem;
+      .bento-card .card-title {
+        text-align: center !important;
+        width: 100%;
       }
-      .slider-category-desc {
-        font-size: 0.8rem;
-        line-height: 1.4;
-        margin-top: 2px;
+      .bento-card .card-desc {
+        text-align: center !important;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
       }
-      .slider-counter {
-        font-size: 0.74rem;
-        padding: 4px 10px;
-        border-radius: 6px;
+      .bento-card .card-meta {
+        justify-content: center !important;
+        width: 100%;
+      }
+      .bento-card .card-links {
+        justify-content: center !important;
+        width: 100%;
       }
 
+      /* Carrosséis no Mobile - 100% Centralizados (Sem ficar torto) */
+      .slider-section {
+        padding: 20px 16px;
+        border-radius: 14px;
+        margin-bottom: 22px;
+        text-align: center !important;
+      }
+      .slider-header {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 14px;
+        padding-bottom: 12px;
+        gap: 8px;
+        width: 100%;
+      }
+      .slider-header > div:first-child {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+      }
+      .slider-header .card-tag {
+        margin: 0 auto 8px auto !important;
+      }
+      .slider-title {
+        font-size: 1.15rem;
+        text-align: center !important;
+        justify-content: center !important;
+        width: 100%;
+      }
+      .slider-category-desc {
+        font-size: 0.84rem;
+        line-height: 1.48;
+        text-align: center !important;
+        margin: 4px auto 10px auto !important;
+        max-width: 90%;
+      }
+      .slider-counter {
+        font-size: 0.76rem;
+        padding: 5px 12px;
+        border-radius: 6px;
+        margin: 4px auto 0 auto !important;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .slider-stage {
+        text-align: center !important;
+        margin: 0 auto !important;
+        width: 100%;
+      }
+
+      .slider-video-meta {
+        text-align: center !important;
+        margin-top: 12px;
+      }
       .slider-v-title {
-        font-size: 1.05rem;
+        font-size: 1.08rem;
+        text-align: center !important;
         margin-bottom: 4px;
       }
       .slider-v-impact {
         font-size: 0.76rem;
-        padding: 3px 9px;
-        margin-bottom: 8px;
+        padding: 4px 10px;
+        margin: 0 auto 8px auto !important;
         line-height: 1.35;
+        display: inline-block;
       }
       .slider-v-desc {
-        font-size: 0.82rem;
-        line-height: 1.45;
-        margin-bottom: 8px;
+        font-size: 0.84rem;
+        line-height: 1.48;
+        margin: 0 auto 10px auto !important;
+        text-align: center !important;
+        max-width: 90%;
       }
 
-      /* Vídeos Verticais no Celular */
+      /* Vídeos Verticais no Celular: Largura adequada para os controles do Drive não estourarem e 100% centralizado */
       .video-wrapper.portrait {
-        max-width: 230px !important; /* Tamanho proporcional para celular */
-        margin: 0 auto 12px auto !important;
+        width: 100% !important;
+        max-width: 280px !important;
+        aspect-ratio: 9 / 16 !important;
+        margin: 0 auto 14px auto !important;
+      }
+      .video-wrapper.portrait iframe {
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
       }
 
-      /* Telão LED no Celular */
+      /* Telão LED no Celular: Altura total em 16:9 para visualização nítida sem cortes e sem barras pretas excessivas */
       .video-wrapper-led {
-        aspect-ratio: auto;
-        height: 100px;
-        margin-bottom: 10px;
+        aspect-ratio: 16 / 9 !important;
+        min-height: 195px !important;
+        height: auto !important;
+        margin: 0 auto 14px auto !important;
+        border-radius: 10px !important;
       }
       .video-wrapper-led iframe {
-        top: -46px;
-        height: calc(100% + 46px);
-        transform: scaleX(1.20);
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        transform: none !important;
       }
 
       /* Botões de Ação no Mobile */
@@ -811,26 +921,38 @@
         max-width: 100%;
       }
 
-      /* Controles e Dots dos Carrosséis */
+      /* Controles e Dots dos Carrosséis no Mobile - Perfeitamente Centralizados */
       .slider-controls {
-        gap: 12px;
-        margin-top: 8px;
-        padding-top: 10px;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 14px !important;
+        margin: 10px auto 0 auto !important;
+        padding-top: 10px !important;
+        width: 100% !important;
       }
       .nav-slider-btn {
-        padding: 7px 16px;
-        font-size: 0.78rem;
+        padding: 8px 18px;
+        font-size: 0.8rem;
       }
       .slider-dots-container {
-        margin: 10px auto 8px;
-        gap: 5px;
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        margin: 12px auto 8px auto !important;
+        width: fit-content !important;
+        max-width: 95% !important;
+        overflow-x: auto !important;
+        padding: 4px 8px !important;
+        scrollbar-width: none !important;
+        -webkit-overflow-scrolling: touch !important;
       }
       .slider-dot {
         width: 7px;
         height: 7px;
       }
       .slider-dot.active {
-        width: 18px;
+        width: 20px;
       }
 
       .career-timeline { gap: 12px; margin-top: 16px; }
@@ -847,8 +969,7 @@
       .brand-avatar-box { width: 38px; height: 38px; }
       .nav-actions .btn { padding: 7px 12px; font-size: 0.78rem; }
       .tab-btn { font-size: 0.82rem; padding: 8px 14px; }
-      .video-wrapper.portrait { max-width: 215px !important; }
-      .video-wrapper-led { height: 90px; }
+      .video-wrapper.portrait { max-width: 270px !important; }
     }
   </style>
 </head>
@@ -864,7 +985,7 @@
         </div>
         <div class="brand-info">
           <h1>Barbara Camarotti</h1>
-          <p>Motion Designer & 3D Artist</p>
+          <p>Editora de Vídeo & Gestora de Audiovisual | Motion Designer & 3D Artist</p>
         </div>
       </a>
       
@@ -914,6 +1035,7 @@
       <button class="tab-btn active" onclick="switchTab('tab-apresentacao', this)">Apresentação</button>
       <button class="tab-btn" onclick="switchTab('tab-motion', this)">Motion Design</button>
       <button class="tab-btn" onclick="switchTab('tab-storytelling', this)">Storytelling</button>
+      <button class="tab-btn" onclick="switchTab('tab-hipercap', this)">Hiper Cap</button>
     </nav>
 
     <!-- ========================================================
@@ -922,13 +1044,13 @@
     <section id="tab-apresentacao" class="tab-content active">
       
       <div class="hero-pitch-card">
-        <span class="pitch-tag">Motion Designer & 3D Artist</span>
+        <span class="pitch-tag">Editora de Vídeo & Gestora de Audiovisual • Motion Designer • 3D Artist</span>
         <h2 class="pitch-title">Transformo marcas, produtos e conceitos em narrativas visuais que prendem a atenção e vendem.</h2>
         <p class="pitch-text">
-          Motion design estratégico de ponta a ponta: animações 2D no <strong>After Effects</strong>, simulações 3D no <strong>Blender</strong> e pós-produção avançada com apoio de <strong>IA generativa</strong>. Da concepção de storyboard à entrega para TV e digital.
+          Atualmente <strong>Editora de Vídeo e Gestora de Audiovisual na FuturaIM</strong>, liderando equipe criativa, garantindo controle de qualidade e desenvolvendo soluções inovadoras em <strong>3D no Blender (UX/UI)</strong> e <strong>IA generativa</strong>. Experiência sólida na construção e manutenção de identidade de marca, direção em set e histórico comprovado em grandes contas nacionais como <strong>HiperCap Brasil</strong>, <strong>Vivo</strong> e <strong>Caixa Econômica</strong>.
         </p>
         <a href="#bio-detalhes" class="learn-more-link">Saiba mais sobre minha trajetória profissional ▾</a>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <div class="hero-actions-bar">
           <a href="https://wa.me/5511991614359?text=Ol%C3%A1%2C%20Barbara!%20Vim%20pelo%20seu%20portf%C3%B3lio." target="_blank" class="btn btn-primary">Chamar no WhatsApp 💬</a>
           <a href="https://www.linkedin.com/in/barbaracamarotti" target="_blank" class="btn btn-secondary">Conectar no LinkedIn ↗</a>
           <a href="https://www.behance.net/barbaracamarot" target="_blank" class="btn btn-secondary">Portfólio no Behance ↗</a>
@@ -978,54 +1100,58 @@
       <div class="big-stats-grid">
         <div class="big-stat-box">
           <div class="big-stat-num">+1M</div>
-          <div class="big-stat-label">Views em Campanha</div>
+          <div class="big-stat-label">Visualizações</div>
         </div>
         <div class="big-stat-box">
-          <div class="big-stat-num">25+</div>
-          <div class="big-stat-label">Vídeos / Semana</div>
+          <div class="big-stat-num">25</div>
+          <div class="big-stat-label">Peças / Semana</div>
         </div>
         <div class="big-stat-box">
-          <div class="big-stat-num">TV</div>
-          <div class="big-stat-label">Band, RedeTV! e NGT</div>
+          <div class="big-stat-num">Gestão</div>
+          <div class="big-stat-label">Equipe & Set</div>
         </div>
         <div class="big-stat-box">
-          <div class="big-stat-num">3D + IA</div>
-          <div class="big-stat-label">Pipelines Modernos</div>
+          <div class="big-stat-num">3D</div>
+          <div class="big-stat-label">Blender + UX/UI</div>
+        </div>
+        <div class="big-stat-box">
+          <div class="big-stat-num">IA</div>
+          <div class="big-stat-label">Generativa</div>
         </div>
       </div>
 
-      <!-- Especialidades -->
-      <h3 class="section-title">Especialidades & Entregas de Motion</h3>
+      <!-- Especialidades & Entregas (01 Motion Design, 02 Modelagem e texturização 3D, 03 Ritmo e Corte, 04 IA Generativa) -->
+      <h3 class="section-title">Especialidades & Entregas</h3>
       <div class="what-i-do-grid">
         <div class="service-card">
           <div class="service-num">01</div>
-          <h4 class="service-title">Motion Design 2D & Tech</h4>
+          <h4 class="service-title">Motion Design</h4>
           <p class="service-desc">
-            Animação vetorial no <strong>After Effects</strong>, vídeos didáticos de produto (*explainers*), character rigging e tipografia cinética fluida para engajamento e retenção.
+            Animação vetorial 2D e grafismos dinâmicos no <strong>After Effects</strong>. Criação de identidades visuais em movimento, vinhetas institucionais, character rigging, cartelas animadas de premiação e tipografia cinética fluida para TV, redes sociais e formatos digitais de alta retenção.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-num">02</div>
-          <h4 class="service-title">Simulação 3D de Produto</h4>
+          <h4 class="service-title">Modelagem e texturização 3D</h4>
           <p class="service-desc">
-            Modelagem, materiais fotorrealistas e iluminação no <strong>Blender</strong>. Foco em e-commerce, demonstrando acabamentos físicos com fidelidade para aumentar a conversão.
+            Criação de modelos 3D, materiais fotorrealistas e física de iluminação no <strong>Blender</strong>. Especialidade em visualização de produtos e enobrecimentos gráficos para e-commerce (UX/UI), permitindo ao cliente compreender texturas, reflexos e acabamentos reais antes da compra.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-num">03</div>
-          <h4 class="service-title">Pós-Produção & Varejo</h4>
+          <h4 class="service-title">Ritmo e Corte</h4>
           <p class="service-desc">
-            Edição de ritmo rápido para TV e digital, composição multicamadas, chaveamento de chroma key e color grading no <strong>DaVinci Resolve</strong> e <strong>Premiere Pro</strong>.
+            Edição audiovisual de precisão no <strong>Premiere Pro</strong> e <strong>DaVinci Resolve</strong>. Montagem com timing apurado para comerciais de TV acelerados, reportagens jornalísticas de storytelling emocional, videoclipes e conteúdos de alto impacto com sound design e color grading refinado.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-num">04</div>
-          <h4 class="service-title">Pipelines com IA Generativa</h4>
+          <h4 class="service-title">IA Generativa</h4>
           <p class="service-desc">
-            Integração controlada de <strong>Midjourney</strong> e <strong>Higgsfield</strong> para criação de cenários virtuais (*matte painting*) e aceleração criativa com alto padrão visual.
+            Aplicação prática e controlada de ferramentas de inteligência artificial (<strong>Midjourney</strong>, <strong>Higgsfield</strong> e <strong>Rabbits AI</strong>) integradas ao pipeline de produção. Geração de concept art, cenários virtuais (*matte painting*) e expansão criativa com alto padrão estético.
           </p>
         </div>
       </div>
@@ -1034,88 +1160,117 @@
       <div id="bio-detalhes" class="bio-extended-section">
         <h3>Mais Sobre Mim & Trajetória Profissional</h3>
         <p>
-          Sou Motion Designer e Editora de Vídeo com experiência consolidada em agência de publicidade, produtora de televisão e empresas do setor gráfico e de eventos. Combino direção de arte refinada, rigor técnico de animação e domínio de ferramentas contemporâneas (incluindo simulação 3D e IA generativa) para viabilizar produções com agilidade e alto impacto visual.
+          Profissional de comunicação visual e audiovisual com atuação destacada em <strong>Motion Design</strong>, <strong>edição de vídeo</strong>, <strong>identidade visual</strong> e <strong>gestão de produção audiovisual</strong>. Experiência comprovada na liderança e delegação de tarefas de equipe, controle de qualidade, direção em gravações externas e de estúdio, além da aplicação avançada de <strong>3D no Blender</strong> e <strong>IA generativa</strong> em soluções de comunicação e experiência do usuário (UX/UI).
         </p>
 
-        <!-- Timeline de Empregos -->
+        <!-- Timeline de Experiências Baseada no Currículo Oficial -->
         <h4 style="font-size: 1.15rem; color: #fff; margin: 24px 0 12px; display: flex; align-items: center; gap: 8px;">
           💼 Experiência & Histórico Profissional
         </h4>
 
         <div class="career-timeline">
           
-          <div class="career-item">
+          <!-- Posição Atual: FuturaIM -->
+          <div class="career-item" style="border-left-color: var(--pink);">
             <div class="career-header">
               <div>
-                <span class="career-role">Motion Designer & Editora de Vídeo</span>
+                <span class="career-role">Editora de Vídeo & Gestora de Audiovisual</span>
                 <span style="color: var(--text-muted); margin: 0 6px;">•</span>
-                <span class="career-company">Inspira Comunicação Integrada</span>
+                <span class="career-company" style="color: #fda4af;">FuturaIM</span>
               </div>
-              <span class="career-period">SET 2023 — ATUAL</span>
+              <span class="career-period" style="background: rgba(255, 42, 122, 0.15); color: #fda4af; border: 1px solid rgba(255, 42, 122, 0.3);">MAI 2026 — ATUAL (POSIÇÃO ATUAL)</span>
             </div>
             <p class="career-desc">
-              Responsável pela entrega semanal de mais de 25 vídeos entre conteúdos para redes sociais e peças audiovisuais complexas. Atendimento direto a contas nacionais de peso como <strong>HiperCap Brasil</strong>, <strong>Vivo</strong> e <strong>Caixa Econômica</strong>. Criação de identidades visuais em movimento, animação 2D, correção de cor e finalização técnica. Destaque para a campanha nacional com <strong>Fernanda Gentil e Ciro Bottini</strong> e a campanha do Dia das Mulheres para Apcap da Sorte, com mais de <strong>1 milhão de visualizações</strong>.
+              Gestão direta da equipe de audiovisual, delegação de tarefas e acompanhamento de prazos e fluxo de entregas. Responsável pelo controle de qualidade e aprovação final de todos os materiais em vídeo. Gestão e manutenção contínua da identidade visual da marca em todos os canais. Direção em gravações externas e de estúdio com operação de câmera e gimbal. Desenvolvimento do projeto em destaque de <strong>visualizações 3D realistas no Blender</strong> para o e-commerce gráfico, aprimorando a experiência do usuário (UX/UI) e alavancando a taxa de conversão ao permitir ao cliente visualizar com fidelidade o resultado dos acabamentos gráficos antes da compra.
             </p>
           </div>
 
+          <!-- Inspira Comunicação -->
           <div class="career-item">
             <div class="career-header">
               <div>
-                <span class="career-role">Editora de Vídeo Jr.</span>
+                <span class="career-role">Motion Designer</span>
+                <span style="color: var(--text-muted); margin: 0 6px;">•</span>
+                <span class="career-company">Inspira Comunicação Integrada</span>
+              </div>
+              <span class="career-period">SET 2023 — ABR 2026</span>
+            </div>
+            <p class="career-desc">
+              Atendimento direto a grandes contas nacionais como <strong>HiperCap Brasil</strong>, <strong>Vivo</strong> e <strong>Caixa Econômica</strong>. Criação de identidades visuais animadas, tipografia cinética, vinhetas institucionais e pós-produção audiovisual completa, com volume de mais de 25 peças semanais. Destaque para comerciais nacionais com <strong>Fernanda Gentil e Ciro Bottini</strong> e campanha especial com mais de <strong>1 milhão de visualizações</strong>.
+            </p>
+          </div>
+
+          <!-- Sua Produtora -->
+          <div class="career-item">
+            <div class="career-header">
+              <div>
+                <span class="career-role">Motion Designer Jr.</span>
                 <span style="color: var(--text-muted); margin: 0 6px;">•</span>
                 <span class="career-company">Sua Produtora</span>
               </div>
               <span class="career-period">MAI 2023 — JUL 2023</span>
             </div>
             <p class="career-desc">
-              Edição de vídeos comerciais e programas televisivos de veiculação nacional em TV aberta (<strong>Band</strong>, <strong>RedeTV!</strong> e <strong>NGT</strong>). Criação de vinhetas gráficas e animação de peças para redes sociais voltadas a anúncios de alta performance e audiência televisiva.
+              Criação e animação de peças para campanhas publicitárias e comerciais televisivos de veiculação em rede nacional (<strong>Band</strong>, <strong>RedeTV!</strong> e <strong>NGT</strong>), além de conteúdos em motion graphics para redes sociais voltados à alta conversão.
             </p>
           </div>
 
+          <!-- Win 10 Marketing -->
           <div class="career-item">
             <div class="career-header">
               <div>
-                <span class="career-role">Estágio — Edição & Design</span>
+                <span class="career-role">Estágio em Design & Motion</span>
                 <span style="color: var(--text-muted); margin: 0 6px;">•</span>
                 <span class="career-company">Win 10 Marketing</span>
               </div>
               <span class="career-period">ABR 2022 — MAI 2023</span>
             </div>
             <p class="career-desc">
-              Produção e edição de vídeos e artes para redes sociais de marcas diversas. Acompanhamento de gravações externas em estúdio e diárias em clientes, gravação e edição de podcasts e captação de materiais audiovisuais.
+              Produção visual estratégica para redes sociais, captação audiovisual de diárias em clientes, gravação e edição de podcasts e acompanhamento técnico de gravações em estúdio.
             </p>
           </div>
 
+          <!-- Freelancer & Projetos Especiais -->
           <div class="career-item">
             <div class="career-header">
               <div>
                 <span class="career-role">Videomaker & Motion Designer Freelancer</span>
                 <span style="color: var(--text-muted); margin: 0 6px;">•</span>
-                <span class="career-company">Projetos Independentes</span>
+                <span class="career-company">Projetos Independentes & Culturais</span>
               </div>
               <span class="career-period">FREELANCE CONTÍNUO</span>
             </div>
             <p class="career-desc">
-              Produção de vídeos institucionais e cobertura de eventos para empresas do Alto Tietê, incluindo lançamento oficial para <strong>Akio Alimentos</strong>. Direção e edição de documentários culturais viabilizados pelo edital da <strong>Lei Paulo Gustavo</strong> em parceria com a Prefeitura de Salesópolis.
+              Direção e montagem de documentários culturais contemplados pelo edital da <strong>Lei Paulo Gustavo</strong> em parceria com a Prefeitura de Salesópolis. Produção de vídeos corporativos e coberturas de lançamento oficial para marcas como <strong>Akio Alimentos</strong>.
             </p>
           </div>
 
         </div>
 
+        <!-- Competências, Formação e Certificações do Currículo -->
         <div class="skills-grid">
           <div class="skill-box">
-            <h4>Formação Acadêmica</h4>
+            <h4>Motion, Edição & 3D</h4>
             <ul class="skill-list">
-              <li>Faculdade de Design de Animação — Universidade Anhembi Morumbi (Cursando)</li>
-              <li>Comunicação Visual — SENAI Theobaldo di Nigris (Concluído)</li>
+              <li><strong>Motion & Edição:</strong> After Effects • Premiere Pro (Avançado) • DaVinci Resolve</li>
+              <li><strong>Design & 3D:</strong> Blender • Photoshop • Illustrator</li>
+              <li><strong>IA Generativa:</strong> Higgsfield • Midjourney • Rabbits AI</li>
             </ul>
           </div>
           <div class="skill-box">
-            <h4>Idiomas & Contato</h4>
+            <h4>Gestão, Produção & Set</h4>
             <ul class="skill-list">
-              <li>Inglês Avançado para projetos e equipes globais</li>
-              <li>WhatsApp: +55 (11) 9 9161-4359</li>
-              <li>E-mail: barbaracamarotti@hotmail.com</li>
+              <li><strong>Gestão:</strong> Liderança de equipe • Delegação • Controle de qualidade • Planejamento</li>
+              <li><strong>Produção & Set:</strong> Direção em set • Operação de câmera • Gimbal</li>
+              <li><strong>Estratégia:</strong> Identidade de marca • UX/UI aplicada</li>
+            </ul>
+          </div>
+          <div class="skill-box">
+            <h4>Formação & Certificações</h4>
+            <ul class="skill-list">
+              <li><strong>Design de Animação:</strong> Univ. Anhembi Morumbi (3º sem.)</li>
+              <li><strong>Comunicação Visual:</strong> SENAI Theobaldo de Nigris (Jul 2021)</li>
+              <li><strong>Certificações:</strong> Rabbits AI • Higgsfield • IA Experience • After Effects VFX • DaVinci Resolve • Blender</li>
             </ul>
           </div>
         </div>
@@ -1138,25 +1293,25 @@
               Modelagem, materiais fotorrealistas e física de iluminação no <strong>Blender</strong> para o e-commerce da FuturaIM. Cada acabamento foi desenvolvido para transmitir textura e reflexo no digital, reduzindo dúvidas na compra e alavancando a conversão.
             </p>
           </div>
-          <div class="slider-counter" id="counter-enobrecimento">Acabamento 1 de 12</div>
+          <div class="slider-counter" id="counter-enobrecimento" class="slider-counter counter-enobrecimento">Acabamento 1 de 12</div>
         </div>
 
         <div class="slider-stage">
           <div class="video-wrapper">
-            <iframe id="iframe-enobrecimento" src="https://drive.google.com/file/d/1PMN73iRKX_MB5fHzJ7ODH5Ww76e0a5nZ/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
+            <iframe id="iframe-enobrecimento" class="iframe-enobrecimento" src="https://drive.google.com/file/d/1PMN73iRKX_MB5fHzJ7ODH5Ww76e0a5nZ/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
           </div>
           <div class="slider-video-meta">
-            <h4 class="slider-v-title" id="title-enobrecimento">Laminação Fosca com Verniz Localizado</h4>
-            <div id="impact-enobrecimento" class="slider-v-impact">Impacto no E-commerce: Redução de dúvidas sobre contraste e alta conversão de impressos corporativos.</div>
-            <p class="slider-v-desc" id="desc-enobrecimento">Simulação física precisa contrastando a base aveludada sem reflexos com o brilho espelhado do verniz localizado.</p>
+            <h4 class="slider-v-title" id="title-enobrecimento" class="slider-v-title title-enobrecimento">Laminação Fosca com Verniz Localizado</h4>
+            <div id="impact-enobrecimento" class="slider-v-impact impact-enobrecimento" class="slider-v-impact">Impacto no E-commerce: Redução de dúvidas sobre contraste e alta conversão de impressos corporativos.</div>
+            <p class="slider-v-desc" id="desc-enobrecimento" class="slider-v-desc desc-enobrecimento">Simulação física precisa contrastando a base aveludada sem reflexos com o brilho espelhado do verniz localizado.</p>
             <div style="margin-top: 8px;">
-              <a id="link-enobrecimento" href="https://drive.google.com/file/d/1PMN73iRKX_MB5fHzJ7ODH5Ww76e0a5nZ/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo em Alta Resolução ↗</a>
+              <a id="link-enobrecimento" class="card-link-btn link-enobrecimento" href="https://drive.google.com/file/d/1PMN73iRKX_MB5fHzJ7ODH5Ww76e0a5nZ/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo em Alta Resolução ↗</a>
             </div>
           </div>
         </div>
 
         <!-- Bolinhas estilo Instagram -->
-        <div class="slider-dots-container" id="dots-enobrecimento"></div>
+        <div class="slider-dots-container" id="dots-enobrecimento" class="slider-dots-container dots-enobrecimento"></div>
 
         <div class="slider-controls">
           <button class="nav-slider-btn" onclick="prevSlide('enobrecimento')">❮ Anterior</button>
@@ -1174,24 +1329,24 @@
               Motion graphics, vinhetas e cartelas adaptadas na proporção ultra-wide nativa (<strong>4.800 × 768 px</strong>) para os painéis de estúdio da Jovem Pan durante transmissões ao vivo.
             </p>
           </div>
-          <div class="slider-counter" id="counter-telao">Vídeo 1 de 13</div>
+          <div class="slider-counter" id="counter-telao" class="slider-counter counter-telao">Vídeo 1 de 13</div>
         </div>
 
         <div class="slider-stage">
           <div class="video-wrapper-led">
-            <iframe id="iframe-telao" src="https://drive.google.com/file/d/11_qmfi-Vp6K2fdOjxmYmcDyaZk4Jscix/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
+            <iframe id="iframe-telao" class="iframe-telao" src="https://drive.google.com/file/d/11_qmfi-Vp6K2fdOjxmYmcDyaZk4Jscix/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
           </div>
           <div class="slider-video-meta">
-            <h4 class="slider-v-title" id="title-telao">#TELAO JOVEM PAN - 28/05 (MEIO MILHÃO)</h4>
-            <p class="slider-v-desc" id="desc-telao">Grafismo animado para telão de LED destacando a rodada especial de meio milhão de reais.</p>
+            <h4 class="slider-v-title" id="title-telao" class="slider-v-title title-telao">#TELAO JOVEM PAN - 28/05 (MEIO MILHÃO)</h4>
+            <p class="slider-v-desc" id="desc-telao" class="slider-v-desc desc-telao">Grafismo animado para telão de LED destacando a rodada especial de meio milhão de reais.</p>
             <div style="margin-top: 8px;">
-              <a id="link-telao" href="https://drive.google.com/file/d/11_qmfi-Vp6K2fdOjxmYmcDyaZk4Jscix/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo em Alta Resolução ↗</a>
+              <a id="link-telao" class="card-link-btn link-telao" href="https://drive.google.com/file/d/11_qmfi-Vp6K2fdOjxmYmcDyaZk4Jscix/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo em Alta Resolução ↗</a>
             </div>
           </div>
         </div>
 
         <!-- Bolinhas estilo Instagram -->
-        <div class="slider-dots-container" id="dots-telao"></div>
+        <div class="slider-dots-container" id="dots-telao" class="slider-dots-container dots-telao"></div>
 
         <div class="slider-controls">
           <button class="nav-slider-btn" onclick="prevSlide('telao')">❮ Anterior</button>
@@ -1209,24 +1364,24 @@
               Série completa de animações educativas e motion design para divulgação científica da Fundação Oswaldo Cruz, abordando preservação ambiental e equilíbrio ecológico.
             </p>
           </div>
-          <div class="slider-counter" id="counter-fiocruz">Episódio 1 de 7</div>
+          <div class="slider-counter" id="counter-fiocruz" class="slider-counter counter-fiocruz">Episódio 1 de 7</div>
         </div>
 
         <div class="slider-stage">
           <div class="video-wrapper">
-            <iframe id="iframe-fiocruz" src="https://drive.google.com/file/d/1hoGjJV3ItYBgjT4dHegpMLz3evaGrNgD/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
+            <iframe id="iframe-fiocruz" class="iframe-fiocruz" src="https://drive.google.com/file/d/1hoGjJV3ItYBgjT4dHegpMLz3evaGrNgD/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
           </div>
           <div class="slider-video-meta">
-            <h4 class="slider-v-title" id="title-fiocruz">Biodiversidade — Vídeo 01: Introdução aos Ecossistemas</h4>
-            <p class="slider-v-desc" id="desc-fiocruz">Panorama geral sobre a riqueza da biodiversidade brasileira e as teias de relações ecológicas fundamentais para o planeta.</p>
+            <h4 class="slider-v-title" id="title-fiocruz" class="slider-v-title title-fiocruz">Biodiversidade — Vídeo 01: Introdução aos Ecossistemas</h4>
+            <p class="slider-v-desc" id="desc-fiocruz" class="slider-v-desc desc-fiocruz">Panorama geral sobre a riqueza da biodiversidade brasileira e as teias de relações ecológicas fundamentais para o planeta.</p>
             <div style="margin-top: 8px;">
-              <a id="link-fiocruz" href="https://drive.google.com/file/d/1hoGjJV3ItYBgjT4dHegpMLz3evaGrNgD/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo em Alta Resolução ↗</a>
+              <a id="link-fiocruz" class="card-link-btn link-fiocruz" href="https://drive.google.com/file/d/1hoGjJV3ItYBgjT4dHegpMLz3evaGrNgD/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo em Alta Resolução ↗</a>
             </div>
           </div>
         </div>
 
         <!-- Bolinhas estilo Instagram -->
-        <div class="slider-dots-container" id="dots-fiocruz"></div>
+        <div class="slider-dots-container" id="dots-fiocruz" class="slider-dots-container dots-fiocruz"></div>
 
         <div class="slider-controls">
           <button class="nav-slider-btn" onclick="prevSlide('fiocruz')">❮ Anterior</button>
@@ -1412,24 +1567,24 @@
               Comerciais de alto dinamismo unindo <strong>motion design</strong> e <strong>composição visual</strong>: cartelas de premiação animadas, ritmo acelerado, inserts de produtos e montagem rítmica para veiculação nacional.
             </p>
           </div>
-          <div class="slider-counter" id="counter-comerciais">Vídeo 1 de 29</div>
+          <div class="slider-counter" id="counter-comerciais" class="slider-counter counter-comerciais">Vídeo 1 de 29</div>
         </div>
 
         <div class="slider-stage">
           <div class="video-wrapper">
-            <iframe id="iframe-comerciais" src="https://www.youtube.com/embed/K5JGDsgCqSY" allow="autoplay; fullscreen" loading="lazy"></iframe>
+            <iframe id="iframe-comerciais" class="iframe-comerciais" src="https://www.youtube.com/embed/K5JGDsgCqSY" allow="autoplay; fullscreen" loading="lazy"></iframe>
           </div>
           <div class="slider-video-meta">
-            <h4 class="slider-v-title" id="title-comerciais">Comercial — 17/07/2024</h4>
-            <p class="slider-v-desc" id="desc-comerciais">Comercial de varejo com foco em prêmios, motion graphics e apresentação dinâmica para TV.</p>
+            <h4 class="slider-v-title" id="title-comerciais" class="slider-v-title title-comerciais">Comercial — 17/07/2024</h4>
+            <p class="slider-v-desc" id="desc-comerciais" class="slider-v-desc desc-comerciais">Comercial de varejo com foco em prêmios, motion graphics e apresentação dinâmica para TV.</p>
             <div style="margin-top: 8px;">
-              <a id="link-comerciais" href="https://www.youtube.com/watch?v=K5JGDsgCqSY" target="_blank" class="card-link-btn">Assistir no YouTube ↗</a>
+              <a id="link-comerciais" class="card-link-btn link-comerciais" href="https://www.youtube.com/watch?v=K5JGDsgCqSY" target="_blank" class="card-link-btn">Assistir no YouTube ↗</a>
             </div>
           </div>
         </div>
 
         <!-- Bolinhas estilo Instagram -->
-        <div class="slider-dots-container" id="dots-comerciais"></div>
+        <div class="slider-dots-container" id="dots-comerciais" class="slider-dots-container dots-comerciais"></div>
 
         <div class="slider-controls">
           <button class="nav-slider-btn" onclick="prevSlide('comerciais')">❮ Anterior</button>
@@ -1447,24 +1602,24 @@
               Reportagens e documentários especiais retratando histórias de superação, entregas de prêmios e o impacto social na vida dos ganhadores.
             </p>
           </div>
-          <div class="slider-counter" id="counter-materias">Vídeo 1 de 9</div>
+          <div class="slider-counter" id="counter-materias" class="slider-counter counter-materias">Vídeo 1 de 9</div>
         </div>
 
         <div class="slider-stage">
           <div class="video-wrapper">
-            <iframe id="iframe-materias" src="https://www.youtube.com/embed/vhuQgJuOO_c" allow="autoplay; fullscreen" loading="lazy"></iframe>
+            <iframe id="iframe-materias" class="iframe-materias" src="https://www.youtube.com/embed/vhuQgJuOO_c" allow="autoplay; fullscreen" loading="lazy"></iframe>
           </div>
           <div class="slider-video-meta">
-            <h4 class="slider-v-title" id="title-materias">História de Ganhador 01</h4>
-            <p class="slider-v-desc" id="desc-materias">Reportagem especial acompanhando a entrega de prêmios e a emoção da família contemplada.</p>
+            <h4 class="slider-v-title" id="title-materias" class="slider-v-title title-materias">História de Ganhador 01</h4>
+            <p class="slider-v-desc" id="desc-materias" class="slider-v-desc desc-materias">Reportagem especial acompanhando a entrega de prêmios e a emoção da família contemplada.</p>
             <div style="margin-top: 8px;">
-              <a id="link-materias" href="https://www.youtube.com/watch?v=vhuQgJuOO_c" target="_blank" class="card-link-btn">Assistir no YouTube ↗</a>
+              <a id="link-materias" class="card-link-btn link-materias" href="https://www.youtube.com/watch?v=vhuQgJuOO_c" target="_blank" class="card-link-btn">Assistir no YouTube ↗</a>
             </div>
           </div>
         </div>
 
         <!-- Bolinhas estilo Instagram -->
-        <div class="slider-dots-container" id="dots-materias"></div>
+        <div class="slider-dots-container" id="dots-materias" class="slider-dots-container dots-materias"></div>
 
         <div class="slider-controls">
           <button class="nav-slider-btn" onclick="prevSlide('materias')">❮ Anterior</button>
@@ -1482,24 +1637,24 @@
               Série de 3 produções narrativas documentando vivências, histórias de moradores e as transformações sociais nas comunidades e bairros.
             </p>
           </div>
-          <div class="slider-counter" id="counter-zeluiz">Vídeo 1 de 3</div>
+          <div class="slider-counter" id="counter-zeluiz" class="slider-counter counter-zeluiz">Vídeo 1 de 3</div>
         </div>
 
         <div class="slider-stage">
           <div class="video-wrapper">
-            <iframe id="iframe-zeluiz" src="https://drive.google.com/file/d/1doXZ7n5A1fpmwVkoUo3rI0GWs80Rezb7/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
+            <iframe id="iframe-zeluiz" class="iframe-zeluiz" src="https://drive.google.com/file/d/1doXZ7n5A1fpmwVkoUo3rI0GWs80Rezb7/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
           </div>
           <div class="slider-video-meta">
-            <h4 class="slider-v-title" id="title-zeluiz">Zé Luiz nos Bairros (Edição Especial)</h4>
-            <p class="slider-v-desc" id="desc-zeluiz">Registro documental dinâmico com depoimentos, captação local e narrativa de impacto social.</p>
+            <h4 class="slider-v-title" id="title-zeluiz" class="slider-v-title title-zeluiz">Zé Luiz nos Bairros (Edição Especial)</h4>
+            <p class="slider-v-desc" id="desc-zeluiz" class="slider-v-desc desc-zeluiz">Registro documental dinâmico com depoimentos, captação local e narrativa de impacto social.</p>
             <div style="margin-top: 8px;">
-              <a id="link-zeluiz" href="https://drive.google.com/file/d/1doXZ7n5A1fpmwVkoUo3rI0GWs80Rezb7/view?usp=drivesdk" target="_blank" class="card-link-btn btn-highlight">Abrir Vídeo no Drive ↗</a>
+              <a id="link-zeluiz" class="card-link-btn link-zeluiz" href="https://drive.google.com/file/d/1doXZ7n5A1fpmwVkoUo3rI0GWs80Rezb7/view?usp=drivesdk" target="_blank" class="card-link-btn btn-highlight">Abrir Vídeo no Drive ↗</a>
             </div>
           </div>
         </div>
 
         <!-- Bolinhas estilo Instagram -->
-        <div class="slider-dots-container" id="dots-zeluiz"></div>
+        <div class="slider-dots-container" id="dots-zeluiz" class="slider-dots-container dots-zeluiz"></div>
 
         <div class="slider-controls">
           <button class="nav-slider-btn" onclick="prevSlide('zeluiz')">❮ Anterior</button>
@@ -1627,6 +1782,128 @@
         </div>
 
       </div>
+    </section>
+
+  
+    <!-- ========================================================
+         4. ABA: HIPER CAP (PRODUÇÕES INTEGRADAS)
+         ======================================================== -->
+    <section id="tab-hipercap" class="tab-content">
+
+      <!-- Apresentação do Trabalho no Hiper Cap -->
+      <div class="bento-card col-12" style="margin-bottom: 24px;">
+        <span class="card-tag tag-motion">Campanhas Completas • TV, Estúdio & Digital</span>
+        <h3 class="card-title" style="font-size: 1.35rem; margin-top: 6px;">Hiper Cap — Produção Audiovisual & Motion Design Integrados</h3>
+        <p class="card-desc" style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 0;">
+          Durante minha atuação na Win 10 Comunicação, liderei e executei a pós-produção e o motion design para as campanhas do <strong>Hiper Cap</strong>. O trabalho abrangeu desde a criação de vinhetas e cartelas para os telões de LED da <strong>Jovem Pan</strong> em formato ultra-wide, passando pela montagem e grafismos de mais de <strong>29 comerciais de TV e redes sociais</strong>, até a edição de <strong>reportagens documentais emocionantes</strong> com os ganhadores dos prêmios.
+        </p>
+      </div>
+
+      <!-- 1. TELÕES JOVEM PAN (DUPLICADO NA ABA HIPER CAP) -->
+<div class="slider-section">
+        <div class="slider-header">
+          <div>
+            <span class="card-tag tag-led">Painel LED • 4.800 × 768 px (Ultra-Wide)</span>
+            <h3 class="slider-title">Telões Jovem Pan</h3>
+            <p class="slider-category-desc">
+              Motion graphics, vinhetas e cartelas adaptadas na proporção ultra-wide nativa (<strong>4.800 × 768 px</strong>) para os painéis de estúdio da Jovem Pan durante transmissões ao vivo.
+            </p>
+          </div>
+          <div class="slider-counter"  class="slider-counter counter-telao">Vídeo 1 de 13</div>
+        </div>
+
+        <div class="slider-stage">
+          <div class="video-wrapper-led">
+            <iframe  class="iframe-telao" src="https://drive.google.com/file/d/11_qmfi-Vp6K2fdOjxmYmcDyaZk4Jscix/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
+          </div>
+          <div class="slider-video-meta">
+            <h4 class="slider-v-title"  class="slider-v-title title-telao">#TELAO JOVEM PAN - 28/05 (MEIO MILHÃO)</h4>
+            <p class="slider-v-desc"  class="slider-v-desc desc-telao">Grafismo animado para telão de LED destacando a rodada especial de meio milhão de reais.</p>
+            <div style="margin-top: 8px;">
+              <a  class="card-link-btn link-telao" href="https://drive.google.com/file/d/11_qmfi-Vp6K2fdOjxmYmcDyaZk4Jscix/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo em Alta Resolução ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bolinhas estilo Instagram -->
+        <div class="slider-dots-container"  class="slider-dots-container dots-telao"></div>
+
+        <div class="slider-controls">
+          <button class="nav-slider-btn" onclick="prevSlide('telao')">❮ Anterior</button>
+          <button class="nav-slider-btn" onclick="nextSlide('telao')">Próximo ❯</button>
+        </div>
+      </div>
+
+      <!-- 2. COMERCIAIS HIPERCAP (DUPLICADO NA ABA HIPER CAP) -->
+<div class="slider-section">
+        <div class="slider-header">
+          <div>
+            <span class="card-tag">TV Aberta & Digital • Motion + Composição Visual</span>
+            <h3 class="slider-title">Comerciais HiperCap</h3>
+            <p class="slider-category-desc">
+              Comerciais de alto dinamismo unindo <strong>motion design</strong> e <strong>composição visual</strong>: cartelas de premiação animadas, ritmo acelerado, inserts de produtos e montagem rítmica para veiculação nacional.
+            </p>
+          </div>
+          <div class="slider-counter"  class="slider-counter counter-comerciais">Vídeo 1 de 29</div>
+        </div>
+
+        <div class="slider-stage">
+          <div class="video-wrapper">
+            <iframe  class="iframe-comerciais" src="https://www.youtube.com/embed/K5JGDsgCqSY" allow="autoplay; fullscreen" loading="lazy"></iframe>
+          </div>
+          <div class="slider-video-meta">
+            <h4 class="slider-v-title"  class="slider-v-title title-comerciais">Comercial — 17/07/2024</h4>
+            <p class="slider-v-desc"  class="slider-v-desc desc-comerciais">Comercial de varejo com foco em prêmios, motion graphics e apresentação dinâmica para TV.</p>
+            <div style="margin-top: 8px;">
+              <a  class="card-link-btn link-comerciais" href="https://www.youtube.com/watch?v=K5JGDsgCqSY" target="_blank" class="card-link-btn">Assistir no YouTube ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bolinhas estilo Instagram -->
+        <div class="slider-dots-container"  class="slider-dots-container dots-comerciais"></div>
+
+        <div class="slider-controls">
+          <button class="nav-slider-btn" onclick="prevSlide('comerciais')">❮ Anterior</button>
+          <button class="nav-slider-btn" onclick="nextSlide('comerciais')">Próximo ❯</button>
+        </div>
+      </div>
+
+      <!-- 3. MATÉRIAS HIPERCAP (DUPLICADO NA ABA HIPER CAP) -->
+<div class="slider-section">
+        <div class="slider-header">
+          <div>
+            <span class="card-tag tag-ai">Reportagens & Storytelling Emocional</span>
+            <h3 class="slider-title">Matérias HiperCap</h3>
+            <p class="slider-category-desc">
+              Reportagens e documentários especiais retratando histórias de superação, entregas de prêmios e o impacto social na vida dos ganhadores.
+            </p>
+          </div>
+          <div class="slider-counter"  class="slider-counter counter-materias">Vídeo 1 de 9</div>
+        </div>
+
+        <div class="slider-stage">
+          <div class="video-wrapper">
+            <iframe  class="iframe-materias" src="https://www.youtube.com/embed/vhuQgJuOO_c" allow="autoplay; fullscreen" loading="lazy"></iframe>
+          </div>
+          <div class="slider-video-meta">
+            <h4 class="slider-v-title"  class="slider-v-title title-materias">História de Ganhador 01</h4>
+            <p class="slider-v-desc"  class="slider-v-desc desc-materias">Reportagem especial acompanhando a entrega de prêmios e a emoção da família contemplada.</p>
+            <div style="margin-top: 8px;">
+              <a  class="card-link-btn link-materias" href="https://www.youtube.com/watch?v=vhuQgJuOO_c" target="_blank" class="card-link-btn">Assistir no YouTube ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bolinhas estilo Instagram -->
+        <div class="slider-dots-container"  class="slider-dots-container dots-materias"></div>
+
+        <div class="slider-controls">
+          <button class="nav-slider-btn" onclick="prevSlide('materias')">❮ Anterior</button>
+          <button class="nav-slider-btn" onclick="nextSlide('materias')">Próximo ❯</button>
+        </div>
+      </div>
+
     </section>
 
   </main>
@@ -1954,60 +2231,75 @@
     // Renderiza bolinhas (dots) para qualquer carrossel
     function renderDots(category) {
       const slider = slidersData[category];
-      const container = document.getElementById(`dots-${category}`);
-      if (!container) return;
+      if (!slider) return;
 
-      container.innerHTML = '';
-      slider.items.forEach((_, i) => {
-        const dot = document.createElement('button');
-        dot.className = `slider-dot ${i === slider.index ? 'active' : ''}`;
-        dot.title = `Ir para o item ${i + 1}`;
-        dot.onclick = () => {
-          slider.index = i;
-          updateSliderUI(category);
-        };
-        container.appendChild(dot);
+      document.querySelectorAll(`.dots-${category}`).forEach(container => {
+        container.innerHTML = '';
+        slider.items.forEach((_, i) => {
+          const dot = document.createElement('button');
+          dot.className = `slider-dot ${i === slider.index ? 'active' : ''}`;
+          dot.title = `Ir para o item ${i + 1}`;
+          dot.onclick = () => {
+            slider.index = i;
+            updateSliderUI(category);
+          };
+          container.appendChild(dot);
+        });
       });
     }
 
     function updateSliderUI(category) {
       const slider = slidersData[category];
+      if (!slider) return;
       const current = slider.items[slider.index];
 
-      const iframe = document.getElementById(`iframe-${category}`);
-      if (iframe) iframe.src = current.src;
+      // Atualiza todos os iframes da categoria (em todas as abas onde estiver presente)
+      document.querySelectorAll(`.iframe-${category}`).forEach(iframe => {
+        iframe.src = current.src;
+      });
 
-      const title = document.getElementById(`title-${category}`);
-      if (title) title.innerText = current.title;
+      // Atualiza títulos
+      document.querySelectorAll(`.title-${category}`).forEach(el => {
+        el.innerText = current.title;
+      });
 
-      const desc = document.getElementById(`desc-${category}`);
-      if (desc) desc.innerText = current.desc;
+      // Atualiza descrições
+      document.querySelectorAll(`.desc-${category}`).forEach(el => {
+        el.innerText = current.desc;
+      });
 
-      const counter = document.getElementById(`counter-${category}`);
-      if (counter) counter.innerText = `${category === 'fiocruz' ? 'Episódio' : category === 'enobrecimento' ? 'Acabamento' : 'Vídeo'} ${slider.index + 1} de ${slider.items.length}`;
+      // Atualiza contadores
+      document.querySelectorAll(`.counter-${category}`).forEach(el => {
+        const prefix = category === 'fiocruz' ? 'Episódio' : category === 'enobrecimento' ? 'Acabamento' : 'Vídeo';
+        el.innerText = `${prefix} ${slider.index + 1} de ${slider.items.length}`;
+      });
 
-      const impact = document.getElementById(`impact-${category}`);
-      if (impact && current.impact) {
-        impact.innerText = current.impact;
-      }
+      // Atualiza impacto se presente
+      document.querySelectorAll(`.impact-${category}`).forEach(el => {
+        if (current.impact) {
+          el.innerText = current.impact;
+          el.style.display = 'inline-block';
+        } else {
+          el.style.display = 'none';
+        }
+      });
 
-      const linkBtn = document.getElementById(`link-${category}`);
-      if (linkBtn) {
+      // Atualiza links de ação
+      document.querySelectorAll(`.link-${category}`).forEach(linkBtn => {
         if (current.link) {
           linkBtn.href = current.link;
         } else if (current.yt) {
           linkBtn.href = `https://www.youtube.com/watch?v=${current.yt}`;
         }
-      }
+      });
 
-      // Atualiza a bolinha ativa
-      const dotsContainer = document.getElementById(`dots-${category}`);
-      if (dotsContainer) {
+      // Atualiza bolinhas ativas em todos os containers da categoria
+      document.querySelectorAll(`.dots-${category}`).forEach(dotsContainer => {
         const dots = dotsContainer.querySelectorAll('.slider-dot');
         dots.forEach((dot, idx) => {
           dot.className = `slider-dot ${idx === slider.index ? 'active' : ''}`;
         });
-      }
+      });
     }
 
     function nextSlide(category) {
