@@ -240,6 +240,7 @@
       white-space: nowrap;
       flex-shrink: 0;
     }
+
     .brand-pill:hover {
       background: rgba(124, 58, 237, 0.18);
       border-color: rgba(124, 58, 237, 0.5);
@@ -402,7 +403,7 @@
       padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
-      border-radius: 12px;
+      border-radius: 10px;
       background: #000;
       margin-bottom: 14px;
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -506,7 +507,6 @@
       white-space: nowrap;
     }
 
-    /* Palco do Vídeo no Carrossel */
     .slider-stage {
       max-width: 820px;
       margin: 0 auto;
@@ -532,7 +532,6 @@
       margin: 0 auto;
     }
 
-    /* Controles do Carrossel (Anterior / Próximo) */
     .slider-controls {
       display: flex;
       justify-content: center;
@@ -644,7 +643,7 @@
         </div>
       </div>
 
-      <!-- FAIXA DE MARCAS (ROLAGEM HORIZONTAL SUAVE) -->
+      <!-- FAIXA DE MARCAS -->
       <div class="brands-showcase-box">
         <div class="brands-showcase-header">
           <h4>Marcas, Contas e Veículos Atendidos</h4>
@@ -860,12 +859,12 @@
           </div>
         </div>
 
-        <!-- Animação Fiocruz -->
+        <!-- Animação Fiocruz (Caminho Atualizado) -->
         <div class="bento-card col-5">
           <div>
             <span class="card-tag tag-tech">Motion Institucional & Ciência</span>
             <div class="video-wrapper">
-              <iframe src="https://drive.google.com/file/d/1SGaH2NlS1lZSAoildob3fR0bLaPaYOKp/preview" allow="autoplay"></iframe>
+              <iframe src="https://drive.google.com/file/d/1hoGjJV3ItYBgjT4dHegpMLz3evaGrNgD/preview" allow="autoplay"></iframe>
             </div>
             <h3 class="card-title">Instituto Fiocruz — Biodiversidade</h3>
             <p class="card-desc">Série de animações e motion design desenvolvidos para divulgação científica e institucional do Instituto Fiocruz.</p>
@@ -1002,7 +1001,7 @@
       </div>
 
       <!-- ==============================================
-           SESSÃO 1: TELÃO JOVEM PAN (CARROSSEL INTERATIVO)
+           SESSÃO 1: TELÃO JOVEM PAN (CAMINHOS ATUALIZADOS)
            ============================================== -->
       <div class="slider-section">
         <div class="slider-header">
@@ -1013,12 +1012,12 @@
               Motion graphics, loops visuais e cartelas de alta definição adaptadas para os painéis de estúdio da Jovem Pan durante as transmissões do programa.
             </p>
           </div>
-          <div class="slider-counter" id="counter-telao">Vídeo 1 de 8</div>
+          <div class="slider-counter" id="counter-telao">Vídeo 1 de 13</div>
         </div>
 
         <div class="slider-stage">
           <div class="video-wrapper">
-            <iframe id="iframe-telao" src="https://drive.google.com/file/d/1NFIXDuSIF-WJBX2TTBp4J2_ySzcijApP/preview" allow="autoplay" allowfullscreen></iframe>
+            <iframe id="iframe-telao" src="https://drive.google.com/file/d/11_qmfi-Vp6K2fdOjxmYmcDyaZk4Jscix/preview" allow="autoplay" allowfullscreen></iframe>
           </div>
           <div class="slider-video-meta">
             <h4 class="slider-v-title" id="title-telao">#TELAO JOVEM PAN - 28/05 (MEIO MILHÃO)</h4>
@@ -1033,7 +1032,7 @@
       </div>
 
       <!-- ==============================================
-           SESSÃO 2: COMERCIAIS (CARROSSEL COM 29 VÍDEOS)
+           SESSÃO 2: COMERCIAIS (29 VÍDEOS)
            ============================================== -->
       <div class="slider-section">
         <div class="slider-header">
@@ -1064,7 +1063,7 @@
       </div>
 
       <!-- ==============================================
-           SESSÃO 3: MATÉRIAS (CARROSSEL COM 9 VÍDEOS)
+           SESSÃO 3: MATÉRIAS (9 VÍDEOS)
            ============================================== -->
       <div class="slider-section">
         <div class="slider-header">
@@ -1099,7 +1098,6 @@
   </main>
 
   <script>
-    // Gerenciador de Abas
     function switchTab(tabId, buttonElement) {
       document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -1109,7 +1107,7 @@
     }
 
     // ============================================
-    // DADOS DOS 3 CARROSSEIS DO HIPERCAP BRASIL
+    // DADOS ATUALIZADOS DOS 3 CARROSSEIS
     // ============================================
     const slidersData = {
       telao: {
@@ -1118,42 +1116,67 @@
           {
             title: "#TELAO JOVEM PAN - 28/05 (MEIO MILHÃO)",
             desc: "Grafismo animado para telão de LED destacando a rodada especial de meio milhão de reais.",
-            src: "https://drive.google.com/file/d/1NFIXDuSIF-WJBX2TTBp4J2_ySzcijApP/preview"
+            src: "https://drive.google.com/file/d/11_qmfi-Vp6K2fdOjxmYmcDyaZk4Jscix/preview"
           },
           {
             title: "TELAO JOVEM PAN - 28/05",
             desc: "Identidade visual em movimento e vinhetas adaptadas para o estúdio da rádio e TV Jovem Pan.",
-            src: "https://drive.google.com/file/d/1o-9KZYnQXbqR0hndjP2br1Mv-8srXCs6/preview"
+            src: "https://drive.google.com/file/d/1cCILyW5guH9v_Ah2ZpNLbcOGqbaSjp0L/preview"
           },
           {
             title: "TELAO JOVEM PAN - 14/05",
             desc: "Animação de fundo de palco e transições para a transmissão dominical ao vivo.",
-            src: "https://drive.google.com/file/d/18s6Xci3TPPn-cF7-RS3Myv4-sn1hkSdf/preview"
+            src: "https://drive.google.com/file/d/1z7GPVeW7NTrvVw9zRGYU_DheHwpZXgBi/preview"
           },
           {
             title: "TELAO JOVEM PAN - 30/04",
             desc: "Conteúdo visual com destaque para as premiações principais e chamadas de compra.",
-            src: "https://drive.google.com/file/d/1wJt3f1HTXJFLnveuujgx9tIK29Gg4f5n/preview"
+            src: "https://drive.google.com/file/d/1RcJttSGobd0ti0eVxypa5buTZjH4VMxf/preview"
           },
           {
             title: "TELAO JOVEM PAN - 23/04",
             desc: "Composição de vinhetas e loops visuais adaptados para painéis digitais de grande formato.",
-            src: "https://drive.google.com/file/d/1OXQFtz3YLCCGPJ1fO_Li8x2YLsw20w2s/preview"
+            src: "https://drive.google.com/file/d/1N54KXvLWoNwU6ULhnOytxLhY4Pamfgyy/preview"
           },
           {
             title: "TELAO JOVEM PAN - 16/04",
             desc: "Animações sincronizadas para inserção ao vivo durante a programação do HiperCap.",
-            src: "https://drive.google.com/file/d/1w3-nlxvLR9zRF3SHNElQ39m3jcrciOAR/preview"
+            src: "https://drive.google.com/file/d/1wGNqQNE1xlOdo453LJhvTu9Dfa0717nS/preview"
           },
           {
             title: "TELAO JOVEM PAN - 09/04",
             desc: "Motion design institucional e cartelas de premiação para exibição em estúdio.",
-            src: "https://drive.google.com/file/d/1FA4Tz1XviQJ3edtRtjGvZMbT2sUhwoKm/preview"
+            src: "https://drive.google.com/file/d/1z3aqJAUC28Vys9iLGFuJYFshX1f1mBBn/preview"
           },
           {
             title: "TELAO JOVEM PAN - 02/04",
             desc: "Vinheta e cartelas promocionais para telões do estúdio com alto dinamismo e contraste.",
-            src: "https://drive.google.com/file/d/1SfKuuLHpw3bUUPu4vtJQebBPdxhRM1hl/preview"
+            src: "https://drive.google.com/file/d/1ew1Xy5ZkCB26VCUOKJQcvLzWZp0X2fEN/preview"
+          },
+          {
+            title: "TELAO 19/03 (1 MILHÃO)",
+            desc: "Peça de impacto para estúdio com destaque para a super premiação de 1 Milhão de Reais.",
+            src: "https://drive.google.com/file/d/1bVRk8sT16PS_UwyzFO2jFx1tHLJHideT/preview"
+          },
+          {
+            title: "TELAO 19/02",
+            desc: "Vinheta e cartelas animadas para telão de LED durante o programa ao vivo.",
+            src: "https://drive.google.com/file/d/1991Zv3_Emvssf8OmF8ipHszGXoboM6c3/preview"
+          },
+          {
+            title: "TELAO JOVEM PAN 12/02",
+            desc: "Composição visual e chamadas promocionais para os painéis digitais do estúdio.",
+            src: "https://drive.google.com/file/d/12R3XYUPsORnIUV0_iVb3n6TYXKvQ2MKL/preview"
+          },
+          {
+            title: "TELAO 26/03 (2 CAM + CASA)",
+            desc: "Animação para telão de estúdio destacando prêmio de 2 caminhões mais casa própria.",
+            src: "https://drive.google.com/file/d/1C31Dz0DsjXpGTBsgUo7N_kmwo3T0HgIP/preview"
+          },
+          {
+            title: "TELAO 18/12 (ESPECIAL FIM DE ANO)",
+            desc: "Vinheta temática de fim de ano desenvolvida para os painéis de estúdio da Jovem Pan.",
+            src: "https://drive.google.com/file/d/1lXW5f3maX0I1fNzZZAird0kN8bEiaeMO/preview"
           }
         ]
       },
