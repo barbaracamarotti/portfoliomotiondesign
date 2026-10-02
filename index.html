@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Barbara Camarotti — Motion Designer & 3D Artist</title>
   
-  <!-- Favicon Dinâmico com Ícone BC personalizado -->
+  <!-- Favicon com Ícone BC personalizado -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%237c3aed'/%3E%3Cstop offset='100%25' stop-color='%23ff2a7a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='26' fill='url(%23g)'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='central' font-family='system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif' font-weight='900' font-size='48' fill='%23ffffff'%3EBC%3C/text%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -90,7 +90,7 @@
     }
     @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-    /* Botão Fale Comigo com Menu Dropdown */
+    /* Dropdown Fale Comigo */
     .contact-dropdown-container {
       position: relative;
       display: inline-block;
@@ -128,7 +128,6 @@
       z-index: 300;
       backdrop-filter: blur(20px);
     }
-
     .dropdown-menu.show { display: flex; animation: dropFade 0.2s ease; }
     @keyframes dropFade { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -156,12 +155,12 @@
       flex-shrink: 0;
     }
 
-    /* Barra de Abas */
+    /* Barra de Abas (3 Categorias Principais) */
     .tabs-bar {
       margin: 28px 0 22px;
       border-bottom: 1px solid var(--card-border);
       display: flex;
-      gap: 8px;
+      gap: 10px;
       overflow-x: auto;
       padding-bottom: 6px;
       -webkit-overflow-scrolling: touch;
@@ -174,9 +173,9 @@
       border: 1px solid transparent;
       color: var(--text-muted);
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       font-weight: 600;
-      padding: 10px 18px;
+      padding: 10px 22px;
       border-radius: var(--btn-radius);
       cursor: pointer;
       transition: all 0.2s ease;
@@ -249,9 +248,7 @@
     }
     .learn-more-link:hover { color: #fff; transform: translateX(3px); }
 
-    /* =======================================================
-       FAIXA DE MARCAS - MARQUEE INFINITO E SUAVE
-       ======================================================= */
+    /* Faixa de Marcas (Marquee Infinito) */
     .brands-showcase-box {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -306,7 +303,7 @@
       background: rgba(124, 58, 237, 0.25); border-color: rgba(124, 58, 237, 0.6); color: #fff;
     }
 
-    /* Números de Alto Impacto */
+    /* Números de Impacto */
     .big-stats-grid {
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 20px 0 28px;
     }
@@ -352,9 +349,7 @@
     .service-title { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
     .service-desc { font-size: 0.86rem; color: var(--text-muted); line-height: 1.5; }
 
-    /* =======================================================
-       TRAJETÓRIA PROFISSIONAL & HISTÓRICO DE CARREIRA
-       ======================================================= */
+    /* Trajetória & Histórico */
     .bio-extended-section {
       background: rgba(255, 255, 255, 0.02); border: 1px solid var(--card-border);
       border-radius: var(--radius); padding: 32px 28px; margin-top: 36px;
@@ -412,10 +407,10 @@
     .skill-list li::before { content: "•"; color: var(--accent); margin-right: 6px; font-weight: bold; }
 
     /* =======================================================
-       PLAYERS DE VÍDEO SEGUROS & 100% RESPONSIVOS
-       (Elimina problemas de toque, tela escura e botões desalinhados)
+       PLAYERS DE VÍDEO (16:9, VERTICAL 9:16 E TELÃO LED)
+       COM CORTE EXATO DA MARGEM ESQUERDA DO GOOGLE DRIVE
        ======================================================= */
-        /* Container 16:9 Padrão */
+    /* Container 16:9 Padrão */
     .video-wrapper {
       position: relative;
       width: 100%;
@@ -435,11 +430,11 @@
       border: 0;
     }
 
-    /* Container Vertical (9:16 Proporção Real) - Perfeitamente Centralizado */
+    /* Container Vertical (9:16 Nativo) - Perfeitamente Centralizado */
     .video-wrapper.portrait {
       position: relative;
       width: 100%;
-      max-width: 300px;
+      max-width: 290px;
       aspect-ratio: 9 / 16;
       margin: 0 auto 16px auto !important;
       border-radius: 14px;
@@ -452,13 +447,13 @@
     .video-wrapper.portrait iframe {
       position: absolute;
       top: 0;
-      left: 0;
-      width: 100%;
+      left: -15px; /* Elimina a barra preta da margem esquerda nativa do Google Drive */
+      width: calc(100% + 30px); /* Compensa a largura mantendo o vídeo 100% centralizado */
       height: 100%;
       border: 0;
     }
 
-    /* Telão LED Ultra-Wide (4.800 x 768 px) com scaleX(1.20) solicitado */
+    /* Telão LED Ultra-Wide (4.800 x 768 px) com scaleX(1.20) */
     .video-wrapper-led {
       position: relative;
       width: 100%;
@@ -477,7 +472,7 @@
       width: 100%;
       height: calc(100% + 56px);
       border: 0;
-      transform: scaleX(1.20); /* Solicitação explícita: scaleX(1.20) */
+      transform: scaleX(1.20); /* scaleX(1.20) solicitado */
       transform-origin: center center;
     }
 
@@ -486,7 +481,8 @@
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       gap: 18px;
-      margin-top: 12px;
+      margin-top: 14px;
+      margin-bottom: 24px;
     }
     .bento-card {
       background: var(--card-bg);
@@ -510,6 +506,18 @@
     .bento-card.card-vertical {
       text-align: center;
       align-items: center;
+    }
+    .bento-card.card-vertical .card-tag {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .bento-card.card-vertical .card-title {
+      text-align: center;
+      width: 100%;
+    }
+    .bento-card.card-vertical .card-desc {
+      text-align: center;
+      width: 100%;
     }
     .bento-card.card-vertical .card-meta {
       justify-content: center;
@@ -666,62 +674,181 @@
     }
 
     /* =======================================================
-       RESPONSIVIDADE RIGOROSA PARA CELULARES
-       (Alinhamento perfeito, sem estourar margem e sem tela escura)
+       RESPONSIVIDADE REFINADA PARA CELULARES
+       (Elementos proporcionais, alinhados e sem exagero de tamanho)
        ======================================================= */
     @media (max-width: 860px) {
-      .container { padding: 0 16px; }
+      .container { padding: 0 14px; }
       
       .bento-grid {
         grid-template-columns: 1fr !important;
-        gap: 16px;
+        gap: 14px;
       }
       .col-12, .col-7, .col-6, .col-5 {
         grid-column: span 1 !important;
       }
 
       .bento-card {
-        padding: 18px 16px;
-        text-align: left;
+        padding: 16px 14px;
+        border-radius: 12px;
       }
-      .bento-card.card-vertical {
-        text-align: center;
+      .card-title {
+        font-size: 1.05rem;
+        margin-bottom: 6px;
+      }
+      .card-desc {
+        font-size: 0.82rem;
+        line-height: 1.45;
+        margin-bottom: 12px;
+      }
+      .card-tag {
+        font-size: 0.68rem;
+        padding: 3px 8px;
+        margin-bottom: 8px;
+      }
+      .pill {
+        font-size: 0.7rem;
+        padding: 3px 7px;
       }
 
-      .hero-pitch-card { padding: 22px 18px; }
-      .pitch-title { font-size: 1.55rem; }
-      .pitch-text { font-size: 0.94rem; }
+      /* Hero Pitch */
+      .hero-pitch-card {
+        padding: 20px 16px;
+        margin-bottom: 16px;
+      }
+      .pitch-tag { font-size: 0.72rem; letter-spacing: 1.5px; margin-bottom: 6px; }
+      .pitch-title { font-size: 1.38rem; line-height: 1.25; margin-bottom: 10px; }
+      .pitch-text { font-size: 0.88rem; line-height: 1.5; margin-bottom: 14px; }
 
-      .big-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-      .big-stat-box { padding: 16px 10px; }
-      .big-stat-num { font-size: 1.8rem; }
+      /* Números / Stats */
+      .big-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        margin: 16px 0 22px;
+      }
+      .big-stat-box { padding: 14px 8px; }
+      .big-stat-num { font-size: 1.6rem; margin-bottom: 4px; }
+      .big-stat-label { font-size: 0.7rem; }
 
-      .slider-section { padding: 20px 14px; }
-      .slider-header { flex-direction: column; align-items: flex-start; gap: 8px; }
-      .slider-title { font-size: 1.15rem; }
-      .slider-v-title { font-size: 1.08rem; }
-      .slider-v-desc { font-size: 0.86rem; }
-      .nav-slider-btn { padding: 8px 16px; font-size: 0.82rem; }
+      /* O Que Eu Faço */
+      .section-title { font-size: 1.15rem; margin: 22px 0 12px; }
+      .what-i-do-grid { gap: 12px; margin-bottom: 24px; }
+      .service-card { padding: 16px 14px; }
+      .service-title { font-size: 0.98rem; }
+      .service-desc { font-size: 0.82rem; line-height: 1.45; }
 
+      /* Carrosséis */
+      .slider-section {
+        padding: 18px 14px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+      }
+      .slider-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+        gap: 8px;
+      }
+      .slider-title {
+        font-size: 1.12rem;
+      }
+      .slider-category-desc {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-top: 2px;
+      }
+      .slider-counter {
+        font-size: 0.74rem;
+        padding: 4px 10px;
+        border-radius: 6px;
+      }
+
+      .slider-v-title {
+        font-size: 1.05rem;
+        margin-bottom: 4px;
+      }
+      .slider-v-impact {
+        font-size: 0.76rem;
+        padding: 3px 9px;
+        margin-bottom: 8px;
+        line-height: 1.35;
+      }
+      .slider-v-desc {
+        font-size: 0.82rem;
+        line-height: 1.45;
+        margin-bottom: 8px;
+      }
+
+      /* Vídeos Verticais no Celular */
       .video-wrapper.portrait {
-        max-width: 260px;
-        margin: 0 auto 16px auto !important;
+        max-width: 230px !important; /* Tamanho proporcional para celular */
+        margin: 0 auto 12px auto !important;
       }
 
-      .video-wrapper-led { aspect-ratio: auto; height: 130px; }
-      .video-wrapper-led iframe { top: -50px; height: calc(100% + 50px); transform: scaleX(1.20); }
-      
-      .career-header { flex-direction: column; gap: 4px; }
+      /* Telão LED no Celular */
+      .video-wrapper-led {
+        aspect-ratio: auto;
+        height: 100px;
+        margin-bottom: 10px;
+      }
+      .video-wrapper-led iframe {
+        top: -46px;
+        height: calc(100% + 46px);
+        transform: scaleX(1.20);
+      }
+
+      /* Botões de Ação no Mobile */
+      .card-links {
+        margin-top: 10px;
+        justify-content: center;
+      }
+      .card-link-btn {
+        font-size: 0.76rem;
+        padding: 7px 12px;
+        width: auto;
+        max-width: 100%;
+      }
+
+      /* Controles e Dots dos Carrosséis */
+      .slider-controls {
+        gap: 12px;
+        margin-top: 8px;
+        padding-top: 10px;
+      }
+      .nav-slider-btn {
+        padding: 7px 16px;
+        font-size: 0.78rem;
+      }
+      .slider-dots-container {
+        margin: 10px auto 8px;
+        gap: 5px;
+      }
+      .slider-dot {
+        width: 7px;
+        height: 7px;
+      }
+      .slider-dot.active {
+        width: 18px;
+      }
+
+      .career-timeline { gap: 12px; margin-top: 16px; }
+      .career-item { padding: 14px; }
+      .career-role { font-size: 0.95rem; }
+      .career-company { font-size: 0.86rem; }
+      .career-period { font-size: 0.72rem; }
+      .career-desc { font-size: 0.82rem; line-height: 1.45; }
     }
 
     @media (max-width: 540px) {
       .brand-info p { display: none; }
       .badge-status { display: none; }
-      .nav-actions .btn { padding: 8px 12px; font-size: 0.8rem; }
-      .tab-btn { font-size: 0.82rem; padding: 8px 12px; }
-      .slider-controls { gap: 10px; }
-      .video-wrapper-led { height: 110px; }
-      .card-link-btn { width: 100%; } /* Botões em tela cheia no mobile para facilitar o toque */
+      .brand-avatar-box { width: 38px; height: 38px; }
+      .nav-actions .btn { padding: 7px 12px; font-size: 0.78rem; }
+      .tab-btn { font-size: 0.82rem; padding: 8px 14px; }
+      .video-wrapper.portrait { max-width: 215px !important; }
+      .video-wrapper-led { height: 90px; }
     }
   </style>
 </head>
@@ -782,16 +909,16 @@
 
   <main class="container">
 
-    <!-- Navegação em Abas -->
+    <!-- Navegação em Abas (Reorganização Solicitada) -->
     <nav class="tabs-bar">
       <button class="tab-btn active" onclick="switchTab('tab-apresentacao', this)">Apresentação</button>
-      <button class="tab-btn" onclick="switchTab('tab-destaques', this)">Destaques</button>
       <button class="tab-btn" onclick="switchTab('tab-motion', this)">Motion Design</button>
-      <button class="tab-btn" onclick="switchTab('tab-edicao', this)">Edição + Motion</button>
-      <button class="tab-btn" onclick="switchTab('tab-hipercap', this)">HiperCap Brasil</button>
+      <button class="tab-btn" onclick="switchTab('tab-storytelling', this)">Storytelling</button>
     </nav>
 
-    <!-- 1. ABA PRINCIPAL: Apresentação -->
+    <!-- ========================================================
+         1. ABA: APRESENTAÇÃO
+         ======================================================== -->
     <section id="tab-apresentacao" class="tab-content active">
       
       <div class="hero-pitch-card">
@@ -867,7 +994,7 @@
         </div>
       </div>
 
-      <!-- O Que Eu Faço -->
+      <!-- Especialidades -->
       <h3 class="section-title">Especialidades & Entregas de Motion</h3>
       <div class="what-i-do-grid">
         <div class="service-card">
@@ -996,17 +1123,19 @@
 
     </section>
 
-    <!-- 2. ABA: Destaques -->
-    <section id="tab-destaques" class="tab-content">
-      
-      <!-- CARROSSEL DE ENOBRECIMENTOS 3D (BLENDER) COM DOTS DO INSTAGRAM -->
+    <!-- ========================================================
+         2. ABA: MOTION DESIGN (ORGANIZAÇÃO SOLICITADA)
+         ======================================================== -->
+    <section id="tab-motion" class="tab-content">
+
+      <!-- 1. DESTAQUE 3D NO BLENDER: LINHA DE ENOBRECIMENTOS (CARROSSEL COM 12 ACABAMENTOS) -->
       <div class="slider-section">
         <div class="slider-header">
           <div>
             <span class="card-tag tag-3d">★ Destaque 3D & E-commerce (Blender)</span>
             <h3 class="slider-title">Linha de Enobrecimentos — Simulação 3D no Blender</h3>
             <p class="slider-category-desc">
-              Modelagem, materiais fotorrealistas e física de iluminação no <strong>Blender</strong> para o e-commerce da FuturaIM. Cada acabamento foi desenvolvido para transmitir textura e reflexo no digital, reduzindo dúvidas na compra e alavancando a taxa de conversão.
+              Modelagem, materiais fotorrealistas e física de iluminação no <strong>Blender</strong> para o e-commerce da FuturaIM. Cada acabamento foi desenvolvido para transmitir textura e reflexo no digital, reduzindo dúvidas na compra e alavancando a conversão.
             </p>
           </div>
           <div class="slider-counter" id="counter-enobrecimento">Acabamento 1 de 12</div>
@@ -1014,7 +1143,7 @@
 
         <div class="slider-stage">
           <div class="video-wrapper">
-            <iframe id="iframe-enobrecimento" src="https://drive.google.com/file/d/1PMN73iRKX_MB5fHzJ7ODH5Ww76e0a5nZ/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
+            <iframe id="iframe-enobrecimento" src="https://drive.google.com/file/d/1PMN73iRKX_MB5fHzJ7ODH5Ww76e0a5nZ/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
           </div>
           <div class="slider-video-meta">
             <h4 class="slider-v-title" id="title-enobrecimento">Laminação Fosca com Verniz Localizado</h4>
@@ -1035,110 +1164,49 @@
         </div>
       </div>
 
-      <div class="bento-grid">
-        
-        <!-- G&S Logo Reveal (1080x1920 Vertical) -->
-        <div class="bento-card card-vertical col-6">
-          <span class="card-tag tag-vert">Brand Motion</span>
-          <div class="video-wrapper portrait">
-            <iframe src="https://drive.google.com/file/d/1V5qf3jr2tyDam9Y4klgECmjEVzAKncdJ/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
-          </div>
-          <h3 class="card-title">G&S — Revelação de Marca (Logo Reveal)</h3>
-          <p class="card-desc">
-            Vinheta vertical de abertura com reveal refinado de logotipo, enfatizando elegância, profundidade visual e curvas de aceleração orgânicas.
-          </p>
-          <div class="card-meta">
-            <span class="pill">After Effects</span>
-            <span class="pill">Vertical Video</span>
-            <span class="pill">Logo Reveal</span>
-          </div>
-          <div class="card-links">
-            <a href="https://drive.google.com/file/d/1V5qf3jr2tyDam9Y4klgECmjEVzAKncdJ/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo Original ↗</a>
-          </div>
-        </div>
-
-        <!-- Seleção de IMpressos (1080x1920 Vertical) -->
-        <div class="bento-card card-vertical col-6">
-          <span class="card-tag tag-ai">Alta Performance & IA</span>
-          <div class="video-wrapper portrait">
-            <iframe src="https://drive.google.com/file/d/1f72Cf3WlEbYGNh0K2CAQHWWYfQVEVmbX/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
-          </div>
-          <h3 class="card-title">Seleção de IMpressos (FuturaIM)</h3>
-          <p class="card-desc">
-            Apresentação dinâmica dos produtos mais vendidos da gráfica em clima esportivo, conciliando After Effects e suporte de ferramentas de IA generativa.
-          </p>
-          <div class="card-meta">
-            <span class="pill">Vertical Video</span>
-            <span class="pill">After Effects</span>
-            <span class="pill">IA Generativa</span>
-          </div>
-          <div class="card-links">
-            <a href="https://drive.google.com/file/d/1f72Cf3WlEbYGNh0K2CAQHWWYfQVEVmbX/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo Original ↗</a>
-          </div>
-        </div>
-
-        <!-- Microsoft Copilot (Vídeo do Drive Integrado) -->
-        <div class="bento-card col-6">
+      <!-- 2. TELÕES JOVEM PAN (CARROSSEL COM 13 VÍDEOS) -->
+      <div class="slider-section">
+        <div class="slider-header">
           <div>
-            <span class="card-tag tag-tech">Tech Explainer & Animação 2D</span>
-            <div class="video-wrapper">
-              <iframe src="https://drive.google.com/file/d/1bcRZQBWZYeSEzBwGZDbKMyx7eXCLJaFc/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
-            </div>
-            <h3 class="card-title">Microsoft Copilot — Explicando o Futuro</h3>
-            <p class="card-desc">
-              Vídeo didático e fluido para apresentar a IA da Microsoft. Roteiro estruturado, storyboard, ilustrações vetoriais no <strong>Illustrator</strong> e animação rítmica com personagem guia no <strong>After Effects</strong>.
+            <span class="card-tag tag-led">Painel LED • 4.800 × 768 px (Ultra-Wide)</span>
+            <h3 class="slider-title">Telões Jovem Pan</h3>
+            <p class="slider-category-desc">
+              Motion graphics, vinhetas e cartelas adaptadas na proporção ultra-wide nativa (<strong>4.800 × 768 px</strong>) para os painéis de estúdio da Jovem Pan durante transmissões ao vivo.
             </p>
           </div>
-          <div>
-            <div class="card-meta">
-              <span class="pill">After Effects</span>
-              <span class="pill">Illustrator</span>
-              <span class="pill">Character Rig</span>
-            </div>
-            <div class="card-links">
-              <a href="https://drive.google.com/file/d/1bcRZQBWZYeSEzBwGZDbKMyx7eXCLJaFc/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo em Alta Resolução ↗</a>
+          <div class="slider-counter" id="counter-telao">Vídeo 1 de 13</div>
+        </div>
+
+        <div class="slider-stage">
+          <div class="video-wrapper-led">
+            <iframe id="iframe-telao" src="https://drive.google.com/file/d/11_qmfi-Vp6K2fdOjxmYmcDyaZk4Jscix/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
+          </div>
+          <div class="slider-video-meta">
+            <h4 class="slider-v-title" id="title-telao">#TELAO JOVEM PAN - 28/05 (MEIO MILHÃO)</h4>
+            <p class="slider-v-desc" id="desc-telao">Grafismo animado para telão de LED destacando a rodada especial de meio milhão de reais.</p>
+            <div style="margin-top: 8px;">
+              <a id="link-telao" href="https://drive.google.com/file/d/11_qmfi-Vp6K2fdOjxmYmcDyaZk4Jscix/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo em Alta Resolução ↗</a>
             </div>
           </div>
         </div>
 
-        <!-- Zé Luiz -->
-        <div class="bento-card col-6">
-          <div>
-            <span class="card-tag tag-cutout">Direção de Arte & Colagem</span>
-            <div class="video-wrapper">
-              <iframe src="https://drive.google.com/file/d/12b_LbMbtK-5Jwci3acBxq3z_n6KbJ6m2/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
-            </div>
-            <h3 class="card-title">Zé Luiz — Presente nos Bairros</h3>
-            <p class="card-desc">
-              Animação baseada em técnica de recorte e colagem digital (*cutout motion*). Storyboard minucioso e tipografia marcante, traduzindo mensagem comunitária.
-            </p>
-          </div>
-          <div>
-            <div class="card-meta">
-              <span class="pill">Colagem Digital</span>
-              <span class="pill">After Effects</span>
-              <span class="pill">Photoshop Cutout</span>
-            </div>
-            <div class="card-links">
-              <a href="https://www.behance.net/barbaracamarot" target="_blank" class="card-link-btn">Ver Case no Behance ↗</a>
-            </div>
-          </div>
-        </div>
+        <!-- Bolinhas estilo Instagram -->
+        <div class="slider-dots-container" id="dots-telao"></div>
 
+        <div class="slider-controls">
+          <button class="nav-slider-btn" onclick="prevSlide('telao')">❮ Anterior</button>
+          <button class="nav-slider-btn" onclick="nextSlide('telao')">Próximo ❯</button>
+        </div>
       </div>
-    </section>
 
-    <!-- 3. ABA: Motion Design -->
-    <section id="tab-motion" class="tab-content">
-      
-      <!-- CARROSSEL FIOCRUZ - BIODIVERSIDADE (7 EPISÓDIOS COM DOTS) -->
+      <!-- 3. SÉRIE BIODIVERSIDADE (INSTITUTO FIOCRUZ - 7 EPISÓDIOS) -->
       <div class="slider-section">
         <div class="slider-header">
           <div>
             <span class="card-tag tag-tech">Divulgação Científica & Motion Educativo</span>
-            <h3 class="slider-title">Instituto Fiocruz — Biodiversidade (Série Completa)</h3>
+            <h3 class="slider-title">Série Biodiversidade — Instituto Fiocruz</h3>
             <p class="slider-category-desc">
-              Série de animações educativas e motion design criadas para divulgação científica da Fundação Oswaldo Cruz (Fiocruz), abordando preservação, biomas e o equilíbrio dos ecossistemas.
+              Série completa de animações educativas e motion design para divulgação científica da Fundação Oswaldo Cruz, abordando preservação ambiental e equilíbrio ecológico.
             </p>
           </div>
           <div class="slider-counter" id="counter-fiocruz">Episódio 1 de 7</div>
@@ -1166,38 +1234,103 @@
         </div>
       </div>
 
+      <!-- GRID DE PROJETOS DE MOTION DESIGN -->
       <div class="bento-grid">
         
-        <!-- Graficamente Chuteira Rosa (1080x1920 Vertical) -->
+        <!-- Story (Participe da Comunidade) - 9:16 Vertical Centralizado -->
         <div class="bento-card card-vertical col-6">
-          <span class="card-tag tag-vert">Marketing Visual & Teoria</span>
+          <span class="card-tag tag-vert">Social Media Motion</span>
           <div class="video-wrapper portrait">
-            <iframe src="https://drive.google.com/file/d/1_MvazwuF9JuZhno8BU_SyE9Abdhxh5QY/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
+            <iframe src="https://drive.google.com/file/d/1ixce0OQ_ebdKmrf3GYuRHR54BhSjQbuA/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
           </div>
-          <h3 class="card-title">Graficamente: Chuteira Rosa</h3>
+          <h3 class="card-title">Story — Participe da Comunidade</h3>
           <p class="card-desc">
-            Análise visual e ritmo dinâmico demonstrando como o contraste das marcas esportivas na Copa do Mundo se traduz em atenção e conversão gráfica.
+            Peça vertical com animação de cards de interface, transições ágeis e microinterações de engajamento para redes sociais.
           </p>
           <div class="card-meta">
-            <span class="pill">Social Media</span>
-            <span class="pill">Tipografia Cinética</span>
             <span class="pill">After Effects</span>
+            <span class="pill">Social Media</span>
+            <span class="pill">Motion Graphics</span>
           </div>
           <div class="card-links">
-            <a href="https://drive.google.com/file/d/1_MvazwuF9JuZhno8BU_SyE9Abdhxh5QY/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo em Alta Resolução ↗</a>
+            <a href="https://drive.google.com/file/d/1ixce0OQ_ebdKmrf3GYuRHR54BhSjQbuA/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo Original ↗</a>
+          </div>
+        </div>
+
+        <!-- O Rei do Litoral Tá On... -->
+        <div class="bento-card col-6">
+          <div>
+            <span class="card-tag tag-ai">Campanha Comercial</span>
+            <div class="video-wrapper">
+              <iframe src="https://drive.google.com/file/d/19fY4C7SbiIAABqyrcB8AFHA1xm_JAv6Z/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
+            </div>
+            <h3 class="card-title">O Rei do Litoral Tá On...</h3>
+            <p class="card-desc">
+              Peça comercial promocional com animação de tipografia cinética, motion graphics vibrante e edição com foco em energia, engajamento e vendas.
+            </p>
+          </div>
+          <div>
+            <div class="card-meta">
+              <span class="pill">After Effects</span>
+              <span class="pill">Comercial Promocional</span>
+              <span class="pill">Tipografia Cinética</span>
+            </div>
+            <div class="card-links">
+              <a href="https://drive.google.com/file/d/19fY4C7SbiIAABqyrcB8AFHA1xm_JAv6Z/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo Original ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- G&S Revelação (Logo Reveal) - 9:16 Vertical Centralizado -->
+        <div class="bento-card card-vertical col-6">
+          <span class="card-tag tag-vert">Brand Motion</span>
+          <div class="video-wrapper portrait">
+            <iframe src="https://drive.google.com/file/d/1V5qf3jr2tyDam9Y4klgECmjEVzAKncdJ/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
+          </div>
+          <h3 class="card-title">G&S — Revelação de Marca (Logo Reveal)</h3>
+          <p class="card-desc">
+            Vinheta vertical de abertura com reveal refinado de logotipo, enfatizando elegância, profundidade visual e curvas de aceleração orgânicas.
+          </p>
+          <div class="card-meta">
+            <span class="pill">After Effects</span>
+            <span class="pill">Identidade Visual</span>
+            <span class="pill">Logo Reveal</span>
+          </div>
+          <div class="card-links">
+            <a href="https://drive.google.com/file/d/1V5qf3jr2tyDam9Y4klgECmjEVzAKncdJ/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo Original ↗</a>
+          </div>
+        </div>
+
+        <!-- Seleção de IMpressos (FuturaIM) - 9:16 Vertical Centralizado -->
+        <div class="bento-card card-vertical col-6">
+          <span class="card-tag tag-ai">Alta Performance & IA</span>
+          <div class="video-wrapper portrait">
+            <iframe src="https://drive.google.com/file/d/1f72Cf3WlEbYGNh0K2CAQHWWYfQVEVmbX/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
+          </div>
+          <h3 class="card-title">Seleção de IMpressos (FuturaIM)</h3>
+          <p class="card-desc">
+            Apresentação dinâmica dos produtos mais vendidos da gráfica em clima esportivo, conciliando After Effects e suporte de ferramentas de IA generativa.
+          </p>
+          <div class="card-meta">
+            <span class="pill">After Effects</span>
+            <span class="pill">IA Generativa</span>
+            <span class="pill">E-commerce</span>
+          </div>
+          <div class="card-links">
+            <a href="https://drive.google.com/file/d/1f72Cf3WlEbYGNh0K2CAQHWWYfQVEVmbX/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo Original ↗</a>
           </div>
         </div>
 
         <!-- Microsoft Copilot -->
         <div class="bento-card col-6">
           <div>
-            <span class="card-tag tag-tech">Tech Explainer & 2D</span>
+            <span class="card-tag tag-tech">Tech Explainer & Animação 2D</span>
             <div class="video-wrapper">
               <iframe src="https://drive.google.com/file/d/1bcRZQBWZYeSEzBwGZDbKMyx7eXCLJaFc/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
             </div>
             <h3 class="card-title">Microsoft Copilot — Explicando o Futuro</h3>
             <p class="card-desc">
-              Motion didático apresentando as funções da IA da Microsoft. Roteiro estruturado, storyboard, ilustrações vetoriais e animação de personagem guia.
+              Vídeo didático e fluido para apresentar a IA da Microsoft. Roteiro estruturado, storyboard, ilustrações vetoriais no <strong>Illustrator</strong> e animação rítmica com personagem guia no <strong>After Effects</strong>.
             </p>
           </div>
           <div>
@@ -1212,96 +1345,51 @@
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- 4. ABA: Edição + Motion -->
-    <section id="tab-edicao" class="tab-content">
-      <div class="bento-grid">
-        
-        <!-- Story Comunidade (Proporção 1080x1920 Vertical) -->
-        <div class="bento-card card-vertical col-6">
-          <span class="card-tag tag-vert">Social Media Motion</span>
-          <div class="video-wrapper portrait">
-            <iframe src="https://drive.google.com/file/d/1ixce0OQ_ebdKmrf3GYuRHR54BhSjQbuA/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
+        <!-- Zé Luiz — Presente nos Bairros (Cutout Motion) -->
+        <div class="bento-card col-6">
+          <div>
+            <span class="card-tag tag-cutout">Direção de Arte & Colagem</span>
+            <div class="video-wrapper">
+              <iframe src="https://drive.google.com/file/d/12b_LbMbtK-5Jwci3acBxq3z_n6KbJ6m2/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
+            </div>
+            <h3 class="card-title">Zé Luiz — Presente nos Bairros</h3>
+            <p class="card-desc">
+              Animação baseada em técnica de recorte e colagem digital (*cutout motion*). Storyboard minucioso e tipografia marcante, traduzindo mensagem comunitária de forma estética e moderna.
+            </p>
           </div>
-          <h3 class="card-title">Story — Participe da Comunidade</h3>
-          <p class="card-desc">
-            Peça vertical com animação de cards de interface, transições ágeis e microinterações de engajamento para redes sociais.
-          </p>
-          <div class="card-meta">
-            <span class="pill">Social Media</span>
-            <span class="pill">Motion para Social</span>
-          </div>
-          <div class="card-links">
-            <a href="https://drive.google.com/file/d/1ixce0OQ_ebdKmrf3GYuRHR54BhSjQbuA/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo Original ↗</a>
+          <div>
+            <div class="card-meta">
+              <span class="pill">Colagem Digital</span>
+              <span class="pill">After Effects</span>
+              <span class="pill">Photoshop Cutout</span>
+            </div>
+            <div class="card-links">
+              <a href="https://drive.google.com/file/d/12b_LbMbtK-5Jwci3acBxq3z_n6KbJ6m2/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo no Drive ↗</a>
+            </div>
           </div>
         </div>
 
-        <!-- O Rei do Litoral Tá On -->
-        <div class="bento-card col-6">
+        <!-- Animação Ilha Anchieta (Presente no Drive) -->
+        <div class="bento-card col-12">
           <div>
-            <span class="card-tag tag-ai">Campanha Comercial</span>
+            <span class="card-tag tag-tech">Motion Gráfico & Animação Histórica</span>
             <div class="video-wrapper">
-              <iframe src="https://drive.google.com/file/d/19fY4C7SbiIAABqyrcB8AFHA1xm_JAv6Z/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
+              <iframe src="https://drive.google.com/file/d/1aBDNf1RNbwnBLBKcqBtvNXilMkvkvdrD/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
             </div>
-            <h3 class="card-title">O Rei do Litoral Tá On...</h3>
-            <p class="card-desc">Peça comercial promocional com animação de tipografia, motion graphics vibrante e edição com foco em energia, engajamento e vendas.</p>
+            <h3 class="card-title">Animação Ilha Anchieta</h3>
+            <p class="card-desc">
+              Sequências animadas e mapas gráficos explicativos desenvolvidos para contextualizar fatos históricos e reconstruir a narrativa do documentário sobre a Ilha Anchieta.
+            </p>
           </div>
           <div>
             <div class="card-meta">
               <span class="pill">After Effects</span>
-              <span class="pill">Comercial Promocional</span>
-            </div>
-            <div class="card-links">
-              <a href="https://drive.google.com/file/d/19fY4C7SbiIAABqyrcB8AFHA1xm_JAv6Z/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo Original ↗</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Jornalístico Ilha Anchieta (Lei Paulo Gustavo / Inspira) -->
-        <div class="bento-card col-6">
-          <div>
-            <span class="card-tag">Documentário & Cultura (1.2 GB)</span>
-            <div class="video-wrapper">
-              <iframe src="https://drive.google.com/file/d/1Mkv_GA9h8FeI2YIwFja0CnX4nmFfX2eQ/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
-            </div>
-            <h3 class="card-title">Jornalístico Ilha Anchieta</h3>
-            <p class="card-desc">
-              Documentário e cobertura especial viabilizado pelo edital cultural da <strong>Lei Paulo Gustavo</strong> e agência <strong>Inspira</strong>. Edição narrativa de grande profundidade histórica e cultural.
-            </p>
-          </div>
-          <div>
-            <div class="card-meta">
+              <span class="pill">Animação 2D</span>
+              <span class="pill">Mapas & Infográficos</span>
               <span class="pill">Lei Paulo Gustavo</span>
-              <span class="pill">Edição Documental</span>
-              <span class="pill">Inspira</span>
             </div>
             <div class="card-links">
-              <!-- Botão em destaque garantindo reprodução mesmo se o Drive estiver processando o arquivo de 1.2GB -->
-              <a href="https://drive.google.com/file/d/1Mkv_GA9h8FeI2YIwFja0CnX4nmFfX2eQ/view?usp=drive_link" target="_blank" class="card-link-btn btn-highlight">▶ Abrir / Assistir no Drive ↗</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Basilis 50 Anos -->
-        <div class="bento-card col-6">
-          <div>
-            <span class="card-tag">Evento Corporativo (800 MB)</span>
-            <div class="video-wrapper">
-              <iframe src="https://drive.google.com/file/d/1DDbZ5LYLs4KzFkkYfZpH3p-A09vXyo3_/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
-            </div>
-            <h3 class="card-title">Basilis 50 Anos — Evento</h3>
-            <p class="card-desc">Cobertura e edição audiovisual comemorativa dos 50 anos da Basilis, retratando momentos marcantes, entrevistas e atmosfera institucional.</p>
-          </div>
-          <div>
-            <div class="card-meta">
-              <span class="pill">Cobertura de Evento</span>
-              <span class="pill">Institucional</span>
-            </div>
-            <div class="card-links">
-              <!-- Botão em destaque garantindo reprodução mesmo se o Drive estiver processando o arquivo de 800MB -->
-              <a href="https://drive.google.com/file/d/1DDbZ5LYLs4KzFkkYfZpH3p-A09vXyo3_/view?usp=drivesdk" target="_blank" class="card-link-btn btn-highlight">▶ Abrir / Assistir no Drive ↗</a>
+              <a href="https://drive.google.com/file/d/1aBDNf1RNbwnBLBKcqBtvNXilMkvkvdrD/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo em Alta Resolução ↗</a>
             </div>
           </div>
         </div>
@@ -1309,61 +1397,19 @@
       </div>
     </section>
 
-    <!-- 5. ABA: HiperCap Brasil COM OS 3 CARROSSEIS -->
-    <section id="tab-hipercap" class="tab-content">
+    <!-- ========================================================
+         3. ABA: STORYTELLING (ORGANIZAÇÃO SOLICITADA)
+         ======================================================== -->
+    <section id="tab-storytelling" class="tab-content">
       
-      <div class="hero-pitch-card" style="padding: 24px; margin-bottom: 24px;">
-        <span class="pitch-tag">HiperCap Brasil</span>
-        <h2 class="pitch-title" style="font-size: 1.8rem; margin-bottom: 6px;">Trabalhos HiperCap Brasil — Realizados por Barbara Camarotti</h2>
-        <p class="pitch-text" style="font-size: 0.94rem; margin-bottom: 0;">
-          Navegue pelas 3 categorias de produções de grande escala: Telões de estúdio em formato panorâmico de LED, Comerciais nacionais de TV e Matérias de histórias de ganhadores.
-        </p>
-      </div>
-
-      <!-- SESSÃO 1: TELÃO JOVEM PAN (4.800 x 768 px COM AJUSTE DE scaleX(1.20) E DOTS) -->
+      <!-- 1. COMERCIAIS HIPER (CARROSSEL COM 29 VÍDEOS - MOTION + COMPOSIÇÃO VISUAL) -->
       <div class="slider-section">
         <div class="slider-header">
           <div>
-            <span class="card-tag tag-led">Painel LED • 4.800 × 768 px (Ultra-Wide)</span>
-            <h3 class="slider-title">Telão Jovem Pan</h3>
+            <span class="card-tag">TV Aberta & Digital • Motion + Composição Visual</span>
+            <h3 class="slider-title">Comerciais HiperCap</h3>
             <p class="slider-category-desc">
-              Motion graphics, vinhetas e cartelas de alta definição adaptadas na proporção ultra-wide nativa (<strong>4.800 × 768 px</strong>) para os painéis de estúdio da Jovem Pan durante transmissões ao vivo.
-            </p>
-          </div>
-          <div class="slider-counter" id="counter-telao">Vídeo 1 de 13</div>
-        </div>
-
-        <div class="slider-stage">
-          <!-- Player adaptado, centralizado e com scaleX(1.20) -->
-          <div class="video-wrapper-led">
-            <iframe id="iframe-telao" src="https://drive.google.com/file/d/11_qmfi-Vp6K2fdOjxmYmcDyaZk4Jscix/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
-          </div>
-          <div class="slider-video-meta">
-            <h4 class="slider-v-title" id="title-telao">#TELAO JOVEM PAN - 28/05 (MEIO MILHÃO)</h4>
-            <p class="slider-v-desc" id="desc-telao">Grafismo animado para telão de LED destacando a rodada especial de meio milhão de reais.</p>
-            <div style="margin-top: 8px;">
-              <a id="link-telao" href="https://drive.google.com/file/d/11_qmfi-Vp6K2fdOjxmYmcDyaZk4Jscix/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo em Alta Resolução ↗</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bolinhas estilo Instagram -->
-        <div class="slider-dots-container" id="dots-telao"></div>
-
-        <div class="slider-controls">
-          <button class="nav-slider-btn" onclick="prevSlide('telao')">❮ Anterior</button>
-          <button class="nav-slider-btn" onclick="nextSlide('telao')">Próximo ❯</button>
-        </div>
-      </div>
-
-      <!-- SESSÃO 2: COMERCIAIS (29 VÍDEOS COM DOTS) -->
-      <div class="slider-section">
-        <div class="slider-header">
-          <div>
-            <span class="card-tag">TV Aberta & Digital</span>
-            <h3 class="slider-title">Comerciais</h3>
-            <p class="slider-category-desc">
-              Comerciais de alto dinamismo com cartelas de premiação, montagem rítmica, inserts de produtos e chamadas de venda para veiculação nacional.
+              Comerciais de alto dinamismo unindo <strong>motion design</strong> e <strong>composição visual</strong>: cartelas de premiação animadas, ritmo acelerado, inserts de produtos e montagem rítmica para veiculação nacional.
             </p>
           </div>
           <div class="slider-counter" id="counter-comerciais">Vídeo 1 de 29</div>
@@ -1375,7 +1421,7 @@
           </div>
           <div class="slider-video-meta">
             <h4 class="slider-v-title" id="title-comerciais">Comercial — 17/07/2024</h4>
-            <p class="slider-v-desc" id="desc-comerciais">Comercial de varejo com foco em prêmios e apresentação dinâmica para TV.</p>
+            <p class="slider-v-desc" id="desc-comerciais">Comercial de varejo com foco em prêmios, motion graphics e apresentação dinâmica para TV.</p>
             <div style="margin-top: 8px;">
               <a id="link-comerciais" href="https://www.youtube.com/watch?v=K5JGDsgCqSY" target="_blank" class="card-link-btn">Assistir no YouTube ↗</a>
             </div>
@@ -1391,14 +1437,14 @@
         </div>
       </div>
 
-      <!-- SESSÃO 3: MATÉRIAS (9 VÍDEOS COM DOTS) -->
+      <!-- 2. MATÉRIAS HIPERCAP (CARROSSEL COM 9 HISTÓRIAS DE GANHADORES) -->
       <div class="slider-section">
         <div class="slider-header">
           <div>
-            <span class="card-tag tag-ai">Reportagens & Storytelling</span>
-            <h3 class="slider-title">Matérias</h3>
+            <span class="card-tag tag-ai">Reportagens & Storytelling Emocional</span>
+            <h3 class="slider-title">Matérias HiperCap</h3>
             <p class="slider-category-desc">
-              Reportagens e documentários especiais mostrando histórias de superação, entregas de prêmios e impacto social na vida dos ganhadores.
+              Reportagens e documentários especiais retratando histórias de superação, entregas de prêmios e o impacto social na vida dos ganhadores.
             </p>
           </div>
           <div class="slider-counter" id="counter-materias">Vídeo 1 de 9</div>
@@ -1426,6 +1472,161 @@
         </div>
       </div>
 
+      <!-- 3. ZÉ LUIZ HISTÓRIAS (NOVO CARROSSEL COM OS 3 VÍDEOS) -->
+      <div class="slider-section">
+        <div class="slider-header">
+          <div>
+            <span class="card-tag tag-cutout">Storytelling Comunitário & Documental</span>
+            <h3 class="slider-title">Zé Luiz — Histórias nos Bairros</h3>
+            <p class="slider-category-desc">
+              Série de 3 produções narrativas documentando vivências, histórias de moradores e as transformações sociais nas comunidades e bairros.
+            </p>
+          </div>
+          <div class="slider-counter" id="counter-zeluiz">Vídeo 1 de 3</div>
+        </div>
+
+        <div class="slider-stage">
+          <div class="video-wrapper">
+            <iframe id="iframe-zeluiz" src="https://drive.google.com/file/d/1doXZ7n5A1fpmwVkoUo3rI0GWs80Rezb7/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
+          </div>
+          <div class="slider-video-meta">
+            <h4 class="slider-v-title" id="title-zeluiz">Zé Luiz nos Bairros (Edição Especial)</h4>
+            <p class="slider-v-desc" id="desc-zeluiz">Registro documental dinâmico com depoimentos, captação local e narrativa de impacto social.</p>
+            <div style="margin-top: 8px;">
+              <a id="link-zeluiz" href="https://drive.google.com/file/d/1doXZ7n5A1fpmwVkoUo3rI0GWs80Rezb7/view?usp=drivesdk" target="_blank" class="card-link-btn btn-highlight">Abrir Vídeo no Drive ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bolinhas estilo Instagram -->
+        <div class="slider-dots-container" id="dots-zeluiz"></div>
+
+        <div class="slider-controls">
+          <button class="nav-slider-btn" onclick="prevSlide('zeluiz')">❮ Anterior</button>
+          <button class="nav-slider-btn" onclick="nextSlide('zeluiz')">Próximo ❯</button>
+        </div>
+      </div>
+
+      <!-- GRID DE HISTÓRIAS E DOCUMENTÁRIOS -->
+      <div class="bento-grid">
+        
+        <!-- Graficamente: Chuteira Rosa (9:16 Vertical Centralizado) -->
+        <div class="bento-card card-vertical col-6">
+          <span class="card-tag tag-vert">Marketing Visual & Teoria</span>
+          <div class="video-wrapper portrait">
+            <iframe src="https://drive.google.com/file/d/1_MvazwuF9JuZhno8BU_SyE9Abdhxh5QY/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
+          </div>
+          <h3 class="card-title">Graficamente: Chuteira Rosa</h3>
+          <p class="card-desc">
+            Análise visual e ritmo dinâmico demonstrando como o contraste das marcas esportivas na Copa do Mundo se traduz em atenção e conversão gráfica.
+          </p>
+          <div class="card-meta">
+            <span class="pill">Tipografia Cinética</span>
+            <span class="pill">Retenção de Audiência</span>
+            <span class="pill">Storytelling Gráfico</span>
+          </div>
+          <div class="card-links">
+            <a href="https://drive.google.com/file/d/1_MvazwuF9JuZhno8BU_SyE9Abdhxh5QY/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo em Alta Resolução ↗</a>
+          </div>
+        </div>
+
+        <!-- Jornalístico Ilha Anchieta (Lei Paulo Gustavo / Inspira) -->
+        <div class="bento-card col-6">
+          <div>
+            <span class="card-tag">Documentário & Cultura</span>
+            <div class="video-wrapper">
+              <iframe src="https://drive.google.com/file/d/1Mkv_GA9h8FeI2YIwFja0CnX4nmFfX2eQ/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
+            </div>
+            <h3 class="card-title">Jornalístico Ilha Anchieta</h3>
+            <p class="card-desc">
+              Documentário e cobertura especial viabilizado pelo edital cultural da <strong>Lei Paulo Gustavo</strong> e agência <strong>Inspira</strong>. Edição narrativa de grande profundidade histórica e cultural.
+            </p>
+          </div>
+          <div>
+            <div class="card-meta">
+              <span class="pill">Lei Paulo Gustavo</span>
+              <span class="pill">Edição Documental</span>
+              <span class="pill">Inspira</span>
+            </div>
+            <div class="card-links">
+              <a href="https://drive.google.com/file/d/1Mkv_GA9h8FeI2YIwFja0CnX4nmFfX2eQ/view?usp=drive_link" target="_blank" class="card-link-btn btn-highlight">▶ Abrir / Assistir no Drive ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Moçambique (Lei Paulo Gustavo) -->
+        <div class="bento-card col-6">
+          <div>
+            <span class="card-tag tag-ai">Documentário Cultural & Patrimônio</span>
+            <div class="video-wrapper">
+              <iframe src="https://drive.google.com/file/d/1gk5p1ZzN0oozh9t_2BroN9LGGtaRJA7q/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
+            </div>
+            <h3 class="card-title">Moçambique</h3>
+            <p class="card-desc">
+              Documentário sobre as tradições da congada e moçambique, registrando a memória viva, fé e raízes afro-brasileiras viabilizado pelo edital cultural da <strong>Lei Paulo Gustavo</strong>.
+            </p>
+          </div>
+          <div>
+            <div class="card-meta">
+              <span class="pill">Lei Paulo Gustavo</span>
+              <span class="pill">Cultura Popular</span>
+              <span class="pill">Documentário</span>
+            </div>
+            <div class="card-links">
+              <a href="https://drive.google.com/file/d/1gk5p1ZzN0oozh9t_2BroN9LGGtaRJA7q/view?usp=drivesdk" target="_blank" class="card-link-btn btn-highlight">▶ Abrir / Assistir no Drive ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ciclos (Lei Paulo Gustavo) -->
+        <div class="bento-card col-6">
+          <div>
+            <span class="card-tag">Narrativa & Documentário</span>
+            <div class="video-wrapper">
+              <iframe src="https://drive.google.com/file/d/1IaSb--hEHv2otCgbTgSDiRZL_TTGQG0t/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
+            </div>
+            <h3 class="card-title">Ciclos</h3>
+            <p class="card-desc">
+              Obra audiovisual documental sobre histórias e transformações humanas, viabilizada pelo edital cultural da <strong>Lei Paulo Gustavo</strong>.
+            </p>
+          </div>
+          <div>
+            <div class="card-meta">
+              <span class="pill">Lei Paulo Gustavo</span>
+              <span class="pill">Edição Documental</span>
+              <span class="pill">Narrativa Autoral</span>
+            </div>
+            <div class="card-links">
+              <a href="https://drive.google.com/file/d/1IaSb--hEHv2otCgbTgSDiRZL_TTGQG0t/view?usp=drivesdk" target="_blank" class="card-link-btn btn-highlight">▶ Abrir / Assistir no Drive ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Basilis 50 Anos — Evento -->
+        <div class="bento-card col-12">
+          <div>
+            <span class="card-tag">Cobertura de Evento & Institucional</span>
+            <div class="video-wrapper">
+              <iframe src="https://drive.google.com/file/d/1DDbZ5LYLs4KzFkkYfZpH3p-A09vXyo3_/preview" allow="autoplay; fullscreen" loading="lazy"></iframe>
+            </div>
+            <h3 class="card-title">Basilis 50 Anos — Evento</h3>
+            <p class="card-desc">
+              Cobertura e edição audiovisual comemorativa dos 50 anos da Basilis, retratando momentos marcantes, entrevistas e a celebração institucional de meio século de história.
+            </p>
+          </div>
+          <div>
+            <div class="card-meta">
+              <span class="pill">Cobertura Corporativa</span>
+              <span class="pill">Institucional</span>
+              <span class="pill">Edição de Evento</span>
+            </div>
+            <div class="card-links">
+              <a href="https://drive.google.com/file/d/1DDbZ5LYLs4KzFkkYfZpH3p-A09vXyo3_/view?usp=drivesdk" target="_blank" class="card-link-btn btn-highlight">▶ Abrir / Assistir no Drive ↗</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
   </main>
@@ -1547,53 +1748,6 @@
           }
         ]
       },
-      fiocruz: {
-        index: 0,
-        items: [
-          {
-            title: "Biodiversidade — Vídeo 01: Introdução aos Ecossistemas",
-            desc: "Panorama geral sobre a riqueza da biodiversidade brasileira e as teias de relações ecológicas fundamentais para o planeta.",
-            src: "https://drive.google.com/file/d/1hoGjJV3ItYBgjT4dHegpMLz3evaGrNgD/preview",
-            link: "https://drive.google.com/file/d/1hoGjJV3ItYBgjT4dHegpMLz3evaGrNgD/view?usp=drivesdk"
-          },
-          {
-            title: "Biodiversidade — Vídeo 02: Fauna Ameaçada e Conservação",
-            desc: "Espécies vulneráveis dos biomas nacionais e a importância dos corredores ecológicos para preservação da vida selvagem.",
-            src: "https://drive.google.com/file/d/1hL84VV1F1tF-3o_eMX00lXkZCgaeSeYJ/preview",
-            link: "https://drive.google.com/file/d/1hL84VV1F1tF-3o_eMX00lXkZCgaeSeYJ/view?usp=drivesdk"
-          },
-          {
-            title: "Biodiversidade — Vídeo 03: Florestas Tropicais e Clima",
-            desc: "O papel decisivo das matas e florestas tropicais na regulação da umidade, chuvas e temperatura global.",
-            src: "https://drive.google.com/file/d/1-nTeuq0oIfrnTm6urfd82z0NPBCmzUdj/preview",
-            link: "https://drive.google.com/file/d/1-nTeuq0oIfrnTm6urfd82z0NPBCmzUdj/view?usp=drivesdk"
-          },
-          {
-            title: "Biodiversidade — Vídeo 04: Água e Saúde Pública",
-            desc: "A relação direta entre bacias hidrográficas limpas, preservação de nascentes e prevenção de doenças para a população.",
-            src: "https://drive.google.com/file/d/1Coq-YKByg4JO1kyXu_4xwwWA6gplbxCi/preview",
-            link: "https://drive.google.com/file/d/1Coq-YKByg4JO1kyXu_4xwwWA6gplbxCi/view?usp=drivesdk"
-          },
-          {
-            title: "Biodiversidade — Vídeo 05: Microrganismos e Biotecnologia",
-            desc: "Como fungos e bactérias da nossa flora e solo são essenciais na criação de novos medicamentos e vacinas pela Fiocruz.",
-            src: "https://drive.google.com/file/d/1Um8TTw4MqtglJHrL-9LJTUgiKJqf5SsZ/preview",
-            link: "https://drive.google.com/file/d/1Um8TTw4MqtglJHrL-9LJTUgiKJqf5SsZ/view?usp=drivesdk"
-          },
-          {
-            title: "Biodiversidade — Vídeo 06: Ações Sustentáveis e Comunidade",
-            desc: "Projetos de conscientização social conectando saber popular e pesquisa acadêmica em prol do meio ambiente.",
-            src: "https://drive.google.com/file/d/11w0NfRX_RDiVX4JHaPWj2KAczPiJAlYT/preview",
-            link: "https://drive.google.com/file/d/11w0NfRX_RDiVX4JHaPWj2KAczPiJAlYT/view?usp=drivesdk"
-          },
-          {
-            title: "Biodiversidade — Vídeo 07: O Futuro e as Próximas Gerações",
-            desc: "Mensagem inspiradora sobre legado científico, transição ecológica e os desafios da preservação para o século XXI.",
-            src: "https://drive.google.com/file/d/1Ws963xbDXDSFIGO4xXjs3nXzdYvEJkOh/preview",
-            link: "https://drive.google.com/file/d/1Ws963xbDXDSFIGO4xXjs3nXzdYvEJkOh/view?usp=drivesdk"
-          }
-        ]
-      },
       telao: {
         index: 0,
         items: [
@@ -1677,15 +1831,62 @@
           }
         ]
       },
+      fiocruz: {
+        index: 0,
+        items: [
+          {
+            title: "Biodiversidade — Vídeo 01: Introdução aos Ecossistemas",
+            desc: "Panorama geral sobre a riqueza da biodiversidade brasileira e as teias de relações ecológicas fundamentais para o planeta.",
+            src: "https://drive.google.com/file/d/1hoGjJV3ItYBgjT4dHegpMLz3evaGrNgD/preview",
+            link: "https://drive.google.com/file/d/1hoGjJV3ItYBgjT4dHegpMLz3evaGrNgD/view?usp=drivesdk"
+          },
+          {
+            title: "Biodiversidade — Vídeo 02: Fauna Ameaçada e Conservação",
+            desc: "Espécies vulneráveis dos biomas nacionais e a importância dos corredores ecológicos para preservação da vida selvagem.",
+            src: "https://drive.google.com/file/d/1hL84VV1F1tF-3o_eMX00lXkZCgaeSeYJ/preview",
+            link: "https://drive.google.com/file/d/1hL84VV1F1tF-3o_eMX00lXkZCgaeSeYJ/view?usp=drivesdk"
+          },
+          {
+            title: "Biodiversidade — Vídeo 03: Florestas Tropicais e Clima",
+            desc: "O papel decisivo das matas e florestas tropicais na regulação da umidade, chuvas e temperatura global.",
+            src: "https://drive.google.com/file/d/1-nTeuq0oIfrnTm6urfd82z0NPBCmzUdj/preview",
+            link: "https://drive.google.com/file/d/1-nTeuq0oIfrnTm6urfd82z0NPBCmzUdj/view?usp=drivesdk"
+          },
+          {
+            title: "Biodiversidade — Vídeo 04: Água e Saúde Pública",
+            desc: "A relação direta entre bacias hidrográficas limpas, preservação de nascentes e prevenção de doenças para a população.",
+            src: "https://drive.google.com/file/d/1Coq-YKByg4JO1kyXu_4xwwWA6gplbxCi/preview",
+            link: "https://drive.google.com/file/d/1Coq-YKByg4JO1kyXu_4xwwWA6gplbxCi/view?usp=drivesdk"
+          },
+          {
+            title: "Biodiversidade — Vídeo 05: Microrganismos e Biotecnologia",
+            desc: "Como fungos e bactérias da nossa flora e solo são essenciais na criação de novos medicamentos e vacinas pela Fiocruz.",
+            src: "https://drive.google.com/file/d/1Um8TTw4MqtglJHrL-9LJTUgiKJqf5SsZ/preview",
+            link: "https://drive.google.com/file/d/1Um8TTw4MqtglJHrL-9LJTUgiKJqf5SsZ/view?usp=drivesdk"
+          },
+          {
+            title: "Biodiversidade — Vídeo 06: Ações Sustentáveis e Comunidade",
+            desc: "Projetos de conscientização social conectando saber popular e pesquisa acadêmica em prol do meio ambiente.",
+            src: "https://drive.google.com/file/d/11w0NfRX_RDiVX4JHaPWj2KAczPiJAlYT/preview",
+            link: "https://drive.google.com/file/d/11w0NfRX_RDiVX4JHaPWj2KAczPiJAlYT/view?usp=drivesdk"
+          },
+          {
+            title: "Biodiversidade — Vídeo 07: O Futuro e as Próximas Gerações",
+            desc: "Mensagem inspiradora sobre legado científico, transição ecológica e os desafios da preservação para o século XXI.",
+            src: "https://drive.google.com/file/d/1Ws963xbDXDSFIGO4xXjs3nXzdYvEJkOh/preview",
+            link: "https://drive.google.com/file/d/1Ws963xbDXDSFIGO4xXjs3nXzdYvEJkOh/view?usp=drivesdk"
+          }
+        ]
+      },
       comerciais: {
         index: 0,
         items: [
-          { title: "Comercial — 17/07/2024", desc: "Comercial de varejo com foco em prêmios e apresentação dinâmica para TV.", src: "https://www.youtube.com/embed/K5JGDsgCqSY", yt: "K5JGDsgCqSY" },
-          { title: "Comercial — 24/07/2024", desc: "Edição com cortes rítmicos e cartelas de premiação de alta conversão.", src: "https://www.youtube.com/embed/vFr5UgK0rwY", yt: "vFr5UgK0rwY" },
-          { title: "Comercial — 31/07/2024", desc: "Campanha semanal de prêmios com animações tipográficas e reforço visual.", src: "https://www.youtube.com/embed/0k-jjlliXoU", yt: "0k-jjlliXoU" },
-          { title: "Campanha Correios", desc: "Campanha nacional focada na rede de vendas dos Correios em todo o Brasil.", src: "https://www.youtube.com/embed/WtCTLH9oPCc", yt: "WtCTLH9oPCc" },
-          { title: "Comercial — 04/12/2024", desc: "Comercial de fim de ano com ritmo acelerado e grafismos de celebração.", src: "https://www.youtube.com/embed/fmuqxfJplec", yt: "fmuqxfJplec" },
-          { title: "Comercial — 12/12/2024", desc: "Peça de alta performance para TV e redes com ofertas de fim de ano.", src: "https://www.youtube.com/embed/IVxPqvUsSVQ", yt: "IVxPqvUsSVQ" },
+          { title: "Comercial — 17/07/2024", desc: "Comercial de TV unindo motion design dinâmico, animações tipográficas e composição visual.", src: "https://www.youtube.com/embed/K5JGDsgCqSY", yt: "K5JGDsgCqSY" },
+          { title: "Comercial — 24/07/2024", desc: "Montagem rítmica com cartelas de premiação de alta conversão e motion graphics.", src: "https://www.youtube.com/embed/vFr5UgK0rwY", yt: "vFr5UgK0rwY" },
+          { title: "Comercial — 31/07/2024", desc: "Motion design e composição de produto em campanha semanal de prêmios.", src: "https://www.youtube.com/embed/0k-jjlliXoU", yt: "0k-jjlliXoU" },
+          { title: "Campanha Correios", desc: "Composição visual de alcance nacional destacando a rede de vendas dos Correios.", src: "https://www.youtube.com/embed/WtCTLH9oPCc", yt: "WtCTLH9oPCc" },
+          { title: "Comercial — 04/12/2024", desc: "Motion festivo de fim de ano com ritmo acelerado e grafismos de celebração.", src: "https://www.youtube.com/embed/fmuqxfJplec", yt: "fmuqxfJplec" },
+          { title: "Comercial — 12/12/2024", desc: "Peça de alta performance para TV e redes com composição de ofertas de fim de ano.", src: "https://www.youtube.com/embed/IVxPqvUsSVQ", yt: "IVxPqvUsSVQ" },
           { title: "Comercial — 08/01/2025", desc: "Comercial de início de ano com metas, renovação e destaque aos prêmios principais.", src: "https://www.youtube.com/embed/7XFi5-vZT5M", yt: "7XFi5-vZT5M" },
           { title: "Comercial — 29/01/2025", desc: "Edição para TV com cortes dinâmicos e reforço do aplicativo oficial.", src: "https://www.youtube.com/embed/D8QGsNcXYcY", yt: "D8QGsNcXYcY" },
           { title: "Comercial — 19/02/2025", desc: "Campanha de prêmios com animações tipográficas e ritmo comercial.", src: "https://www.youtube.com/embed/eQdLAKAIWC8", yt: "eQdLAKAIWC8" },
@@ -1723,6 +1924,29 @@
           { title: "História de Ganhador 07", desc: "Cobertura especial da entrega de veículos e premiações em dinheiro.", src: "https://www.youtube.com/embed/mH9F5wsGW1M", yt: "mH9F5wsGW1M" },
           { title: "História de Ganhador 08", desc: "Reportagem emocional conectando a compra do título aos sonhos realizados.", src: "https://www.youtube.com/embed/LHakPjkGvs8", yt: "LHakPjkGvs8" },
           { title: "História de Ganhador 09", desc: "História de conquista com depoimento emocionante do ganhador e da família.", src: "https://www.youtube.com/embed/bwpW98BEYzM", yt: "bwpW98BEYzM" }
+        ]
+      },
+      zeluiz: {
+        index: 0,
+        items: [
+          {
+            title: "Zé Luiz nos Bairros (Edição Especial)",
+            desc: "Registro documental com depoimentos, captação in loco e narrativa comunitária de alto engajamento.",
+            src: "https://drive.google.com/file/d/1doXZ7n5A1fpmwVkoUo3rI0GWs80Rezb7/preview",
+            link: "https://drive.google.com/file/d/1doXZ7n5A1fpmwVkoUo3rI0GWs80Rezb7/view?usp=drivesdk"
+          },
+          {
+            title: "Zé Luiz — Presente nos Bairros",
+            desc: "Narrativa sobre a atuação de proximidade e projetos comunitários com edição ágil e estética moderna.",
+            src: "https://drive.google.com/file/d/1iGjXOf70dtpn8LhTHk21mTBoMd-e3aRB/preview",
+            link: "https://drive.google.com/file/d/1iGjXOf70dtpn8LhTHk21mTBoMd-e3aRB/view?usp=drivesdk"
+          },
+          {
+            title: "Botujuru — Legendado",
+            desc: "Cobertura e história no bairro do Botujuru com acessibilidade completa em legendas e narrativa social.",
+            src: "https://drive.google.com/file/d/1Phvts0SwBkCFeYawHaKYAmCowkeIucMS/preview",
+            link: "https://drive.google.com/file/d/1Phvts0SwBkCFeYawHaKYAmCowkeIucMS/view?usp=drivesdk"
+          }
         ]
       }
     };
