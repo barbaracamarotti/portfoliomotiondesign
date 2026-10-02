@@ -6,7 +6,7 @@
   <title>Barbara Camarotti — Motion Designer & 3D Artist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #090a0f;
@@ -116,7 +116,6 @@
       flex-shrink: 0;
     }
     .tab-btn:hover { color: #fff; background: rgba(255, 255, 255, 0.06); }
-
     .tab-btn.active {
       color: #fff;
       background: var(--accent);
@@ -133,10 +132,197 @@
     .tab-content.active { display: block; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
+    /* =======================================
+       ESTILOS EXCLUSIVOS DA ABA APRESENTAÇÃO
+       ======================================= */
+    .hero-pitch-card {
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.16), rgba(255, 42, 122, 0.08));
+      border: 1px solid rgba(124, 58, 237, 0.3);
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 24px;
+    }
+
+    .pitch-tag {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #c4b5fd;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .pitch-title {
+      font-size: 2.4rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.8px;
+    }
+
+    .pitch-text {
+      font-size: 1.15rem;
+      color: #e2e8f0;
+      max-width: 860px;
+      line-height: 1.65;
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+
+    /* Números de Alto Impacto */
+    .big-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 28px 0;
+    }
+
+    .big-stat-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 24px 18px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .big-stat-box::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--pink));
+      opacity: 0.8;
+    }
+
+    .big-stat-box:hover {
+      border-color: var(--card-hover);
+      transform: translateY(-3px);
+    }
+
+    .big-stat-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 8px;
+      background: linear-gradient(180deg, #ffffff 40%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .big-stat-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* O Que Eu Faço (4 Pilares) */
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 40px 0 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 4px;
+      height: 22px;
+      background: var(--accent);
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .what-i-do-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 26px 22px;
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      border-color: var(--card-hover);
+      transform: translateY(-3px);
+    }
+
+    .service-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .service-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .service-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Faixa de Marcas / Autoridade */
+    .brands-strip {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 36px 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .brands-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+    }
+
+    .brands-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .brand-chip {
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #e2e8f0;
+    }
+
     /* Video Player Embed */
     .video-wrapper {
       position: relative;
-      padding-bottom: 56.25%; /* 16:9 */
+      padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
       border-radius: 12px;
@@ -192,53 +378,16 @@
     }
     .card-link-btn:hover { background: var(--accent); }
 
-    /* Aba Apresentação */
-    .about-hero {
-      background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(255, 42, 122, 0.08));
-      border: 1px solid var(--card-border); border-radius: var(--radius);
-      padding: 36px 30px; margin-bottom: 24px;
-    }
-    .about-hero h2 { font-size: 2rem; font-weight: 800; margin-bottom: 14px; line-height: 1.25; }
-    .about-hero p { font-size: 1rem; color: #cbd5e1; max-width: 900px; margin-bottom: 20px; line-height: 1.65; }
-
-    .stats-row {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;
-      margin: 24px 0;
-    }
-    .stat-card {
-      background: var(--card-bg); border: 1px solid var(--card-border);
-      border-radius: var(--radius); padding: 20px 16px; text-align: center;
-    }
-    .stat-card h3 { font-size: 1.7rem; font-weight: 800; color: #fff; font-family: 'Space Grotesk', sans-serif; }
-    .stat-card p { font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; }
-
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 20px; }
-    .skill-box {
-      background: var(--card-bg); border: 1px solid var(--card-border);
-      border-radius: var(--radius); padding: 22px;
-    }
-    .skill-box h3 { font-size: 1.1rem; margin-bottom: 12px; color: #fff; }
-    .skill-list { list-style: none; }
-    .skill-list li { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 8px; }
-    .skill-list li::before { content: "•"; color: var(--accent); margin-right: 8px; font-weight: bold; }
-
-    /* Responsividade para Telas Menores e Smartphones */
-    @media (max-width: 860px) {
+    /* Responsividade */
+    @media (max-width: 900px) {
       .container { padding: 0 16px; }
       .col-7, .col-6, .col-5 { grid-column: span 12; }
-      
-      .about-hero { padding: 24px 18px; }
-      .about-hero h2 { font-size: 1.6rem; }
-      .about-hero p { font-size: 0.94rem; }
-
-      .stats-row { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-      .stat-card { padding: 16px 10px; }
-      .stat-card h3 { font-size: 1.45rem; }
-      .stat-card p { font-size: 0.72rem; }
-
-      .bento-card { padding: 18px; }
-      .card-title { font-size: 1.18rem; }
-      .card-desc { font-size: 0.86rem; }
+      .big-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .big-stat-num { font-size: 2.1rem; }
+      .hero-pitch-card { padding: 26px 20px; }
+      .pitch-title { font-size: 1.8rem; }
+      .pitch-text { font-size: 1rem; }
+      .brands-strip { flex-direction: column; align-items: flex-start; }
     }
 
     @media (max-width: 540px) {
@@ -246,7 +395,7 @@
       .badge-status { display: none; }
       .nav-actions .btn { padding: 8px 14px; font-size: 0.82rem; }
       .tab-btn { font-size: 0.85rem; padding: 8px 16px; }
-      .skills-grid { grid-template-columns: 1fr; }
+      .what-i-do-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -273,7 +422,7 @@
 
   <main class="container">
 
-    <!-- Navegação em Abas (Estilo Pílulas com Touch Scroll) -->
+    <!-- Navegação em Abas -->
     <nav class="tabs-bar">
       <button class="tab-btn active" onclick="switchTab('tab-apresentacao', this)">Apresentação</button>
       <button class="tab-btn" onclick="switchTab('tab-destaques', this)">Destaques</button>
@@ -282,84 +431,91 @@
       <button class="tab-btn" onclick="switchTab('tab-hipercap', this)">HiperCap Brasil</button>
     </nav>
 
-    <!-- 1. ABA PRINCIPAL: Apresentação -->
+    <!-- 1. ABA PRINCIPAL: Apresentação (Assertiva e Escaneável) -->
     <section id="tab-apresentacao" class="tab-content active">
-      <div class="about-hero">
-        <h2>Olá, eu sou a Barbara Camarotti 👋</h2>
-        <p>
-          Sou Motion Designer, Editora de Vídeo e Artista 3D. Minha proposta profissional é unir direção de arte consistente, narrativa visual rítmica e domínio técnico avançado para produzir animações e peças de alto impacto comercial e institucional.
-        </p>
-        <p>
-          Tenho experiência comprovada em agência, produtora e grandes contas nacionais, incluindo atendimento audiovisual direto para <strong>Vivo</strong>, <strong>Caixa</strong> e <strong>HiperCap Brasil</strong> (campanhas com Fernanda Gentil e Ciro Bottini). Além disso, desenvolvo simulações em 3D no Blender voltadas para experiência do usuário e conversão, e integro ferramentas de IA generativa de forma controlada para acelerar a pós-produção e composição visual.
+      
+      <!-- Bloco de Impacto Direto -->
+      <div class="hero-pitch-card">
+        <span class="pitch-tag">Motion Designer & 3D Artist</span>
+        <h2 class="pitch-title">Animação que une narrativa visual, técnica e resultado comercial.</h2>
+        <p class="pitch-text">
+          Desenvolvo projetos audiovisuais completos: desde a concepção de roteiro e storyboard até a animação 2D no After Effects, modelagem/shaders 3D no Blender e pós-produção avançada com apoio de IA. Foco em transformar ideias em movimento que prendem a atenção e convertem.
         </p>
         <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <a href="mailto:barbaracamarotti@hotmail.com" class="btn btn-primary">Fale Comigo por E-mail</a>
-          <a href="https://www.behance.net/barbaracamarot" target="_blank" class="btn btn-secondary">Ver Portfólio no Behance</a>
+          <a href="mailto:barbaracamarotti@hotmail.com" class="btn btn-primary">Iniciar Conversa por E-mail</a>
+          <a href="https://www.behance.net/barbaracamarot" target="_blank" class="btn btn-secondary">Ver Portfólio no Behance ↗</a>
         </div>
       </div>
 
-      <!-- Métricas -->
-      <div class="stats-row">
-        <div class="stat-card">
-          <h3>+1 Milhão</h3>
-          <p>Views em Campanha Nacional</p>
+      <!-- Números de Autoridade em Destaque -->
+      <div class="big-stats-grid">
+        <div class="big-stat-box">
+          <div class="big-stat-num">+1M</div>
+          <div class="big-stat-label">Views em Campanha Nacional</div>
         </div>
-        <div class="stat-card">
-          <h3>25+ Vídeos</h3>
-          <p>Entregas Semanais</p>
+        <div class="big-stat-box">
+          <div class="big-stat-num">25+</div>
+          <div class="big-stat-label">Vídeos Entregues / Semana</div>
         </div>
-        <div class="stat-card">
-          <h3>TV Aberta</h3>
-          <p>Band, RedeTV! e NGT</p>
+        <div class="big-stat-box">
+          <div class="big-stat-num">TV</div>
+          <div class="big-stat-label">Band, RedeTV! e NGT</div>
         </div>
-        <div class="stat-card">
-          <h3>Cultura & Editais</h3>
-          <p>Lei Paulo Gustavo</p>
+        <div class="big-stat-box">
+          <div class="big-stat-num">3D + IA</div>
+          <div class="big-stat-label">Pipelines Híbridos Modernos</div>
+        </div>
+      </div>
+
+      <!-- O Que Eu Faço (4 Pilares Claros) -->
+      <h3 class="section-title">O que eu faço</h3>
+      <div class="what-i-do-grid">
+        <div class="service-card">
+          <div class="service-num">01</div>
+          <h4 class="service-title">Motion Design & Tech</h4>
+          <p class="service-desc">
+            Animação 2D vetorial, vídeos didáticos de tecnologia (*explainers*), personagens animados e tipografia cinética com curvas de aceleração orgânicas.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">02</div>
+          <h4 class="service-title">Simulação 3D de Produto</h4>
+          <p class="service-desc">
+            Modelagem, materiais fotorrealistas e iluminação de estúdio no Blender voltados para e-commerce, valorização de acabamentos físicos e suporte à compra.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">03</div>
+          <h4 class="service-title">Pós-Produção & Varejo</h4>
+          <p class="service-desc">
+            Edição de ritmo ágil para comerciais de TV aberta e digital, chaveamento de chroma key e color grading no DaVinci Resolve com foco em retenção.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">04</div>
+          <h4 class="service-title">Workflows com IA Generativa</h4>
+          <p class="service-desc">
+            Integração controlada de ferramentas como Midjourney e Higgsfield para criação de cenários virtuais (*matte painting*) e aceleração de prazos sem perder direção de arte.
+          </p>
         </div>
       </div>
 
-      <!-- Competências & Formação -->
-      <div class="skills-grid">
-        <div class="skill-box">
-          <h3>Motion 2D & Vetorial</h3>
-          <ul class="skill-list">
-            <li>Adobe After Effects (avançado / expressões)</li>
-            <li>Adobe Illustrator (criação de telas e assets)</li>
-            <li>Adobe Photoshop (texturas e preparação de recorte)</li>
-            <li>Tipografia cinética e microinterações</li>
-          </ul>
-        </div>
-
-        <div class="skill-box">
-          <h3>3D, Pós-Produção & Cor</h3>
-          <ul class="skill-list">
-            <li>Blender (modelagem, shaders fotorrealistas e render)</li>
-            <li>DaVinci Resolve (color grading e chroma key avançado)</li>
-            <li>Adobe Premiere Pro (montagem rítmica e sound design)</li>
-            <li>Composição multicamadas e tracking</li>
-          </ul>
-        </div>
-
-        <div class="skill-box">
-          <h3>IA no Pipeline Criativo</h3>
-          <ul class="skill-list">
-            <li>Midjourney & Higgsfield (concept art e matte painting)</li>
-            <li>Tripo AI (geração de malhas e suporte a 3D)</li>
-            <li>Extensão de cenários e cenários virtuais</li>
-            <li>Aceleração de produção e fluxos híbridos</li>
-          </ul>
-        </div>
-
-        <div class="skill-box">
-          <h3>Formação & Localização</h3>
-          <ul class="skill-list">
-            <li>Design de Animação — Universidade Anhembi Morumbi</li>
-            <li>Comunicação Visual — SENAI Theobaldo di Nigris</li>
-            <li>Localização: Poá, São Paulo — Brasil</li>
-            <li>Inglês intermediário para projetos e equipes globais</li>
-          </ul>
+      <!-- Faixa de Prova Social e Marcas -->
+      <div class="brands-strip">
+        <div class="brands-title">Marcas & Projetos em que atuei:</div>
+        <div class="brands-list">
+          <span class="brand-chip">Vivo</span>
+          <span class="brand-chip">Caixa</span>
+          <span class="brand-chip">HiperCap Brasil</span>
+          <span class="brand-chip">FuturaIM</span>
+          <span class="brand-chip">Akio</span>
+          <span class="brand-chip">Lei Paulo Gustavo</span>
         </div>
       </div>
+
     </section>
 
     <!-- 2. ABA: Destaques -->
@@ -611,10 +767,10 @@
           </div>
           <div>
             <div class="card-meta">
-              <span class="pill">DaVinci Resolve (Chroma)</span>
-              <span class="pill">Matte Painting com IA</span>
+              <span class="pill">DaVinci Resolve</span>
+              <span class="pill">Chroma Key / Composição</span>
+              <span class="pill">Cenários por IA</span>
               <span class="pill">After Effects VFX</span>
-              <span class="pill">Campanha Nacional</span>
             </div>
             <div class="card-links">
               <a href="https://www.behance.net/barbaracamarot" target="_blank" class="card-link-btn">Ver Case no Behance ↗</a>
