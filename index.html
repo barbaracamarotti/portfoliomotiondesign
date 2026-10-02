@@ -6,7 +6,7 @@
   <title>Barbara Camarotti — Motion Designer & 3D Artist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #090a0f;
@@ -30,8 +30,8 @@
       line-height: 1.6;
       overflow-x: hidden;
       background-image: 
-        radial-gradient(circle at 15% 10%, rgba(124, 58, 237, 0.14), transparent 40%),
-        radial-gradient(circle at 85% 25%, rgba(255, 42, 122, 0.08), transparent 45%),
+        radial-gradient(circle at 15% 10%, rgba(124, 58, 237, 0.15), transparent 40%),
+        radial-gradient(circle at 85% 25%, rgba(255, 42, 122, 0.09), transparent 45%),
         radial-gradient(circle at 50% 70%, rgba(6, 182, 212, 0.05), transparent 50%);
       background-attachment: fixed;
     }
@@ -90,7 +90,7 @@
 
     /* Barra de Abas */
     .tabs-bar {
-      margin: 32px 0 24px;
+      margin: 30px 0 24px;
       border-bottom: 1px solid var(--card-border);
       display: flex;
       gap: 8px;
@@ -132,58 +132,126 @@
     .tab-content.active { display: block; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* =======================================
-       ESTILOS EXCLUSIVOS DA ABA APRESENTAÇÃO
-       ======================================= */
+    /* Hero Pitch */
     .hero-pitch-card {
-      background: linear-gradient(135deg, rgba(124, 58, 237, 0.16), rgba(255, 42, 122, 0.08));
-      border: 1px solid rgba(124, 58, 237, 0.3);
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.18), rgba(255, 42, 122, 0.08));
+      border: 1px solid rgba(124, 58, 237, 0.35);
       border-radius: 20px;
-      padding: 40px;
+      padding: 36px;
       margin-bottom: 24px;
     }
 
     .pitch-tag {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       color: #c4b5fd;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       display: inline-block;
     }
 
     .pitch-title {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       font-weight: 800;
       line-height: 1.2;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       letter-spacing: -0.8px;
     }
 
     .pitch-text {
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       color: #e2e8f0;
       max-width: 860px;
-      line-height: 1.65;
-      margin-bottom: 28px;
-      font-weight: 400;
+      line-height: 1.6;
+      margin-bottom: 24px;
     }
+
+    /* =======================================
+       GRADE DE 12 MARCAS (EM DESTAQUE NO TOPO)
+       ======================================= */
+    .brands-showcase-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 24px;
+    }
+
+    .brands-showcase-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .brands-showcase-header h4 {
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #c4b5fd;
+    }
+
+    .brands-showcase-header span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .logos-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .logo-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      transition: all 0.25s ease;
+      height: 56px;
+      text-align: center;
+    }
+
+    .logo-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(124, 58, 237, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+    }
+
+    .logo-svg {
+      max-height: 24px;
+      width: auto;
+      max-width: 100%;
+      fill: #cbd5e1;
+      transition: fill 0.25s ease;
+    }
+    .logo-item:hover .logo-svg { fill: #fff; }
 
     /* Números de Alto Impacto */
     .big-stats-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
-      margin: 28px 0;
+      margin: 24px 0 32px;
     }
 
     .big-stat-box {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: var(--radius);
-      padding: 24px 18px;
+      padding: 22px 16px;
       text-align: center;
       transition: all 0.3s ease;
       position: relative;
@@ -195,7 +263,6 @@
       position: absolute;
       top: 0; left: 0; right: 0; height: 3px;
       background: linear-gradient(90deg, var(--accent), var(--pink));
-      opacity: 0.8;
     }
 
     .big-stat-box:hover {
@@ -205,17 +272,17 @@
 
     .big-stat-num {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 2.6rem;
+      font-size: 2.5rem;
       font-weight: 800;
       line-height: 1;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       background: linear-gradient(180deg, #ffffff 40%, #cbd5e1 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .big-stat-label {
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       font-weight: 600;
       text-transform: uppercase;
@@ -224,9 +291,9 @@
 
     /* O Que Eu Faço (4 Pilares) */
     .section-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin: 40px 0 18px;
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin: 32px 0 16px;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -235,7 +302,7 @@
     .section-title::before {
       content: "";
       width: 4px;
-      height: 22px;
+      height: 20px;
       background: var(--accent);
       border-radius: 4px;
       display: inline-block;
@@ -243,15 +310,15 @@
 
     .what-i-do-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
     }
 
     .service-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: var(--radius);
-      padding: 26px 22px;
+      padding: 22px 20px;
       transition: all 0.3s ease;
     }
 
@@ -262,61 +329,23 @@
 
     .service-num {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 700;
       color: var(--accent);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .service-title {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: #fff;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .service-desc {
       font-size: 0.88rem;
       color: var(--text-muted);
-      line-height: 1.55;
-    }
-
-    /* Faixa de Marcas / Autoridade */
-    .brands-strip {
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
-      padding: 24px;
-      margin: 36px 0 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .brands-title {
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--text-muted);
-    }
-
-    .brands-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .brand-chip {
-      padding: 6px 14px;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #e2e8f0;
+      line-height: 1.5;
     }
 
     /* Video Player Embed */
@@ -363,13 +392,13 @@
     .tag-ai { background: rgba(255, 42, 122, 0.15); color: #fda4af; border: 1px solid rgba(255, 42, 122, 0.3); }
     .tag-cutout { background: rgba(245, 158, 11, 0.15); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.3); }
 
-    .card-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; color: #fff; line-height: 1.3; }
-    .card-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 18px; line-height: 1.55; }
+    .card-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; color: #fff; line-height: 1.3; }
+    .card-desc { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5; }
     .card-meta {
       display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto;
-      padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
-    .pill { font-size: 0.74rem; padding: 4px 8px; border-radius: 6px; background: rgba(255, 255, 255, 0.04); color: #94a3b8; }
+    .pill { font-size: 0.72rem; padding: 4px 8px; border-radius: 6px; background: rgba(255, 255, 255, 0.04); color: #94a3b8; }
     .card-links { display: flex; gap: 10px; margin-top: 14px; }
     .card-link-btn {
       font-size: 0.8rem; font-weight: 600; text-decoration: none; color: #fff;
@@ -379,23 +408,26 @@
     .card-link-btn:hover { background: var(--accent); }
 
     /* Responsividade */
-    @media (max-width: 900px) {
-      .container { padding: 0 16px; }
+    @media (max-width: 960px) {
+      .logos-grid { grid-template-columns: repeat(4, 1fr); }
       .col-7, .col-6, .col-5 { grid-column: span 12; }
       .big-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
       .big-stat-num { font-size: 2.1rem; }
       .hero-pitch-card { padding: 26px 20px; }
       .pitch-title { font-size: 1.8rem; }
-      .pitch-text { font-size: 1rem; }
-      .brands-strip { flex-direction: column; align-items: flex-start; }
     }
 
-    @media (max-width: 540px) {
+    @media (max-width: 600px) {
+      .logos-grid { grid-template-columns: repeat(3, 1fr); }
       .brand-info p { display: none; }
       .badge-status { display: none; }
       .nav-actions .btn { padding: 8px 14px; font-size: 0.82rem; }
       .tab-btn { font-size: 0.85rem; padding: 8px 16px; }
       .what-i-do-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 420px) {
+      .logos-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -431,15 +463,15 @@
       <button class="tab-btn" onclick="switchTab('tab-hipercap', this)">HiperCap Brasil</button>
     </nav>
 
-    <!-- 1. ABA PRINCIPAL: Apresentação (Assertiva e Escaneável) -->
+    <!-- 1. ABA PRINCIPAL: Apresentação -->
     <section id="tab-apresentacao" class="tab-content active">
       
       <!-- Bloco de Impacto Direto -->
       <div class="hero-pitch-card">
         <span class="pitch-tag">Motion Designer & 3D Artist</span>
-        <h2 class="pitch-title">Animação que une narrativa visual, técnica e resultado comercial.</h2>
+        <h2 class="pitch-title">Transformo marcas, produtos e conceitos em narrativas visuais que prendem a atenção e vendem.</h2>
         <p class="pitch-text">
-          Desenvolvo projetos audiovisuais completos: desde a concepção de roteiro e storyboard até a animação 2D no After Effects, modelagem/shaders 3D no Blender e pós-produção avançada com apoio de IA. Foco em transformar ideias em movimento que prendem a atenção e convertem.
+          Motion design estratégico de ponta a ponta: animações 2D no <strong>After Effects</strong>, simulações 3D fotorrealistas no <strong>Blender</strong> e pós-produção avançada integrada a ferramentas de <strong>IA generativa</strong>. Da concepção do storyboard à entrega expressa para TV e digital.
         </p>
         <div style="display: flex; gap: 12px; flex-wrap: wrap;">
           <a href="mailto:barbaracamarotti@hotmail.com" class="btn btn-primary">Iniciar Conversa por E-mail</a>
@@ -447,7 +479,104 @@
         </div>
       </div>
 
-      <!-- Números de Autoridade em Destaque -->
+      <!-- =============================================
+           SEÇÃO COM AS 12 MARCAS (EM DESTAQUE NO TOPO)
+           ============================================= -->
+      <div class="brands-showcase-box">
+        <div class="brands-showcase-header">
+          <h4>Marcas & Contas Atendidas</h4>
+          <span>Campanhas Nacionais, Veiculação em TV e Projetos Digitais</span>
+        </div>
+        
+        <div class="logos-grid">
+          <!-- 1. Vivo -->
+          <div class="logo-item" title="Vivo">
+            <svg class="logo-svg" viewBox="0 0 100 28" xmlns="http://www.w3.org/2000/svg">
+              <text x="50%" y="20" font-family="'Space Grotesk', sans-serif" font-weight="800" font-size="20" text-anchor="middle" letter-spacing="1">vivo</text>
+            </svg>
+          </div>
+
+          <!-- 2. Caixa -->
+          <div class="logo-item" title="Caixa Econômica Federal">
+            <svg class="logo-svg" viewBox="0 0 110 28" xmlns="http://www.w3.org/2000/svg">
+              <text x="50%" y="20" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="18" text-anchor="middle" letter-spacing="2">CAIXA</text>
+            </svg>
+          </div>
+
+          <!-- 3. HiperCap Brasil -->
+          <div class="logo-item" title="HiperCap Brasil">
+            <svg class="logo-svg" viewBox="0 0 130 28" xmlns="http://www.w3.org/2000/svg">
+              <text x="50%" y="19" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="15" text-anchor="middle" letter-spacing="0.5">HIPERCAP</text>
+            </svg>
+          </div>
+
+          <!-- 4. Metrô -->
+          <div class="logo-item" title="Metrô de São Paulo">
+            <svg class="logo-svg" viewBox="0 0 110 28" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="14" r="9" stroke="currentColor" stroke-width="2.5" fill="none" opacity="0.7"/>
+              <text x="68" y="20" font-family="'Space Grotesk', sans-serif" font-weight="800" font-size="16">METRÔ</text>
+            </svg>
+          </div>
+
+          <!-- 5. Apcap da Sorte -->
+          <div class="logo-item" title="Apcap da Sorte">
+            <svg class="logo-svg" viewBox="0 0 120 28" xmlns="http://www.w3.org/2000/svg">
+              <text x="50%" y="19" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="15" text-anchor="middle">APCAP</text>
+            </svg>
+          </div>
+
+          <!-- 6. Copastour -->
+          <div class="logo-item" title="Copastour">
+            <svg class="logo-svg" viewBox="0 0 130 28" xmlns="http://www.w3.org/2000/svg">
+              <text x="50%" y="19" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="15" text-anchor="middle" letter-spacing="0.5">COPASTOUR</text>
+            </svg>
+          </div>
+
+          <!-- 7. FuturaIM -->
+          <div class="logo-item" title="FuturaIM">
+            <svg class="logo-svg" viewBox="0 0 120 28" xmlns="http://www.w3.org/2000/svg">
+              <text x="50%" y="19" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="15" text-anchor="middle">Futura<tspan fill="#a78bfa">IM</tspan></text>
+            </svg>
+          </div>
+
+          <!-- 8. GIV Online -->
+          <div class="logo-item" title="GIV Online">
+            <svg class="logo-svg" viewBox="0 0 120 28" xmlns="http://www.w3.org/2000/svg">
+              <text x="50%" y="19" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="16" text-anchor="middle" letter-spacing="1">GIV<tspan fill="#ff2a7a">.</tspan></text>
+            </svg>
+          </div>
+
+          <!-- 9. Instituto Fiocruz -->
+          <div class="logo-item" title="Instituto Fiocruz">
+            <svg class="logo-svg" viewBox="0 0 120 28" xmlns="http://www.w3.org/2000/svg">
+              <text x="50%" y="19" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="15" text-anchor="middle" letter-spacing="1">FIOCRUZ</text>
+            </svg>
+          </div>
+
+          <!-- 10. Akio -->
+          <div class="logo-item" title="Akio Alimentos">
+            <svg class="logo-svg" viewBox="0 0 100 28" xmlns="http://www.w3.org/2000/svg">
+              <text x="50%" y="20" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="18" text-anchor="middle" letter-spacing="2">AKIO</text>
+            </svg>
+          </div>
+
+          <!-- 11. WBL -->
+          <div class="logo-item" title="WBL">
+            <svg class="logo-svg" viewBox="0 0 90 28" xmlns="http://www.w3.org/2000/svg">
+              <text x="50%" y="20" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="18" text-anchor="middle" letter-spacing="1.5">WBL</text>
+            </svg>
+          </div>
+
+          <!-- 12. Lei Paulo Gustavo -->
+          <div class="logo-item" title="Lei Paulo Gustavo">
+            <svg class="logo-svg" viewBox="0 0 140 28" xmlns="http://www.w3.org/2000/svg">
+              <text x="50%" y="18" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="12" text-anchor="middle" letter-spacing="0.5">LEI PAULO GUSTAVO</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Números de Alto Impacto -->
       <div class="big-stats-grid">
         <div class="big-stat-box">
           <div class="big-stat-num">+1M</div>
@@ -463,18 +592,18 @@
         </div>
         <div class="big-stat-box">
           <div class="big-stat-num">3D + IA</div>
-          <div class="big-stat-label">Pipelines Híbridos Modernos</div>
+          <div class="big-stat-label">Blender & Pipelines Híbridos</div>
         </div>
       </div>
 
-      <!-- O Que Eu Faço (4 Pilares Claros) -->
-      <h3 class="section-title">O que eu faço</h3>
+      <!-- O Que Eu Faço (4 Pilares Compactos) -->
+      <h3 class="section-title">Especialidades & Entregas de Motion</h3>
       <div class="what-i-do-grid">
         <div class="service-card">
           <div class="service-num">01</div>
-          <h4 class="service-title">Motion Design & Tech</h4>
+          <h4 class="service-title">Motion Design 2D & Tech</h4>
           <p class="service-desc">
-            Animação 2D vetorial, vídeos didáticos de tecnologia (*explainers*), personagens animados e tipografia cinética com curvas de aceleração orgânicas.
+            Animação vetorial no <strong>After Effects</strong>, vídeos didáticos de produto (*explainers*), character rigging e tipografia cinética fluida para engajamento e retenção.
           </p>
         </div>
 
@@ -482,7 +611,7 @@
           <div class="service-num">02</div>
           <h4 class="service-title">Simulação 3D de Produto</h4>
           <p class="service-desc">
-            Modelagem, materiais fotorrealistas e iluminação de estúdio no Blender voltados para e-commerce, valorização de acabamentos físicos e suporte à compra.
+            Modelagem, materiais fotorrealistas e iluminação no <strong>Blender</strong>. Foco em e-commerce, demonstrando acabamentos físicos com fidelidade para aumentar a conversão.
           </p>
         </div>
 
@@ -490,29 +619,16 @@
           <div class="service-num">03</div>
           <h4 class="service-title">Pós-Produção & Varejo</h4>
           <p class="service-desc">
-            Edição de ritmo ágil para comerciais de TV aberta e digital, chaveamento de chroma key e color grading no DaVinci Resolve com foco em retenção.
+            Edição de ritmo rápido para TV e digital, composição multicamadas, chaveamento de chroma key e color grading no <strong>DaVinci Resolve</strong> e <strong>Premiere Pro</strong>.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-num">04</div>
-          <h4 class="service-title">Workflows com IA Generativa</h4>
+          <h4 class="service-title">Pipelines com IA Generativa</h4>
           <p class="service-desc">
-            Integração controlada de ferramentas como Midjourney e Higgsfield para criação de cenários virtuais (*matte painting*) e aceleração de prazos sem perder direção de arte.
+            Integração controlada de <strong>Midjourney</strong> e <strong>Higgsfield</strong> para criação de cenários virtuais (*matte painting*) e aceleração criativa com alto padrão visual.
           </p>
-        </div>
-      </div>
-
-      <!-- Faixa de Prova Social e Marcas -->
-      <div class="brands-strip">
-        <div class="brands-title">Marcas & Projetos em que atuei:</div>
-        <div class="brands-list">
-          <span class="brand-chip">Vivo</span>
-          <span class="brand-chip">Caixa</span>
-          <span class="brand-chip">HiperCap Brasil</span>
-          <span class="brand-chip">FuturaIM</span>
-          <span class="brand-chip">Akio</span>
-          <span class="brand-chip">Lei Paulo Gustavo</span>
         </div>
       </div>
 
@@ -526,7 +642,7 @@
             <span class="card-tag tag-3d">★ Destaque 3D & E-commerce</span>
             <h3 class="card-title">Linha de Enobrecimentos — Simulação 3D no Blender</h3>
             <p class="card-desc">
-              Desenvolvimento completo no Blender da linha de acabamentos gráficos (Hot Stamping, Verniz Localizado, Soft Touch e Laminação Fosca). Focado em reproduzir a física e o reflexo real dos materiais para o e-commerce da FuturaIM, reduzindo dúvidas na compra e devoluções de pedidos.
+              Desenvolvimento no <strong>Blender</strong> da linha de acabamentos gráficos (Hot Stamping, Verniz Localizado, Soft Touch e Fosco). Reprodução física de reflexos e texturas para o e-commerce da FuturaIM, reduzindo dúvidas na compra e devoluções.
             </p>
           </div>
           <div>
@@ -543,7 +659,7 @@
 
         <div class="bento-card col-5">
           <div>
-            <span class="card-tag">Brand Motion & Reveal</span>
+            <span class="card-tag">Brand Motion</span>
             <div class="video-wrapper">
               <iframe src="https://drive.google.com/file/d/1V5qf3jr2tyDam9Y4klgECmjEVzAKncdJ/preview" allow="autoplay"></iframe>
             </div>
@@ -565,7 +681,7 @@
             <span class="card-tag tag-tech">Tech Explainer & Animação 2D</span>
             <h3 class="card-title">Microsoft Copilot — Explicando o Futuro</h3>
             <p class="card-desc">
-              Vídeo didático e fluido para apresentar a IA da Microsoft. Fluxo completo com roteiro estruturado, storyboard detalhado, ilustrações vetoriais no Illustrator e animação rítmica com personagem guia.
+              Vídeo didático e fluido para apresentar a IA da Microsoft. Roteiro estruturado, storyboard, ilustrações vetoriais no <strong>Illustrator</strong> e animação rítmica com personagem guia no <strong>After Effects</strong>.
             </p>
           </div>
           <div>
@@ -610,7 +726,7 @@
             <span class="card-tag tag-3d">★ Destaque 3D & Produto</span>
             <h3 class="card-title">Linha de Enobrecimentos — Simulação 3D no Blender</h3>
             <p class="card-desc">
-              Modelagem, sombreamento e simulação física fotorrealista no Blender para reproduzir acabamentos gráficos (Hot Stamping, Verniz Localizado, Soft Touch e Laminação Fosca). Utilizado no e-commerce da FuturaIM para guiar a compra e reduzir dúvidas e devoluções.
+              Modelagem, sombreamento e simulação física fotorrealista no <strong>Blender</strong> para reproduzir acabamentos gráficos (Hot Stamping, Verniz Localizado, Soft Touch e Laminação Fosca). Utilizado no e-commerce da FuturaIM para guiar a compra e reduzir dúvidas e devoluções.
             </p>
           </div>
           <div>
@@ -762,7 +878,7 @@
             <span class="card-tag tag-ai">VFX Avançado & IA Híbrida</span>
             <h3 class="card-title">Hiper Cap Brasil — Natal: Magia na Pós-Produção</h3>
             <p class="card-desc">
-              Pós-produção complexa com chroma key no DaVinci Resolve, montagem rítmica no Premiere Pro e criação de cenários virtuais utilizando IA generativa integrados via VFX e partículas no After Effects.
+              Pós-produção complexa com chroma key no <strong>DaVinci Resolve</strong>, montagem rítmica no <strong>Premiere Pro</strong> e criação de cenários virtuais utilizando IA generativa integrados via VFX e partículas no <strong>After Effects</strong>.
             </p>
           </div>
           <div>
