@@ -4,17 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Barbara Camarotti — Motion Designer & 3D Artist</title>
+  
+  <!-- Favicon Dinâmico com Ícone BC personalizado -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%237c3aed'/%3E%3Cstop offset='100%25' stop-color='%23ff2a7a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='26' fill='url(%23g)'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='central' font-family='system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif' font-weight='900' font-size='48' fill='%23ffffff'%3EBC%3C/text%3E%3C/svg%3E">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  
   <style>
     :root {
       --bg: #090a0f;
-      --card-bg: rgba(22, 24, 35, 0.7);
+      --card-bg: rgba(22, 24, 35, 0.72);
       --card-border: rgba(255, 255, 255, 0.08);
-      --card-hover: rgba(255, 255, 255, 0.16);
+      --card-hover: rgba(255, 255, 255, 0.18);
       --accent: #7c3aed;
-      --accent-glow: rgba(124, 58, 237, 0.35);
+      --accent-glow: rgba(124, 58, 237, 0.38);
       --pink: #ff2a7a;
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
@@ -32,32 +37,43 @@
       line-height: 1.6;
       overflow-x: hidden;
       background-image: 
-        radial-gradient(circle at 15% 10%, rgba(124, 58, 237, 0.15), transparent 40%),
-        radial-gradient(circle at 85% 25%, rgba(255, 42, 122, 0.09), transparent 45%),
-        radial-gradient(circle at 50% 70%, rgba(6, 182, 212, 0.05), transparent 50%);
+        radial-gradient(circle at 15% 10%, rgba(124, 58, 237, 0.16), transparent 40%),
+        radial-gradient(circle at 85% 25%, rgba(255, 42, 122, 0.1), transparent 45%),
+        radial-gradient(circle at 50% 70%, rgba(6, 182, 212, 0.06), transparent 50%);
       background-attachment: fixed;
     }
 
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* Topo e Header */
+    /* Topo / Header */
     header {
       position: sticky; top: 0; z-index: 200;
-      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-      background: rgba(9, 10, 15, 0.9);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      background: rgba(9, 10, 15, 0.92);
       border-bottom: 1px solid var(--card-border);
       padding: 14px 0;
     }
 
     .nav-inner { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
     .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-main); }
-    .brand-avatar {
-      width: 40px; height: 40px; border-radius: 10px;
+    
+    .brand-avatar-box {
+      width: 44px; height: 44px; border-radius: 12px;
+      overflow: hidden; flex-shrink: 0; position: relative;
       background: linear-gradient(135deg, var(--accent), var(--pink));
       display: flex; align-items: center; justify-content: center;
-      font-weight: 800; font-size: 1.05rem; flex-shrink: 0;
+      border: 1.5px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 12px var(--accent-glow);
     }
-    .brand-info h1 { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.3px; white-space: nowrap; }
+    .brand-avatar-img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
+      display: block;
+    }
+    .brand-avatar-fallback {
+      font-weight: 800; font-size: 1.05rem; color: #fff;
+    }
+
+    .brand-info h1 { font-size: 1.08rem; font-weight: 700; letter-spacing: -0.3px; white-space: nowrap; }
     .brand-info p { font-size: 0.78rem; color: var(--text-muted); }
 
     .nav-actions { display: flex; align-items: center; gap: 12px; position: relative; }
@@ -101,11 +117,11 @@
       top: calc(100% + 8px);
       right: 0;
       background: #12141f;
-      border: 1px solid rgba(124, 58, 237, 0.35);
+      border: 1px solid rgba(124, 58, 237, 0.4);
       border-radius: 12px;
       padding: 8px;
-      min-width: 220px;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 0 20px rgba(124, 58, 237, 0.2);
+      min-width: 250px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75), 0 0 25px rgba(124, 58, 237, 0.25);
       display: none;
       flex-direction: column;
       gap: 4px;
@@ -119,7 +135,7 @@
     .dropdown-item {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       padding: 10px 14px;
       color: #e2e8f0;
       text-decoration: none;
@@ -129,14 +145,15 @@
       transition: all 0.2s ease;
     }
     .dropdown-item:hover {
-      background: rgba(124, 58, 237, 0.2);
+      background: rgba(124, 58, 237, 0.22);
       color: #fff;
       transform: translateX(4px);
     }
     .dropdown-icon {
-      font-size: 1.1rem;
-      width: 22px;
+      font-size: 1.2rem;
+      width: 26px;
       text-align: center;
+      flex-shrink: 0;
     }
 
     /* Barra de Abas */
@@ -232,7 +249,9 @@
     }
     .learn-more-link:hover { color: #fff; transform: translateX(3px); }
 
-    /* Faixa de Marcas Horizontal */
+    /* =======================================================
+       FAIXA DE MARCAS - MARQUEE INFINITO E SUAVE
+       ======================================================= */
     .brands-showcase-box {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -245,7 +264,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       padding-bottom: 8px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
@@ -254,20 +273,37 @@
     }
     .brands-showcase-header span { font-size: 0.75rem; color: var(--text-muted); }
 
-    .brands-tags-list {
-      display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px;
-      -webkit-overflow-scrolling: touch; scrollbar-width: none; flex-wrap: nowrap;
+    .marquee-container {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     }
-    .brands-tags-list::-webkit-scrollbar { display: none; }
+
+    .marquee-track {
+      display: flex;
+      gap: 10px;
+      width: max-content;
+      animation: marqueeScroll 28s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
 
     .brand-pill {
-      display: inline-flex; align-items: center; padding: 7px 14px;
-      background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 8px; font-size: 0.82rem; font-weight: 600; color: #e2e8f0;
+      display: inline-flex; align-items: center; padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px; font-size: 0.84rem; font-weight: 600; color: #e2e8f0;
       transition: all 0.2s ease; white-space: nowrap; flex-shrink: 0;
     }
     .brand-pill:hover {
-      background: rgba(124, 58, 237, 0.18); border-color: rgba(124, 58, 237, 0.5); color: #fff;
+      background: rgba(124, 58, 237, 0.25); border-color: rgba(124, 58, 237, 0.6); color: #fff;
     }
 
     /* Números de Alto Impacto */
@@ -294,7 +330,7 @@
       font-size: 0.76rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
     }
 
-    /* O Que Eu Faço */
+    /* Especialidades */
     .section-title {
       font-size: 1.3rem; font-weight: 800; margin: 28px 0 14px; display: flex; align-items: center; gap: 10px;
     }
@@ -316,21 +352,69 @@
     .service-title { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
     .service-desc { font-size: 0.86rem; color: var(--text-muted); line-height: 1.5; }
 
+    /* =======================================================
+       TRAJETÓRIA PROFISSIONAL & TIMELINE DE CARREIRA
+       ======================================================= */
     .bio-extended-section {
       background: rgba(255, 255, 255, 0.02); border: 1px solid var(--card-border);
-      border-radius: var(--radius); padding: 30px; margin-top: 36px;
+      border-radius: var(--radius); padding: 32px 28px; margin-top: 36px;
     }
-    .bio-extended-section h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 12px; color: #fff; }
-    .bio-extended-section p { font-size: 0.94rem; color: #cbd5e1; line-height: 1.65; margin-bottom: 16px; }
+    .bio-extended-section h3 { font-size: 1.35rem; font-weight: 800; margin-bottom: 12px; color: #fff; }
+    .bio-extended-section p { font-size: 0.95rem; color: #cbd5e1; line-height: 1.65; margin-bottom: 16px; }
 
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-top: 20px; }
+    .career-timeline {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .career-item {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-left: 3px solid var(--accent);
+      border-radius: 10px;
+      padding: 20px;
+      transition: all 0.25s ease;
+    }
+    .career-item:hover {
+      border-color: var(--card-hover);
+      border-left-color: var(--pink);
+      transform: translateX(3px);
+    }
+
+    .career-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .career-role { font-size: 1.05rem; font-weight: 700; color: #fff; }
+    .career-company { color: #c4b5fd; font-weight: 600; font-size: 0.92rem; }
+    .career-period {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .career-desc { font-size: 0.88rem; color: #94a3b8; line-height: 1.55; margin-top: 6px; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 24px; }
     .skill-box { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 18px; }
     .skill-box h4 { font-size: 0.95rem; margin-bottom: 10px; color: #fff; }
     .skill-list { list-style: none; }
     .skill-list li { font-size: 0.84rem; color: var(--text-muted); margin-bottom: 6px; }
     .skill-list li::before { content: "•"; color: var(--accent); margin-right: 6px; font-weight: bold; }
 
-    /* Video Player Embed Padrão (16:9) */
+    /* =======================================================
+       PLAYERS DE VÍDEO (16:9, 9:16 VERTICAL E TELÃO ULTRA-WIDE)
+       ======================================================= */
+    /* Padrão 16:9 */
     .video-wrapper {
       position: relative;
       padding-bottom: 56.25%;
@@ -345,14 +429,26 @@
       position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
     }
 
-    /* Video Player Vertical / Story (9:16) */
+    /* Proporção Exata 1080x1920 (9:16 Vertical) */
     .video-wrapper.portrait {
-      padding-bottom: 140%;
-      max-width: 320px;
+      position: relative;
+      padding-bottom: 0;
+      height: auto;
+      aspect-ratio: 9 / 16;
+      max-width: 290px;
+      width: 100%;
       margin: 0 auto 14px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid rgba(124, 58, 237, 0.35);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+    .video-wrapper.portrait iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
     }
 
-    /* Video Player Embed Ultra-Wide (4.800 x 768 px - Telão LED) */
+    /* Telão LED Ultra-Wide (4.800 x 768 px) com ajuste fino de 5% */
     .video-wrapper-led {
       position: relative;
       width: 100%;
@@ -371,11 +467,11 @@
       width: 100%;
       height: calc(100% + 56px);
       border: 0;
-      transform: scaleX(1.20); /* Estica 5% nas laterais corrigindo distorção */
+      transform: scaleX(1.20); /* Estica 5% nas laterais corrigindo distorção de proporção */
       transform-origin: center center;
     }
 
-    /* Bento Grid Geral */
+    /* Bento Grid */
     .bento-grid {
       display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; margin-top: 12px;
     }
@@ -405,6 +501,7 @@
     .tag-ai { background: rgba(255, 42, 122, 0.15); color: #fda4af; border: 1px solid rgba(255, 42, 122, 0.3); }
     .tag-cutout { background: rgba(245, 158, 11, 0.15); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.3); }
     .tag-led { background: rgba(168, 85, 247, 0.2); color: #e9d5ff; border: 1px solid rgba(168, 85, 247, 0.45); }
+    .tag-vert { background: rgba(236, 72, 153, 0.15); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.35); }
 
     .card-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 6px; color: #fff; line-height: 1.3; }
     .card-desc { font-size: 0.86rem; color: var(--text-muted); margin-bottom: 14px; line-height: 1.5; }
@@ -468,7 +565,7 @@
       border-radius: 6px; margin-bottom: 10px;
     }
 
-    /* Bolinhas de Indicador (Estilo Carrossel Instagram) */
+    /* Bolinhas de Indicador (Estilo Instagram) */
     .slider-dots-container {
       display: flex;
       justify-content: center;
@@ -542,6 +639,7 @@
       .nav-slider-btn { padding: 8px 16px; font-size: 0.82rem; }
       .video-wrapper-led { aspect-ratio: auto; height: 140px; }
       .video-wrapper-led iframe { top: -50px; height: calc(100% + 50px); transform: scaleX(1.05); }
+      .career-header { flex-direction: column; gap: 4px; }
     }
 
     @media (max-width: 540px) {
@@ -556,16 +654,21 @@
 </head>
 <body>
 
-  <!-- Topo com Dropdown Fale Comigo -->
+  <!-- Topo com Foto Perfil e Menu Dropdown -->
   <header>
     <div class="container nav-inner">
       <a href="#" class="brand">
-        <div class="brand-avatar">BC</div>
+        <div class="brand-avatar-box">
+          <!-- Foto de Perfil da Barbara -->
+          <img src="https://lh3.googleusercontent.com/d/18APCu54tJ6LI7LJpO-CQb5YvElQgeRLm" alt="Barbara Camarotti" class="brand-avatar-img" onerror="this.style.display='none'; document.getElementById('avatar-fallback').style.display='block';">
+          <span id="avatar-fallback" class="brand-avatar-fallback" style="display: none;">BC</span>
+        </div>
         <div class="brand-info">
           <h1>Barbara Camarotti</h1>
           <p>Motion Designer & 3D Artist</p>
         </div>
       </a>
+      
       <div class="nav-actions">
         <div class="badge-status">
           <span class="status-dot"></span> Disponível
@@ -577,11 +680,11 @@
             Fale Comigo ▾
           </button>
           <div class="dropdown-menu" id="contactMenu">
-            <a href="https://wa.me/5511999999999" target="_blank" class="dropdown-item">
+            <a href="https://wa.me/5511991614359?text=Ol%C3%A1%2C%20Barbara!%20Vim%20pelo%20seu%20portf%C3%B3lio." target="_blank" class="dropdown-item">
               <span class="dropdown-icon">💬</span>
               <div>
                 <strong>WhatsApp</strong>
-                <div style="font-size: 0.72rem; color: #94a3b8;">Conversa direta</div>
+                <div style="font-size: 0.72rem; color: #94a3b8;">+55 (11) 9 9161-4359</div>
               </div>
             </a>
             <a href="mailto:barbaracamarotti@hotmail.com" class="dropdown-item">
@@ -591,11 +694,11 @@
                 <div style="font-size: 0.72rem; color: #94a3b8;">barbaracamarotti@hotmail.com</div>
               </div>
             </a>
-            <a href="https://www.linkedin.com/in/barbara-camarotti/" target="_blank" class="dropdown-item">
+            <a href="https://www.linkedin.com/in/barbaracamarotti" target="_blank" class="dropdown-item">
               <span class="dropdown-icon">🔗</span>
               <div>
                 <strong>LinkedIn</strong>
-                <div style="font-size: 0.72rem; color: #94a3b8;">Conectar no perfil</div>
+                <div style="font-size: 0.72rem; color: #94a3b8;">linkedin.com/in/barbaracamarotti</div>
               </div>
             </a>
           </div>
@@ -626,34 +729,51 @@
           Motion design estratégico de ponta a ponta: animações 2D no <strong>After Effects</strong>, simulações 3D no <strong>Blender</strong> e pós-produção avançada com apoio de <strong>IA generativa</strong>. Da concepção de storyboard à entrega para TV e digital.
         </p>
 
-        <a href="#bio-detalhes" class="learn-more-link">Saiba mais sobre minha trajetória ▾</a>
+        <a href="#bio-detalhes" class="learn-more-link">Saiba mais sobre minha trajetória profissional ▾</a>
 
         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-          <a href="mailto:barbaracamarotti@hotmail.com" class="btn btn-primary">Iniciar Conversa por E-mail</a>
+          <a href="https://wa.me/5511991614359?text=Ol%C3%A1%2C%20Barbara!%20Vim%20pelo%20seu%20portf%C3%B3lio." target="_blank" class="btn btn-primary">Chamar no WhatsApp 💬</a>
+          <a href="https://www.linkedin.com/in/barbaracamarotti" target="_blank" class="btn btn-secondary">Conectar no LinkedIn ↗</a>
           <a href="https://www.behance.net/barbaracamarot" target="_blank" class="btn btn-secondary">Portfólio no Behance ↗</a>
         </div>
       </div>
 
-      <!-- FAIXA DE MARCAS -->
+      <!-- FAIXA DE MARCAS COM ROLAGEM INFINITA E AUTOMÁTICA (MARQUEE) -->
       <div class="brands-showcase-box">
         <div class="brands-showcase-header">
           <h4>Marcas, Contas e Veículos Atendidos</h4>
-          <span>Deslize para ver ➔</span>
+          <span>Passe o mouse para pausar ➔</span>
         </div>
         
-        <div class="brands-tags-list">
-          <span class="brand-pill">HiperCap Brasil</span>
-          <span class="brand-pill">Caixa Econômica</span>
-          <span class="brand-pill">Vivo</span>
-          <span class="brand-pill">Metrô</span>
-          <span class="brand-pill">Apcap da Sorte</span>
-          <span class="brand-pill">Copastour</span>
-          <span class="brand-pill">FuturaIM</span>
-          <span class="brand-pill">GIV Online</span>
-          <span class="brand-pill">Instituto Fiocruz</span>
-          <span class="brand-pill">Akio Alimentos</span>
-          <span class="brand-pill">WBL</span>
-          <span class="brand-pill">Lei Paulo Gustavo</span>
+        <div class="marquee-container">
+          <div class="marquee-track">
+            <!-- Bloco 1 -->
+            <span class="brand-pill">HiperCap Brasil</span>
+            <span class="brand-pill">Caixa Econômica</span>
+            <span class="brand-pill">Vivo</span>
+            <span class="brand-pill">Metrô</span>
+            <span class="brand-pill">Apcap da Sorte</span>
+            <span class="brand-pill">Copastour</span>
+            <span class="brand-pill">FuturaIM</span>
+            <span class="brand-pill">GIV Online</span>
+            <span class="brand-pill">Instituto Fiocruz</span>
+            <span class="brand-pill">Akio Alimentos</span>
+            <span class="brand-pill">WBL</span>
+            <span class="brand-pill">Lei Paulo Gustavo</span>
+            <!-- Bloco 2 duplicado para continuidade infinita perfeita -->
+            <span class="brand-pill">HiperCap Brasil</span>
+            <span class="brand-pill">Caixa Econômica</span>
+            <span class="brand-pill">Vivo</span>
+            <span class="brand-pill">Metrô</span>
+            <span class="brand-pill">Apcap da Sorte</span>
+            <span class="brand-pill">Copastour</span>
+            <span class="brand-pill">FuturaIM</span>
+            <span class="brand-pill">GIV Online</span>
+            <span class="brand-pill">Instituto Fiocruz</span>
+            <span class="brand-pill">Akio Alimentos</span>
+            <span class="brand-pill">WBL</span>
+            <span class="brand-pill">Lei Paulo Gustavo</span>
+          </div>
         </div>
       </div>
 
@@ -713,15 +833,77 @@
         </div>
       </div>
 
-      <!-- Destino do Saiba Mais -->
+      <!-- MAIS SOBRE MIM: TRAJETÓRIA COMPLETA DE EMPREGOS -->
       <div id="bio-detalhes" class="bio-extended-section">
-        <h3>Trajetória Profissional & Formação</h3>
+        <h3>Mais Sobre Mim & Trajetória Profissional</h3>
         <p>
-          Atuo no mercado audiovisual com experiência sólida em agência, produtora e projetos corporativos. Na <strong>Inspira Comunicação Integrada</strong>, atuo como Motion Designer e Editora de Vídeo responsável por campanhas nacionais de grande repercussão para contas como Vivo, Caixa e HiperCap Brasil (incluindo peças com Fernanda Gentil e Ciro Bottini e campanha do Dia das Mulheres com mais de 1 milhão de visualizações).
+          Sou Motion Designer e Editora de Vídeo com experiência consolidada em agência de publicidade, produtora de televisão e empresas do setor gráfico e de eventos. Combino direção de arte refinada, rigor técnico de animação e domínio de ferramentas contemporâneas (incluindo simulação 3D e IA generativa) para viabilizar produções com agilidade e alto impacto visual.
         </p>
-        <p>
-          Minha experiência também inclui passagem pela <strong>Sua Produtora</strong> na edição de comerciais e programas veiculados em TV aberta (Band, RedeTV! e NGT), além de cobertura de eventos institucionais e documentários viabilizados pelo edital cultural da <strong>Lei Paulo Gustavo</strong>.
-        </p>
+
+        <!-- Timeline de Empregos -->
+        <h4 style="font-size: 1.15rem; color: #fff; margin: 24px 0 12px; display: flex; align-items: center; gap: 8px;">
+          💼 Experiência & Histórico Profissional
+        </h4>
+
+        <div class="career-timeline">
+          
+          <div class="career-item">
+            <div class="career-header">
+              <div>
+                <span class="career-role">Motion Designer & Editora de Vídeo</span>
+                <span style="color: var(--text-muted); margin: 0 6px;">•</span>
+                <span class="career-company">Inspira Comunicação Integrada</span>
+              </div>
+              <span class="career-period">SET 2023 — ATUAL</span>
+            </div>
+            <p class="career-desc">
+              Responsável pela entrega semanal de mais de 25 vídeos entre conteúdos para redes sociais e peças audiovisuais complexas. Atendimento direto a contas nacionais de peso como <strong>HiperCap Brasil</strong>, <strong>Vivo</strong> e <strong>Caixa Econômica</strong>. Criação de identidades visuais em movimento, animação 2D, correção de cor e finalização técnica. Destaque para a campanha nacional com <strong>Fernanda Gentil e Ciro Bottini</strong> e a campanha do Dia das Mulheres para Apcap da Sorte, com mais de <strong>1 milhão de visualizações</strong>.
+            </p>
+          </div>
+
+          <div class="career-item">
+            <div class="career-header">
+              <div>
+                <span class="career-role">Editora de Vídeo Jr.</span>
+                <span style="color: var(--text-muted); margin: 0 6px;">•</span>
+                <span class="career-company">Sua Produtora</span>
+              </div>
+              <span class="career-period">MAI 2023 — JUL 2023</span>
+            </div>
+            <p class="career-desc">
+              Edição de vídeos comerciais e programas televisivos de veiculação nacional em TV aberta (<strong>Band</strong>, <strong>RedeTV!</strong> e <strong>NGT</strong>). Criação de vinhetas gráficas e animação de peças para redes sociais voltadas a anúncios de alta performance e audiência televisiva.
+            </p>
+          </div>
+
+          <div class="career-item">
+            <div class="career-header">
+              <div>
+                <span class="career-role">Estágio — Edição & Design</span>
+                <span style="color: var(--text-muted); margin: 0 6px;">•</span>
+                <span class="career-company">Win 10 Marketing</span>
+              </div>
+              <span class="career-period">ABR 2022 — MAI 2023</span>
+            </div>
+            <p class="career-desc">
+              Produção e edição de vídeos e artes para redes sociais de marcas diversas. Acompanhamento de gravações externas em estúdio e diárias em clientes, gravação e edição de podcasts e captação de materiais audiovisuais.
+            </p>
+          </div>
+
+          <div class="career-item">
+            <div class="career-header">
+              <div>
+                <span class="career-role">Videomaker & Motion Designer Freelancer</span>
+                <span style="color: var(--text-muted); margin: 0 6px;">•</span>
+                <span class="career-company">Projetos Independentes</span>
+              </div>
+              <span class="career-period">FREELANCE CONTÍNUO</span>
+            </div>
+            <p class="career-desc">
+              Produção de vídeos institucionais e cobertura de eventos para empresas do Alto Tietê, incluindo lançamento oficial para <strong>Akio Alimentos</strong>. Direção e edição de documentários culturais viabilizados pelo edital da <strong>Lei Paulo Gustavo</strong> em parceria com a Prefeitura de Salesópolis.
+            </p>
+          </div>
+
+        </div>
 
         <div class="skills-grid">
           <div class="skill-box">
@@ -732,10 +914,11 @@
             </ul>
           </div>
           <div class="skill-box">
-            <h4>Localização & Idiomas</h4>
+            <h4>Contato & Localização</h4>
             <ul class="skill-list">
               <li>Poá, São Paulo — Brasil</li>
-              <li>Inglês intermediário para equipes remotas</li>
+              <li>WhatsApp: +55 (11) 9 9161-4359</li>
+              <li>E-mail: barbaracamarotti@hotmail.com</li>
             </ul>
           </div>
         </div>
@@ -765,7 +948,7 @@
           </div>
           <div class="slider-video-meta">
             <h4 class="slider-v-title" id="title-enobrecimento">Laminação Fosca com Verniz Localizado</h4>
-            <div id="impact-enobrecimento" class="slider-v-impact">Impacto no E-commerce: Redução de dúvidas sobre contraste e alta conversão de itens corporativos.</div>
+            <div id="impact-enobrecimento" class="slider-v-impact">Impacto no E-commerce: Redução de dúvidas sobre contraste e alta conversão de impressos corporativos.</div>
             <p class="slider-v-desc" id="desc-enobrecimento">Simulação física precisa contrastando a base aveludada sem reflexos com o brilho espelhado do verniz localizado.</p>
             <div style="margin-top: 8px;">
               <a id="link-enobrecimento" href="https://drive.google.com/file/d/1PMN73iRKX_MB5fHzJ7ODH5Ww76e0a5nZ/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo em Alta Resolução ↗</a>
@@ -783,28 +966,56 @@
       </div>
 
       <div class="bento-grid">
+        
+        <!-- G&S Logo Reveal (1080x1920 Vertical) -->
         <div class="bento-card col-6">
           <div>
-            <span class="card-tag">Brand Motion</span>
-            <div class="video-wrapper">
+            <span class="card-tag tag-vert">Brand Motion • 1080x1920</span>
+            <div class="video-wrapper portrait">
               <iframe src="https://drive.google.com/file/d/1V5qf3jr2tyDam9Y4klgECmjEVzAKncdJ/preview" allow="autoplay"></iframe>
             </div>
-            <h3 class="card-title">G&S — Revelação de Marca (Logo Reveal)</h3>
-            <p class="card-desc">
-              Vinheta de abertura com reveal refinado de logotipo, enfatizando elegância, profundidade visual e curvas de aceleração orgânicas.
+            <h3 class="card-title" style="text-align: center;">G&S — Revelação de Marca (Logo Reveal)</h3>
+            <p class="card-desc" style="text-align: center;">
+              Vinheta vertical de abertura com reveal refinado de logotipo, enfatizando elegância, profundidade visual e curvas de aceleração orgânicas em 1080x1920.
             </p>
           </div>
           <div>
-            <div class="card-meta">
+            <div class="card-meta" style="justify-content: center;">
               <span class="pill">After Effects</span>
-              <span class="pill">Identidade Visual</span>
+              <span class="pill">Vertical 1080x1920</span>
+              <span class="pill">Logo Reveal</span>
             </div>
           </div>
         </div>
 
+        <!-- Seleção de IMpressos (1080x1920 Vertical) -->
+        <div class="bento-card col-6">
+          <div>
+            <span class="card-tag tag-vert">Alta Performance & IA • 1080x1920</span>
+            <div class="video-wrapper portrait">
+              <iframe src="https://drive.google.com/file/d/1f72Cf3WlEbYGNh0K2CAQHWWYfQVEVmbX/preview" allow="autoplay"></iframe>
+            </div>
+            <h3 class="card-title" style="text-align: center;">Seleção de IMpressos (FuturaIM)</h3>
+            <p class="card-desc" style="text-align: center;">
+              Apresentação dinâmica dos produtos mais vendidos da gráfica em clima esportivo em 1080x1920, conciliando After Effects e suporte de ferramentas de IA generativa.
+            </p>
+          </div>
+          <div>
+            <div class="card-meta" style="justify-content: center;">
+              <span class="pill">Vertical 1080x1920</span>
+              <span class="pill">After Effects</span>
+              <span class="pill">IA Generativa</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Microsoft Copilot (Vídeo do Drive Integrado) -->
         <div class="bento-card col-6">
           <div>
             <span class="card-tag tag-tech">Tech Explainer & Animação 2D</span>
+            <div class="video-wrapper">
+              <iframe src="https://drive.google.com/file/d/1bcRZQBWZYeSEzBwGZDbKMyx7eXCLJaFc/preview" allow="autoplay"></iframe>
+            </div>
             <h3 class="card-title">Microsoft Copilot — Explicando o Futuro</h3>
             <p class="card-desc">
               Vídeo didático e fluido para apresentar a IA da Microsoft. Roteiro estruturado, storyboard, ilustrações vetoriais no <strong>Illustrator</strong> e animação rítmica com personagem guia no <strong>After Effects</strong>.
@@ -817,31 +1028,12 @@
               <span class="pill">Character Rig</span>
             </div>
             <div class="card-links">
-              <a href="https://www.behance.net/barbaracamarot" target="_blank" class="card-link-btn">Ver Detalhes no Behance ↗</a>
+              <a href="https://drive.google.com/file/d/1bcRZQBWZYeSEzBwGZDbKMyx7eXCLJaFc/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo em Alta Resolução ↗</a>
             </div>
           </div>
         </div>
 
-        <div class="bento-card col-6">
-          <div>
-            <span class="card-tag tag-ai">Alta Performance & IA</span>
-            <div class="video-wrapper">
-              <iframe src="https://drive.google.com/file/d/1f72Cf3WlEbYGNh0K2CAQHWWYfQVEVmbX/preview" allow="autoplay"></iframe>
-            </div>
-            <h3 class="card-title">Seleção de IMpressos (FuturaIM)</h3>
-            <p class="card-desc">
-              Apresentação dinâmica dos produtos mais vendidos da gráfica em clima esportivo, conciliando prazo curto com After Effects e suporte de ferramentas de IA generativa.
-            </p>
-          </div>
-          <div>
-            <div class="card-meta">
-              <span class="pill">After Effects</span>
-              <span class="pill">IA Generativa</span>
-              <span class="pill">E-commerce</span>
-            </div>
-          </div>
-        </div>
-
+        <!-- Zé Luiz -->
         <div class="bento-card col-6">
           <div>
             <span class="card-tag tag-cutout">Direção de Arte & Colagem</span>
@@ -850,7 +1042,7 @@
             </div>
             <h3 class="card-title">Zé Luiz — Presente nos Bairros</h3>
             <p class="card-desc">
-              Animação baseada em técnica de recorte e colagem digital (*cutout motion*). Storyboard minucioso e tipografia marcante.
+              Animação baseada em técnica de recorte e colagem digital (*cutout motion*). Storyboard minucioso e tipografia marcante, traduzindo mensagem comunitária.
             </p>
           </div>
           <div>
@@ -864,13 +1056,14 @@
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
     <!-- 3. ABA: Motion Design -->
     <section id="tab-motion" class="tab-content">
       
-      <!-- CARROSSEL FIOCRUZ - BIODIVERSIDADE (7 EPISÓDIOS) COM DOTS -->
+      <!-- CARROSSEL FIOCRUZ - BIODIVERSIDADE (7 EPISÓDIOS COM DOTS) -->
       <div class="slider-section">
         <div class="slider-header">
           <div>
@@ -906,9 +1099,38 @@
       </div>
 
       <div class="bento-grid">
+        
+        <!-- Graficamente Chuteira Rosa (Vídeo do Drive Integrado) -->
+        <div class="bento-card col-6">
+          <div>
+            <span class="card-tag">Marketing Visual & Teoria</span>
+            <div class="video-wrapper">
+              <iframe src="https://drive.google.com/file/d/1_MvazwuF9JuZhno8BU_SyE9Abdhxh5QY/preview" allow="autoplay"></iframe>
+            </div>
+            <h3 class="card-title">Graficamente: Chuteira Rosa</h3>
+            <p class="card-desc">
+              Análise visual e ritmo dinâmico demonstrando como o contraste das marcas esportivas na Copa do Mundo se traduz em atenção e conversão gráfica.
+            </p>
+          </div>
+          <div>
+            <div class="card-meta">
+              <span class="pill">Tipografia Cinética</span>
+              <span class="pill">Retenção de Audiência</span>
+              <span class="pill">After Effects</span>
+            </div>
+            <div class="card-links">
+              <a href="https://drive.google.com/file/d/1_MvazwuF9JuZhno8BU_SyE9Abdhxh5QY/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo em Alta Resolução ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Microsoft Copilot -->
         <div class="bento-card col-6">
           <div>
             <span class="card-tag tag-tech">Tech Explainer & 2D</span>
+            <div class="video-wrapper">
+              <iframe src="https://drive.google.com/file/d/1bcRZQBWZYeSEzBwGZDbKMyx7eXCLJaFc/preview" allow="autoplay"></iframe>
+            </div>
             <h3 class="card-title">Microsoft Copilot — Explicando o Futuro</h3>
             <p class="card-desc">
               Motion didático apresentando as funções da IA da Microsoft. Roteiro estruturado, storyboard, ilustrações vetoriais e animação de personagem guia.
@@ -921,41 +1143,11 @@
               <span class="pill">Character Rig</span>
             </div>
             <div class="card-links">
-              <a href="https://www.behance.net/barbaracamarot" target="_blank" class="card-link-btn">Ver Case no Behance ↗</a>
+              <a href="https://drive.google.com/file/d/1bcRZQBWZYeSEzBwGZDbKMyx7eXCLJaFc/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo em Alta Resolução ↗</a>
             </div>
           </div>
         </div>
 
-        <div class="bento-card col-6">
-          <div>
-            <span class="card-tag">Brand Motion</span>
-            <div class="video-wrapper">
-              <iframe src="https://drive.google.com/file/d/1V5qf3jr2tyDam9Y4klgECmjEVzAKncdJ/preview" allow="autoplay"></iframe>
-            </div>
-            <h3 class="card-title">G&S — Revelação de Marca (Logo Reveal)</h3>
-            <p class="card-desc">Vinheta animada com revelação fluida e curvas de aceleração refinadas.</p>
-          </div>
-          <div>
-            <div class="card-meta">
-              <span class="pill">After Effects</span>
-              <span class="pill">Identidade Visual</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="bento-card col-12">
-          <div>
-            <span class="card-tag">Marketing & Teoria</span>
-            <h3 class="card-title">Graficamente: Chuteira Rosa</h3>
-            <p class="card-desc">Análise visual e ritmo dinâmico demonstrando como o contraste das marcas esportivas na Copa do Mundo se traduz em atenção e conversão gráfica.</p>
-          </div>
-          <div>
-            <div class="card-meta">
-              <span class="pill">Tipografia Cinética</span>
-              <span class="pill">Retenção de Audiência</span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -963,26 +1155,25 @@
     <section id="tab-edicao" class="tab-content">
       <div class="bento-grid">
         
-        <!-- Zé Luiz -->
+        <!-- Story Comunidade (Proporção 1080x1920 Vertical) -->
         <div class="bento-card col-6">
           <div>
-            <span class="card-tag tag-cutout">Direção de Arte & Colagem</span>
-            <div class="video-wrapper">
-              <iframe src="https://drive.google.com/file/d/12b_LbMbtK-5Jwci3acBxq3z_n6KbJ6m2/preview" allow="autoplay"></iframe>
+            <span class="card-tag tag-vert">Social Media Motion • 1080x1920</span>
+            <div class="video-wrapper portrait">
+              <iframe src="https://drive.google.com/file/d/1ixce0OQ_ebdKmrf3GYuRHR54BhSjQbuA/preview" allow="autoplay"></iframe>
             </div>
-            <h3 class="card-title">Zé Luiz — Presente nos Bairros</h3>
-            <p class="card-desc">
-              Animação baseada em técnica de recorte e colagem digital (*cutout motion*). Storyboard minucioso e tipografia marcante, traduzindo mensagem comunitária de forma estética e moderna.
+            <h3 class="card-title" style="text-align: center;">Story — Participe da Comunidade</h3>
+            <p class="card-desc" style="text-align: center;">
+              Peça vertical em 1080x1920 com animação de cards de interface, transições ágeis e microinterações de engajamento para redes sociais.
             </p>
           </div>
           <div>
-            <div class="card-meta">
-              <span class="pill">Colagem Digital</span>
-              <span class="pill">After Effects</span>
-              <span class="pill">Photoshop Cutout</span>
+            <div class="card-meta" style="justify-content: center;">
+              <span class="pill">Formato 1080x1920</span>
+              <span class="pill">Motion para Social</span>
             </div>
-            <div class="card-links">
-              <a href="https://www.behance.net/barbaracamarot" target="_blank" class="card-link-btn">Ver Case no Behance ↗</a>
+            <div class="card-links" style="justify-content: center;">
+              <a href="https://drive.google.com/file/d/1ixce0OQ_ebdKmrf3GYuRHR54BhSjQbuA/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo Original ↗</a>
             </div>
           </div>
         </div>
@@ -995,7 +1186,9 @@
               <iframe src="https://drive.google.com/file/d/1riWnvRTbrygwBWTrsOiiRbTfyLTgzdKe/preview" allow="autoplay"></iframe>
             </div>
             <h3 class="card-title">Jornalístico Ilha Anchieta</h3>
-            <p class="card-desc">Documentário e cobertura especial viabilizado pelo edital cultural da <strong>Lei Paulo Gustavo</strong> e agência <strong>Inspira</strong>. Edição narrativa de grande profundidade histórica e cultural.</p>
+            <p class="card-desc">
+              Documentário e cobertura especial viabilizado pelo edital cultural da <strong>Lei Paulo Gustavo</strong> e agência <strong>Inspira</strong>. Edição narrativa de grande profundidade histórica e cultural.
+            </p>
           </div>
           <div>
             <div class="card-meta">
@@ -1030,24 +1223,6 @@
           </div>
         </div>
 
-        <!-- Seleção de IMpressos -->
-        <div class="bento-card col-6">
-          <div>
-            <span class="card-tag tag-ai">Alta Performance & IA</span>
-            <div class="video-wrapper">
-              <iframe src="https://drive.google.com/file/d/1f72Cf3WlEbYGNh0K2CAQHWWYfQVEVmbX/preview" allow="autoplay"></iframe>
-            </div>
-            <h3 class="card-title">Seleção de IMpressos (FuturaIM)</h3>
-            <p class="card-desc">Vídeo comercial acelerado para FuturaIM unindo After Effects e IA generativa no pipeline criativo para atender a prazos curtos de entrega.</p>
-          </div>
-          <div>
-            <div class="card-meta">
-              <span class="pill">After Effects</span>
-              <span class="pill">E-commerce Gráfico</span>
-            </div>
-          </div>
-        </div>
-
         <!-- Basilis 50 Anos -->
         <div class="bento-card col-6">
           <div>
@@ -1065,24 +1240,6 @@
             </div>
             <div class="card-links">
               <a href="https://drive.google.com/file/d/1-nA1IofRi63GkM5bmxve64Kqf_apWpYs/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo Original ↗</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Story Comunidade (Proporção 9:16 Vertical) -->
-        <div class="bento-card col-6">
-          <div>
-            <span class="card-tag">Social Media Motion (9:16)</span>
-            <div class="video-wrapper portrait">
-              <iframe src="https://drive.google.com/file/d/1ixce0OQ_ebdKmrf3GYuRHR54BhSjQbuA/preview" allow="autoplay"></iframe>
-            </div>
-            <h3 class="card-title" style="text-align: center;">Story — Participe da Comunidade</h3>
-            <p class="card-desc" style="text-align: center;">Peça vertical com animação de cards de interface, transições ágeis e microinterações de engajamento para redes sociais.</p>
-          </div>
-          <div>
-            <div class="card-meta" style="justify-content: center;">
-              <span class="pill">Formato 9:16</span>
-              <span class="pill">Motion para Social</span>
             </div>
           </div>
         </div>
