@@ -421,11 +421,11 @@
       border-radius: 10px;
       background: #000;
       margin-bottom: 14px;
-      border: 1px solid rgba(124, 58, 237, 0.35);
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(124, 58, 237, 0.2);
+      border: 1px solid rgba(124, 58, 237, 0.4);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(124, 58, 237, 0.25);
     }
 
-    /* Compensação para ocultar a barra preta do Google Drive e centralizar o vídeo */
+    /* Centralização perfeita + esticar 5% nas laterais (scaleX: 1.05) */
     .video-wrapper-led iframe {
       position: absolute;
       top: -56px;
@@ -433,7 +433,26 @@
       width: 100%;
       height: calc(100% + 56px);
       border: 0;
+      transform: scaleX(1.05); /* Estica 5% horizontalmente */
+      transform-origin: center center;
     }
+
+    /* Mini Botões de Episódios (Fiocruz) */
+    .pill-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 5px 11px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .pill-btn:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+    .pill-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 
     /* Bento Grid Geral */
     .bento-grid {
@@ -614,6 +633,7 @@
       .video-wrapper-led iframe {
         top: -50px;
         height: calc(100% + 50px);
+        transform: scaleX(1.05);
       }
     }
 
@@ -893,17 +913,31 @@
           </div>
         </div>
 
+        <!-- FIOCRUZ COM SELETOR DE TODOS OS 7 EPISÓDIOS -->
         <div class="bento-card col-5">
           <div>
             <span class="card-tag tag-tech">Motion Institucional & Ciência</span>
             <div class="video-wrapper">
-              <iframe src="https://drive.google.com/file/d/1hoGjJV3ItYBgjT4dHegpMLz3evaGrNgD/preview" allow="autoplay"></iframe>
+              <iframe id="iframe-fiocruz" src="https://drive.google.com/file/d/1hoGjJV3ItYBgjT4dHegpMLz3evaGrNgD/preview" allow="autoplay"></iframe>
             </div>
-            <h3 class="card-title">Instituto Fiocruz — Biodiversidade</h3>
-            <p class="card-desc">Série de animações e motion design desenvolvidos para divulgação científica e institucional do Instituto Fiocruz.</p>
+            
+            <!-- Seletor de episódios da Fiocruz -->
+            <div style="display: flex; gap: 5px; overflow-x: auto; padding-bottom: 6px; margin-bottom: 10px;">
+              <button class="pill-btn active" onclick="setFiocruz(1, '1hoGjJV3ItYBgjT4dHegpMLz3evaGrNgD', this)">Ep 01</button>
+              <button class="pill-btn" onclick="setFiocruz(2, '1hL84VV1F1tF-3o_eMX00lXkZCgaeSeYJ', this)">Ep 02</button>
+              <button class="pill-btn" onclick="setFiocruz(3, '1-nTeuq0oIfrnTm6urfd82z0NPBCmzUdj', this)">Ep 03</button>
+              <button class="pill-btn" onclick="setFiocruz(4, '1Coq-YKByg4JO1kyXu_4xwwWA6gplbxCi', this)">Ep 04</button>
+              <button class="pill-btn" onclick="setFiocruz(5, '1Um8TTw4MqtglJHrL-9LJTUgiKJqf5SsZ', this)">Ep 05</button>
+              <button class="pill-btn" onclick="setFiocruz(6, '11w0NfRX_RDiVX4JHaPWj2KAczPiJAlYT', this)">Ep 06</button>
+              <button class="pill-btn" onclick="setFiocruz(7, '1Ws963xbDXDSFIGO4xXjs3nXzdYvEJkOh', this)">Ep 07</button>
+            </div>
+
+            <h3 class="card-title" id="title-fiocruz">Instituto Fiocruz — Biodiversidade (Ep. 01)</h3>
+            <p class="card-desc">Série de animações educativas e motion design desenvolvidos para divulgação científica da Fundação Oswaldo Cruz.</p>
           </div>
           <div>
             <div class="card-meta">
+              <span class="pill">7 Episódios</span>
               <span class="pill">Motion Educativo</span>
               <span class="pill">Fiocruz</span>
             </div>
@@ -949,6 +983,8 @@
     <!-- 4. ABA: Edição + Motion -->
     <section id="tab-edicao" class="tab-content">
       <div class="bento-grid">
+        
+        <!-- Zé Luiz -->
         <div class="bento-card col-6">
           <div>
             <span class="card-tag tag-cutout">Direção de Arte & Colagem</span>
@@ -972,6 +1008,50 @@
           </div>
         </div>
 
+        <!-- Jornalístico Ilha Anchieta (Lei Paulo Gustavo / Inspira) -->
+        <div class="bento-card col-6">
+          <div>
+            <span class="card-tag">Documentário & Cultura</span>
+            <div class="video-wrapper">
+              <iframe src="https://drive.google.com/file/d/1riWnvRTbrygwBWTrsOiiRbTfyLTgzdKe/preview" allow="autoplay"></iframe>
+            </div>
+            <h3 class="card-title">Jornalístico Ilha Anchieta</h3>
+            <p class="card-desc">Documentário e cobertura especial viabilizado pelo edital cultural da <strong>Lei Paulo Gustavo</strong> e agência <strong>Inspira</strong>. Edição narrativa de grande profundidade histórica e cultural.</p>
+          </div>
+          <div>
+            <div class="card-meta">
+              <span class="pill">Lei Paulo Gustavo</span>
+              <span class="pill">Edição Documental</span>
+              <span class="pill">Inspira</span>
+            </div>
+            <div class="card-links">
+              <a href="https://drive.google.com/file/d/1riWnvRTbrygwBWTrsOiiRbTfyLTgzdKe/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo Original ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- O Rei do Litoral Tá On -->
+        <div class="bento-card col-6">
+          <div>
+            <span class="card-tag tag-ai">Campanha Comercial</span>
+            <div class="video-wrapper">
+              <iframe src="https://drive.google.com/file/d/19fY4C7SbiIAABqyrcB8AFHA1xm_JAv6Z/preview" allow="autoplay"></iframe>
+            </div>
+            <h3 class="card-title">O Rei do Litoral Tá On...</h3>
+            <p class="card-desc">Peça comercial promocional com animação de tipografia, motion graphics vibrante e edição com foco em energia, engajamento e vendas.</p>
+          </div>
+          <div>
+            <div class="card-meta">
+              <span class="pill">After Effects</span>
+              <span class="pill">Comercial Promocional</span>
+            </div>
+            <div class="card-links">
+              <a href="https://drive.google.com/file/d/19fY4C7SbiIAABqyrcB8AFHA1xm_JAv6Z/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo Original ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seleção de IMpressos -->
         <div class="bento-card col-6">
           <div>
             <span class="card-tag tag-ai">Alta Performance & IA</span>
@@ -989,6 +1069,28 @@
           </div>
         </div>
 
+        <!-- Basilis 50 Anos -->
+        <div class="bento-card col-6">
+          <div>
+            <span class="card-tag">Evento Corporativo</span>
+            <div class="video-wrapper">
+              <iframe src="https://drive.google.com/file/d/1-nA1IofRi63GkM5bmxve64Kqf_apWpYs/preview" allow="autoplay"></iframe>
+            </div>
+            <h3 class="card-title">Basilis 50 Anos — Evento</h3>
+            <p class="card-desc">Cobertura e edição audiovisual comemorativa dos 50 anos da Basilis, retratando momentos marcantes, entrevistas e atmosfera institucional.</p>
+          </div>
+          <div>
+            <div class="card-meta">
+              <span class="pill">Cobertura de Evento</span>
+              <span class="pill">Institucional</span>
+            </div>
+            <div class="card-links">
+              <a href="https://drive.google.com/file/d/1-nA1IofRi63GkM5bmxve64Kqf_apWpYs/view?usp=drivesdk" target="_blank" class="card-link-btn">Abrir Vídeo Original ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Comunidade -->
         <div class="bento-card col-6">
           <div>
             <span class="card-tag">Social Media Motion</span>
@@ -1006,19 +1108,6 @@
           </div>
         </div>
 
-        <div class="bento-card col-6">
-          <div>
-            <span class="card-tag">Cobertura de Evento & Food</span>
-            <h3 class="card-title">Akio: Lançamento de Sabores</h3>
-            <p class="card-desc">Cobertura audiovisual do evento de lançamento dos molhos Akio com receitas do chef Paulo Yoller. Edição sensorial focada na energia do evento e no produto.</p>
-          </div>
-          <div>
-            <div class="card-meta">
-              <span class="pill">Food & Beverage</span>
-              <span class="pill">Montagem Sensorial</span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -1034,7 +1123,7 @@
       </div>
 
       <!-- ==============================================
-           SESSÃO 1: TELÃO JOVEM PAN (PROPORÇÃO 4.800 x 768 px)
+           SESSÃO 1: TELÃO JOVEM PAN (4.800 x 768 px COM AJUSTE DE 5%)
            ============================================== -->
       <div class="slider-section">
         <div class="slider-header">
@@ -1049,7 +1138,7 @@
         </div>
 
         <div class="slider-stage">
-          <!-- Player adaptado e compensado para centralização perfeita -->
+          <!-- Player adaptado, centralizado e esticado 5% nas laterais -->
           <div class="video-wrapper-led">
             <iframe id="iframe-telao" src="https://drive.google.com/file/d/11_qmfi-Vp6K2fdOjxmYmcDyaZk4Jscix/preview" allow="autoplay" allowfullscreen></iframe>
           </div>
@@ -1090,6 +1179,9 @@
           <div class="slider-video-meta">
             <h4 class="slider-v-title" id="title-comerciais">Comercial — 17/07/2024</h4>
             <p class="slider-v-desc" id="desc-comerciais">Comercial de varejo com foco em prêmios e apresentação dinâmica para TV.</p>
+            <div style="margin-top: 8px;">
+              <a id="link-comerciais" href="https://www.youtube.com/watch?v=K5JGDsgCqSY" target="_blank" class="card-link-btn">Assistir no YouTube ↗</a>
+            </div>
           </div>
         </div>
 
@@ -1121,6 +1213,9 @@
           <div class="slider-video-meta">
             <h4 class="slider-v-title" id="title-materias">História de Ganhador 01</h4>
             <p class="slider-v-desc" id="desc-materias">Reportagem especial acompanhando a entrega de prêmios e a emoção da família contemplada.</p>
+            <div style="margin-top: 8px;">
+              <a id="link-materias" href="https://www.youtube.com/watch?v=vhuQgJuOO_c" target="_blank" class="card-link-btn">Assistir no YouTube ↗</a>
+            </div>
           </div>
         </div>
 
@@ -1141,6 +1236,14 @@
 
       document.getElementById(tabId).classList.add('active');
       buttonElement.classList.add('active');
+    }
+
+    // Seletor interativo da série Fiocruz
+    function setFiocruz(num, fileId, btnElement) {
+      document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+      btnElement.classList.add('active');
+      document.getElementById('iframe-fiocruz').src = `https://drive.google.com/file/d/${fileId}/preview`;
+      document.getElementById('title-fiocruz').innerText = `Instituto Fiocruz — Biodiversidade (Ep. 0${num})`;
     }
 
     // ============================================
@@ -1233,49 +1336,49 @@
       comerciais: {
         index: 0,
         items: [
-          { title: "Comercial — 17/07/2024", desc: "Comercial de varejo com foco em prêmios e apresentação dinâmica para TV.", src: "https://www.youtube.com/embed/K5JGDsgCqSY" },
-          { title: "Comercial — 24/07/2024", desc: "Edição com cortes rítmicos e cartelas de premiação de alta conversão.", src: "https://www.youtube.com/embed/vFr5UgK0rwY" },
-          { title: "Comercial — 31/07/2024", desc: "Campanha semanal de prêmios com animações tipográficas e reforço visual.", src: "https://www.youtube.com/embed/0k-jjlliXoU" },
-          { title: "Campanha Correios", desc: "Campanha nacional focada na rede de vendas dos Correios em todo o Brasil.", src: "https://www.youtube.com/embed/WtCTLH9oPCc" },
-          { title: "Comercial — 04/12/2024", desc: "Comercial de fim de ano com ritmo acelerado e grafismos de celebração.", src: "https://www.youtube.com/embed/fmuqxfJplec" },
-          { title: "Comercial — 12/12/2024", desc: "Peça de alta performance para TV e redes com ofertas de fim de ano.", src: "https://www.youtube.com/embed/IVxPqvUsSVQ" },
-          { title: "Comercial — 08/01/2025", desc: "Comercial de início de ano com metas, renovação e destaque aos prêmios principais.", src: "https://www.youtube.com/embed/7XFi5-vZT5M" },
-          { title: "Comercial — 29/01/2025", desc: "Edição para TV com cortes dinâmicos e reforço do aplicativo oficial.", src: "https://www.youtube.com/embed/D8QGsNcXYcY" },
-          { title: "Comercial — 19/02/2025", desc: "Campanha de prêmios com animações tipográficas e ritmo comercial.", src: "https://www.youtube.com/embed/eQdLAKAIWC8" },
-          { title: "Comercial — 19/03/2025", desc: "Comercial semanal com foco em histórias de ganhadores e chamada de ação.", src: "https://www.youtube.com/embed/rLA1WnsnjME" },
-          { title: "Comercial — 04/04/2025", desc: "Edição expressa de varejo para veiculação multiplataforma.", src: "https://www.youtube.com/embed/mSSNpPxx5C4" },
-          { title: "Comercial — 23/04/2025", desc: "Comercial de TV com cartelas dinâmicas e sincronia com trilha sonora.", src: "https://www.youtube.com/embed/fSxMKvM6484" },
-          { title: "Comercial — 30/04/2025", desc: "Peça promocional com chamadas de prêmios e pontos de venda físicos.", src: "https://www.youtube.com/embed/X0sRWRv4Ar0" },
-          { title: "Comercial — 14/04/2025", desc: "Edição de alta conversão para TV aberta e redes sociais.", src: "https://www.youtube.com/embed/1zU8OazW8-0" },
-          { title: "Campanha Mudança R$ 2,00 (23/05/2025)", desc: "Campanha da mudança de preço para R$ 2,00, com forte narrativa e apelo popular.", src: "https://www.youtube.com/embed/0hhMuKlxWz4" },
-          { title: "Comercial — 02/07/2025", desc: "Comercial de TV com grafismos de alto contraste e foco no prêmio principal.", src: "https://www.youtube.com/embed/XHd191WiDio" },
-          { title: "Comercial — 07/07/2025", desc: "Edição com cortes rápidos e ênfase na facilidade de compra via Pix.", src: "https://www.youtube.com/embed/y2mWfu0J0z8" },
-          { title: "Comercial — 14/07/2025", desc: "Campanha semanal com inserts de prêmios e storytelling comercial.", src: "https://www.youtube.com/embed/_-q4QaCASXo" },
-          { title: "Comercial — 30/07/2025", desc: "Comercial promocional com foco em premiação de meio milhão de reais.", src: "https://www.youtube.com/embed/PIBhb-s29ms" },
-          { title: "Comercial — 03/09/2025", desc: "Edição dinâmica para TV e digital com cartelas de premiação.", src: "https://www.youtube.com/embed/N7MoUw-2Zio" },
-          { title: "Comercial — 05/11/2025", desc: "Comercial semanal com ritmo acelerado e grafismos de reforço de marca.", src: "https://www.youtube.com/embed/PT1zaFwDxEg" },
-          { title: "Comercial — 19/11/2025", desc: "Peça de varejo com foco em entrega expressa e múltiplos ganhadores.", src: "https://www.youtube.com/embed/r7wo4JzIXsI" },
-          { title: "Comercial — 26/11/2025", desc: "Comercial de TV aberta com foco nas premiações de fim de ano.", src: "https://www.youtube.com/embed/o27uzALKstg" },
-          { title: "Comercial — 03/12/2025", desc: "Campanha festiva com elementos visuais de Natal e premiações especiais.", src: "https://www.youtube.com/embed/kXoIQegQXPQ" },
-          { title: "Comercial — 10/12/2025", desc: "Comercial de TV com alta energia e foco na realização de sonhos.", src: "https://www.youtube.com/embed/VqtBc5E6jA4" },
-          { title: "Especial de Natal — 24/12/2025", desc: "Comercial especial de Natal com efeitos visuais e pós-produção avançada.", src: "https://www.youtube.com/embed/qmMOsHa9_TQ" },
-          { title: "Comercial — 01/03/2026", desc: "Comercial de abertura de temporada com nova identidade e chamadas de venda.", src: "https://www.youtube.com/embed/gm0KtBq5JOU" },
-          { title: "Comercial — 22/03/2026", desc: "Edição comercial com foco no sorteio principal e premiações secundárias.", src: "https://www.youtube.com/embed/L7ZL5v_BKyI" },
-          { title: "Comercial — 19/04/2026", desc: "Campanha de alta performance veiculada em TV e plataformas digitais.", src: "https://www.youtube.com/embed/BJQjBu8eCMc" }
+          { title: "Comercial — 17/07/2024", desc: "Comercial de varejo com foco em prêmios e apresentação dinâmica para TV.", src: "https://www.youtube.com/embed/K5JGDsgCqSY", yt: "K5JGDsgCqSY" },
+          { title: "Comercial — 24/07/2024", desc: "Edição com cortes rítmicos e cartelas de premiação de alta conversão.", src: "https://www.youtube.com/embed/vFr5UgK0rwY", yt: "vFr5UgK0rwY" },
+          { title: "Comercial — 31/07/2024", desc: "Campanha semanal de prêmios com animações tipográficas e reforço visual.", src: "https://www.youtube.com/embed/0k-jjlliXoU", yt: "0k-jjlliXoU" },
+          { title: "Campanha Correios", desc: "Campanha nacional focada na rede de vendas dos Correios em todo o Brasil.", src: "https://www.youtube.com/embed/WtCTLH9oPCc", yt: "WtCTLH9oPCc" },
+          { title: "Comercial — 04/12/2024", desc: "Comercial de fim de ano com ritmo acelerado e grafismos de celebração.", src: "https://www.youtube.com/embed/fmuqxfJplec", yt: "fmuqxfJplec" },
+          { title: "Comercial — 12/12/2024", desc: "Peça de alta performance para TV e redes com ofertas de fim de ano.", src: "https://www.youtube.com/embed/IVxPqvUsSVQ", yt: "IVxPqvUsSVQ" },
+          { title: "Comercial — 08/01/2025", desc: "Comercial de início de ano com metas, renovação e destaque aos prêmios principais.", src: "https://www.youtube.com/embed/7XFi5-vZT5M", yt: "7XFi5-vZT5M" },
+          { title: "Comercial — 29/01/2025", desc: "Edição para TV com cortes dinâmicos e reforço do aplicativo oficial.", src: "https://www.youtube.com/embed/D8QGsNcXYcY", yt: "D8QGsNcXYcY" },
+          { title: "Comercial — 19/02/2025", desc: "Campanha de prêmios com animações tipográficas e ritmo comercial.", src: "https://www.youtube.com/embed/eQdLAKAIWC8", yt: "eQdLAKAIWC8" },
+          { title: "Comercial — 19/03/2025", desc: "Comercial semanal com foco em histórias de ganhadores e chamada de ação.", src: "https://www.youtube.com/embed/rLA1WnsnjME", yt: "rLA1WnsnjME" },
+          { title: "Comercial — 04/04/2025", desc: "Edição expressa de varejo para veiculação multiplataforma.", src: "https://www.youtube.com/embed/mSSNpPxx5C4", yt: "mSSNpPxx5C4" },
+          { title: "Comercial — 23/04/2025", desc: "Comercial de TV com cartelas dinâmicas e sincronia com trilha sonora.", src: "https://www.youtube.com/embed/fSxMKvM6484", yt: "fSxMKvM6484" },
+          { title: "Comercial — 30/04/2025", desc: "Peça promocional com chamadas de prêmios e pontos de venda físicos.", src: "https://www.youtube.com/embed/X0sRWRv4Ar0", yt: "X0sRWRv4Ar0" },
+          { title: "Comercial — 14/04/2025", desc: "Edição de alta conversão para TV aberta e redes sociais.", src: "https://www.youtube.com/embed/1zU8OazW8-0", yt: "1zU8OazW8-0" },
+          { title: "Campanha Mudança R$ 2,00 (23/05/2025)", desc: "Campanha da mudança de preço para R$ 2,00, com forte narrativa e apelo popular.", src: "https://www.youtube.com/embed/0hhMuKlxWz4", yt: "0hhMuKlxWz4" },
+          { title: "Comercial — 02/07/2025", desc: "Comercial de TV com grafismos de alto contraste e foco no prêmio principal.", src: "https://www.youtube.com/embed/XHd191WiDio", yt: "XHd191WiDio" },
+          { title: "Comercial — 07/07/2025", desc: "Edição com cortes rápidos e ênfase na facilidade de compra via Pix.", src: "https://www.youtube.com/embed/y2mWfu0J0z8", yt: "y2mWfu0J0z8" },
+          { title: "Comercial — 14/07/2025", desc: "Campanha semanal com inserts de prêmios e storytelling comercial.", src: "https://www.youtube.com/embed/_-q4QaCASXo", yt: "_-q4QaCASXo" },
+          { title: "Comercial — 30/07/2025", desc: "Comercial promocional com foco em premiação de meio milhão de reais.", src: "https://www.youtube.com/embed/PIBhb-s29ms", yt: "PIBhb-s29ms" },
+          { title: "Comercial — 03/09/2025", desc: "Edição dinâmica para TV e digital com cartelas de premiação.", src: "https://www.youtube.com/embed/N7MoUw-2Zio", yt: "N7MoUw-2Zio" },
+          { title: "Comercial — 05/11/2025", desc: "Comercial semanal com ritmo acelerado e grafismos de reforço de marca.", src: "https://www.youtube.com/embed/PT1zaFwDxEg", yt: "PT1zaFwDxEg" },
+          { title: "Comercial — 19/11/2025", desc: "Peça de varejo com foco em entrega expressa e múltiplos ganhadores.", src: "https://www.youtube.com/embed/r7wo4JzIXsI", yt: "r7wo4JzIXsI" },
+          { title: "Comercial — 26/11/2025", desc: "Comercial de TV aberta com foco nas premiações de fim de ano.", src: "https://www.youtube.com/embed/o27uzALKstg", yt: "o27uzALKstg" },
+          { title: "Comercial — 03/12/2025", desc: "Campanha festiva com elementos visuais de Natal e premiações especiais.", src: "https://www.youtube.com/embed/kXoIQegQXPQ", yt: "kXoIQegQXPQ" },
+          { title: "Comercial — 10/12/2025", desc: "Comercial de TV com alta energia e foco na realização de sonhos.", src: "https://www.youtube.com/embed/VqtBc5E6jA4", yt: "VqtBc5E6jA4" },
+          { title: "Especial de Natal — 24/12/2025", desc: "Comercial especial de Natal com efeitos visuais e pós-produção avançada.", src: "https://www.youtube.com/embed/qmMOsHa9_TQ", yt: "qmMOsHa9_TQ" },
+          { title: "Comercial — 01/03/2026", desc: "Comercial de abertura de temporada com nova identidade e chamadas de venda.", src: "https://www.youtube.com/embed/gm0KtBq5JOU", yt: "gm0KtBq5JOU" },
+          { title: "Comercial — 22/03/2026", desc: "Edição comercial com foco no sorteio principal e premiações secundárias.", src: "https://www.youtube.com/embed/L7ZL5v_BKyI", yt: "L7ZL5v_BKyI" },
+          { title: "Comercial — 19/04/2026", desc: "Campanha de alta performance veiculada em TV e plataformas digitais.", src: "https://www.youtube.com/embed/BJQjBu8eCMc", yt: "BJQjBu8eCMc" }
         ]
       },
       materias: {
         index: 0,
         items: [
-          { title: "História de Ganhador 01", desc: "Reportagem especial documentando a entrega de prêmio e a transformação na vida do ganhador.", src: "https://www.youtube.com/embed/vhuQgJuOO_c" },
-          { title: "História de Ganhador 02", desc: "História real de superação e conquista viabilizada pelo HiperCap Brasil.", src: "https://www.youtube.com/embed/cGAJ4sT0GOw" },
-          { title: "História de Ganhador 03", desc: "Matéria com depoimentos de familiares e cobertura da entrega do prêmio principal.", src: "https://www.youtube.com/embed/t87r9Y6HSIM" },
-          { title: "História de Ganhador 04", desc: "Reportagem institucional mostrando o impacto social e a ajuda ao Hospital de Amor.", src: "https://www.youtube.com/embed/X2fSu0kBaYA" },
-          { title: "História de Ganhador 05", desc: "História de ganhador no interior de São Paulo com cobertura documental e entrevistas.", src: "https://www.youtube.com/embed/9oyiK_gAsGw" },
-          { title: "História de Ganhador 06", desc: "Matéria especial com montagem dinâmica focando na reação do ganhador ao vivo.", src: "https://www.youtube.com/embed/hM3S2aeSBxc" },
-          { title: "História de Ganhador 07", desc: "Cobertura especial da entrega de veículos e premiações em dinheiro.", src: "https://www.youtube.com/embed/mH9F5wsGW1M" },
-          { title: "História de Ganhador 08", desc: "Reportagem emocional conectando a compra do título aos sonhos realizados.", src: "https://www.youtube.com/embed/LHakPjkGvs8" },
-          { title: "História de Ganhador 09", desc: "História de conquista com depoimento emocionante do ganhador e da família.", src: "https://www.youtube.com/embed/bwpW98BEYzM" }
+          { title: "História de Ganhador 01", desc: "Reportagem especial documentando a entrega de prêmio e a transformação na vida do ganhador.", src: "https://www.youtube.com/embed/vhuQgJuOO_c", yt: "vhuQgJuOO_c" },
+          { title: "História de Ganhador 02", desc: "História real de superação e conquista viabilizada pelo HiperCap Brasil.", src: "https://www.youtube.com/embed/cGAJ4sT0GOw", yt: "cGAJ4sT0GOw" },
+          { title: "História de Ganhador 03", desc: "Matéria com depoimentos de familiares e cobertura da entrega do prêmio principal.", src: "https://www.youtube.com/embed/t87r9Y6HSIM", yt: "t87r9Y6HSIM" },
+          { title: "História de Ganhador 04", desc: "Reportagem institucional mostrando o impacto social e a ajuda ao Hospital de Amor.", src: "https://www.youtube.com/embed/X2fSu0kBaYA", yt: "X2fSu0kBaYA" },
+          { title: "História de Ganhador 05", desc: "História de ganhador no interior de São Paulo com cobertura documental e entrevistas.", src: "https://www.youtube.com/embed/9oyiK_gAsGw", yt: "9oyiK_gAsGw" },
+          { title: "História de Ganhador 06", desc: "Matéria especial com montagem dinâmica focando na reação do ganhador ao vivo.", src: "https://www.youtube.com/embed/hM3S2aeSBxc", yt: "hM3S2aeSBxc" },
+          { title: "História de Ganhador 07", desc: "Cobertura especial da entrega de veículos e premiações em dinheiro.", src: "https://www.youtube.com/embed/mH9F5wsGW1M", yt: "mH9F5wsGW1M" },
+          { title: "História de Ganhador 08", desc: "Reportagem emocional conectando a compra do título aos sonhos realizados.", src: "https://www.youtube.com/embed/LHakPjkGvs8", yt: "LHakPjkGvs8" },
+          { title: "História de Ganhador 09", desc: "História de conquista com depoimento emocionante do ganhador e da família.", src: "https://www.youtube.com/embed/bwpW98BEYzM", yt: "bwpW98BEYzM" }
         ]
       }
     };
@@ -1293,6 +1396,16 @@
         const linkBtn = document.getElementById('link-telao');
         if (linkBtn && current.link) {
           linkBtn.href = current.link;
+        }
+      } else if (category === 'comerciais') {
+        const linkBtn = document.getElementById('link-comerciais');
+        if (linkBtn && current.yt) {
+          linkBtn.href = `https://www.youtube.com/watch?v=${current.yt}`;
+        }
+      } else if (category === 'materias') {
+        const linkBtn = document.getElementById('link-materias');
+        if (linkBtn && current.yt) {
+          linkBtn.href = `https://www.youtube.com/watch?v=${current.yt}`;
         }
       }
     }
