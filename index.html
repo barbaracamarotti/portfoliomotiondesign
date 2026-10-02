@@ -169,7 +169,7 @@
     }
 
     /* =======================================
-       GRADE DE 12 MARCAS (EM DESTAQUE NO TOPO)
+       FAIXA DE MARCAS EM TEXTO (12 MARCAS)
        ======================================= */
     .brands-showcase-box {
       background: var(--card-bg);
@@ -183,7 +183,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       padding-bottom: 10px;
       flex-wrap: wrap;
@@ -191,7 +191,7 @@
     }
 
     .brands-showcase-header h4 {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 1.5px;
@@ -204,40 +204,33 @@
       font-weight: 600;
     }
 
-    .logos-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 12px;
-    }
-
-    .logo-item {
+    .brands-tags-list {
       display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .brand-pill {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      padding: 12px 14px;
-      background: rgba(255, 255, 255, 0.025);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 12px;
+      padding: 8px 18px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #e2e8f0;
       transition: all 0.25s ease;
-      height: 56px;
-      text-align: center;
+      letter-spacing: 0.2px;
     }
 
-    .logo-item:hover {
-      background: rgba(255, 255, 255, 0.08);
+    .brand-pill:hover {
+      background: rgba(124, 58, 237, 0.16);
       border-color: rgba(124, 58, 237, 0.5);
+      color: #fff;
       transform: translateY(-2px);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.25);
     }
-
-    .logo-svg {
-      max-height: 24px;
-      width: auto;
-      max-width: 100%;
-      fill: #cbd5e1;
-      transition: fill 0.25s ease;
-    }
-    .logo-item:hover .logo-svg { fill: #fff; }
 
     /* Números de Alto Impacto */
     .big-stats-grid {
@@ -289,7 +282,7 @@
       letter-spacing: 0.5px;
     }
 
-    /* O Que Eu Faço (4 Pilares) */
+    /* O Que Eu Faço */
     .section-title {
       font-size: 1.35rem;
       font-weight: 800;
@@ -409,7 +402,6 @@
 
     /* Responsividade */
     @media (max-width: 960px) {
-      .logos-grid { grid-template-columns: repeat(4, 1fr); }
       .col-7, .col-6, .col-5 { grid-column: span 12; }
       .big-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
       .big-stat-num { font-size: 2.1rem; }
@@ -418,16 +410,12 @@
     }
 
     @media (max-width: 600px) {
-      .logos-grid { grid-template-columns: repeat(3, 1fr); }
       .brand-info p { display: none; }
       .badge-status { display: none; }
       .nav-actions .btn { padding: 8px 14px; font-size: 0.82rem; }
       .tab-btn { font-size: 0.85rem; padding: 8px 16px; }
       .what-i-do-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 420px) {
-      .logos-grid { grid-template-columns: repeat(2, 1fr); }
+      .brand-pill { font-size: 0.82rem; padding: 6px 14px; }
     }
   </style>
 </head>
@@ -480,99 +468,27 @@
       </div>
 
       <!-- =============================================
-           SEÇÃO COM AS 12 MARCAS (EM DESTAQUE NO TOPO)
+           SEÇÃO COM AS 12 MARCAS EM TEXTO (CHIPS ELEGANTES)
            ============================================= -->
       <div class="brands-showcase-box">
         <div class="brands-showcase-header">
-          <h4>Marcas & Contas Atendidas</h4>
-          <span>Campanhas Nacionais, Veiculação em TV e Projetos Digitais</span>
+          <h4>Marcas, Contas e Veículos Atendidos</h4>
+          <span>Campanhas Nacionais & Produções Comerciais</span>
         </div>
         
-        <div class="logos-grid">
-          <!-- 1. Vivo -->
-          <div class="logo-item" title="Vivo">
-            <svg class="logo-svg" viewBox="0 0 100 28" xmlns="http://www.w3.org/2000/svg">
-              <text x="50%" y="20" font-family="'Space Grotesk', sans-serif" font-weight="800" font-size="20" text-anchor="middle" letter-spacing="1">vivo</text>
-            </svg>
-          </div>
-
-          <!-- 2. Caixa -->
-          <div class="logo-item" title="Caixa Econômica Federal">
-            <svg class="logo-svg" viewBox="0 0 110 28" xmlns="http://www.w3.org/2000/svg">
-              <text x="50%" y="20" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="18" text-anchor="middle" letter-spacing="2">CAIXA</text>
-            </svg>
-          </div>
-
-          <!-- 3. HiperCap Brasil -->
-          <div class="logo-item" title="HiperCap Brasil">
-            <svg class="logo-svg" viewBox="0 0 130 28" xmlns="http://www.w3.org/2000/svg">
-              <text x="50%" y="19" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="15" text-anchor="middle" letter-spacing="0.5">HIPERCAP</text>
-            </svg>
-          </div>
-
-          <!-- 4. Metrô -->
-          <div class="logo-item" title="Metrô de São Paulo">
-            <svg class="logo-svg" viewBox="0 0 110 28" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="24" cy="14" r="9" stroke="currentColor" stroke-width="2.5" fill="none" opacity="0.7"/>
-              <text x="68" y="20" font-family="'Space Grotesk', sans-serif" font-weight="800" font-size="16">METRÔ</text>
-            </svg>
-          </div>
-
-          <!-- 5. Apcap da Sorte -->
-          <div class="logo-item" title="Apcap da Sorte">
-            <svg class="logo-svg" viewBox="0 0 120 28" xmlns="http://www.w3.org/2000/svg">
-              <text x="50%" y="19" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="15" text-anchor="middle">APCAP</text>
-            </svg>
-          </div>
-
-          <!-- 6. Copastour -->
-          <div class="logo-item" title="Copastour">
-            <svg class="logo-svg" viewBox="0 0 130 28" xmlns="http://www.w3.org/2000/svg">
-              <text x="50%" y="19" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="15" text-anchor="middle" letter-spacing="0.5">COPASTOUR</text>
-            </svg>
-          </div>
-
-          <!-- 7. FuturaIM -->
-          <div class="logo-item" title="FuturaIM">
-            <svg class="logo-svg" viewBox="0 0 120 28" xmlns="http://www.w3.org/2000/svg">
-              <text x="50%" y="19" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="15" text-anchor="middle">Futura<tspan fill="#a78bfa">IM</tspan></text>
-            </svg>
-          </div>
-
-          <!-- 8. GIV Online -->
-          <div class="logo-item" title="GIV Online">
-            <svg class="logo-svg" viewBox="0 0 120 28" xmlns="http://www.w3.org/2000/svg">
-              <text x="50%" y="19" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="16" text-anchor="middle" letter-spacing="1">GIV<tspan fill="#ff2a7a">.</tspan></text>
-            </svg>
-          </div>
-
-          <!-- 9. Instituto Fiocruz -->
-          <div class="logo-item" title="Instituto Fiocruz">
-            <svg class="logo-svg" viewBox="0 0 120 28" xmlns="http://www.w3.org/2000/svg">
-              <text x="50%" y="19" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="15" text-anchor="middle" letter-spacing="1">FIOCRUZ</text>
-            </svg>
-          </div>
-
-          <!-- 10. Akio -->
-          <div class="logo-item" title="Akio Alimentos">
-            <svg class="logo-svg" viewBox="0 0 100 28" xmlns="http://www.w3.org/2000/svg">
-              <text x="50%" y="20" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="18" text-anchor="middle" letter-spacing="2">AKIO</text>
-            </svg>
-          </div>
-
-          <!-- 11. WBL -->
-          <div class="logo-item" title="WBL">
-            <svg class="logo-svg" viewBox="0 0 90 28" xmlns="http://www.w3.org/2000/svg">
-              <text x="50%" y="20" font-family="'Space Grotesk', sans-serif" font-weight="900" font-size="18" text-anchor="middle" letter-spacing="1.5">WBL</text>
-            </svg>
-          </div>
-
-          <!-- 12. Lei Paulo Gustavo -->
-          <div class="logo-item" title="Lei Paulo Gustavo">
-            <svg class="logo-svg" viewBox="0 0 140 28" xmlns="http://www.w3.org/2000/svg">
-              <text x="50%" y="18" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="12" text-anchor="middle" letter-spacing="0.5">LEI PAULO GUSTAVO</text>
-            </svg>
-          </div>
+        <div class="brands-tags-list">
+          <span class="brand-pill">HiperCap Brasil</span>
+          <span class="brand-pill">Caixa Econômica</span>
+          <span class="brand-pill">Vivo</span>
+          <span class="brand-pill">Metrô</span>
+          <span class="brand-pill">Apcap da Sorte</span>
+          <span class="brand-pill">Copastour</span>
+          <span class="brand-pill">FuturaIM</span>
+          <span class="brand-pill">GIV Online</span>
+          <span class="brand-pill">Instituto Fiocruz</span>
+          <span class="brand-pill">Akio Alimentos</span>
+          <span class="brand-pill">WBL</span>
+          <span class="brand-pill">Lei Paulo Gustavo</span>
         </div>
       </div>
 
