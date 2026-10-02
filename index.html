@@ -19,7 +19,7 @@
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
       --radius: 14px;
-      --btn-radius: 10px; /* Meio-termo moderno */
+      --btn-radius: 10px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
@@ -41,7 +41,7 @@
 
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* Topo Essencial */
+    /* Topo */
     header {
       position: sticky; top: 0; z-index: 100;
       backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
@@ -91,7 +91,7 @@
     }
     .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.2); }
 
-    /* Barra de Abas (Meio-termo no raio) */
+    /* Barra de Abas */
     .tabs-bar {
       margin: 28px 0 22px;
       border-bottom: 1px solid var(--card-border);
@@ -135,7 +135,7 @@
     .tab-content.active { display: block; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* Hero Pitch Enxuto */
+    /* Hero Pitch */
     .hero-pitch-card {
       background: linear-gradient(135deg, rgba(124, 58, 237, 0.18), rgba(255, 42, 122, 0.08));
       border: 1px solid rgba(124, 58, 237, 0.35);
@@ -171,7 +171,6 @@
       margin-bottom: 18px;
     }
 
-    /* Link Saiba Mais */
     .learn-more-link {
       display: inline-flex;
       align-items: center;
@@ -183,14 +182,9 @@
       transition: all 0.2s ease;
       margin-bottom: 20px;
     }
-    .learn-more-link:hover {
-      color: #fff;
-      transform: translateX(3px);
-    }
+    .learn-more-link:hover { color: #fff; transform: translateX(3px); }
 
-    /* =======================================
-       MARCAS ROLÁVEIS PARA O LADO (TOUCH-SCROLL)
-       ======================================= */
+    /* Faixa de Marcas Horizontal */
     .brands-showcase-box {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -221,7 +215,6 @@
       color: var(--text-muted);
     }
 
-    /* Faixa rolável no celular */
     .brands-tags-list {
       display: flex;
       gap: 8px;
@@ -239,7 +232,7 @@
       padding: 7px 14px;
       background: rgba(255, 255, 255, 0.035);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 8px; /* Meio-termo */
+      border-radius: 8px;
       font-size: 0.82rem;
       font-weight: 600;
       color: #e2e8f0;
@@ -247,7 +240,6 @@
       white-space: nowrap;
       flex-shrink: 0;
     }
-
     .brand-pill:hover {
       background: rgba(124, 58, 237, 0.18);
       border-color: rgba(124, 58, 237, 0.5);
@@ -364,7 +356,6 @@
       line-height: 1.5;
     }
 
-    /* Seção de Trajetória Detalhada (Destino do Saiba Mais) */
     .bio-extended-section {
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid var(--card-border);
@@ -411,7 +402,7 @@
       padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
-      border-radius: 10px;
+      border-radius: 12px;
       background: #000;
       margin-bottom: 14px;
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -420,7 +411,7 @@
       position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
     }
 
-    /* Bento Grid */
+    /* Bento Grid Geral */
     .bento-grid {
       display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; margin-top: 12px;
     }
@@ -464,7 +455,117 @@
     }
     .card-link-btn:hover { background: var(--accent); }
 
-    /* Responsividade Celular */
+    /* =======================================================
+       ESTILOS DOS CARROSSEIS INTERATIVOS (HIPERCAP BRASIL)
+       ======================================================= */
+    .slider-section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 32px;
+      position: relative;
+    }
+
+    .slider-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 14px;
+    }
+
+    .slider-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .slider-category-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      max-width: 720px;
+    }
+
+    .slider-counter {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      background: rgba(124, 58, 237, 0.15);
+      border: 1px solid rgba(124, 58, 237, 0.35);
+      color: #c4b5fd;
+      padding: 6px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+
+    /* Palco do Vídeo no Carrossel */
+    .slider-stage {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .slider-video-meta {
+      margin-top: 14px;
+      text-align: center;
+    }
+
+    .slider-v-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .slider-v-desc {
+      font-size: 0.92rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Controles do Carrossel (Anterior / Próximo) */
+    .slider-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-slider-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--btn-radius);
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .nav-slider-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+    }
+
+    /* Responsividade */
     @media (max-width: 860px) {
       .container { padding: 0 16px; }
       .col-7, .col-6, .col-5 { grid-column: span 12; }
@@ -476,11 +577,12 @@
       .big-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
       .big-stat-box { padding: 16px 10px; }
       .big-stat-num { font-size: 1.85rem; }
-      .big-stat-label { font-size: 0.72rem; }
 
-      .what-i-do-grid { grid-template-columns: 1fr; }
-      .bio-extended-section { padding: 20px 16px; }
-      .skills-grid { grid-template-columns: 1fr; }
+      .slider-section { padding: 18px 14px; }
+      .slider-title { font-size: 1.15rem; }
+      .slider-v-title { font-size: 1.1rem; }
+      .slider-v-desc { font-size: 0.85rem; }
+      .nav-slider-btn { padding: 8px 16px; font-size: 0.82rem; }
     }
 
     @media (max-width: 540px) {
@@ -488,6 +590,7 @@
       .badge-status { display: none; }
       .nav-actions .btn { padding: 8px 12px; font-size: 0.8rem; }
       .tab-btn { font-size: 0.82rem; padding: 8px 14px; }
+      .slider-controls { gap: 10px; }
     }
   </style>
 </head>
@@ -514,7 +617,7 @@
 
   <main class="container">
 
-    <!-- Navegação em Abas (Meio-termo nos cantos) -->
+    <!-- Navegação em Abas -->
     <nav class="tabs-bar">
       <button class="tab-btn active" onclick="switchTab('tab-apresentacao', this)">Apresentação</button>
       <button class="tab-btn" onclick="switchTab('tab-destaques', this)">Destaques</button>
@@ -526,7 +629,6 @@
     <!-- 1. ABA PRINCIPAL: Apresentação -->
     <section id="tab-apresentacao" class="tab-content active">
       
-      <!-- Bloco de Abertura Enxuto -->
       <div class="hero-pitch-card">
         <span class="pitch-tag">Motion Designer & 3D Artist</span>
         <h2 class="pitch-title">Transformo marcas, produtos e conceitos em narrativas visuais que prendem a atenção e vendem.</h2>
@@ -534,7 +636,6 @@
           Motion design estratégico de ponta a ponta: animações 2D no <strong>After Effects</strong>, simulações 3D no <strong>Blender</strong> e pós-produção avançada com apoio de <strong>IA generativa</strong>. Da concepção de storyboard à entrega para TV e digital.
         </p>
 
-        <!-- Link Saiba Mais Clicável -->
         <a href="#bio-detalhes" class="learn-more-link">Saiba mais sobre minha trajetória ▾</a>
 
         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
@@ -543,9 +644,7 @@
         </div>
       </div>
 
-      <!-- =============================================
-           FAIXA DE MARCAS ROLÁVEL (TOUCH-SCROLL HORIZONTAL)
-           ============================================= -->
+      <!-- FAIXA DE MARCAS (ROLAGEM HORIZONTAL SUAVE) -->
       <div class="brands-showcase-box">
         <div class="brands-showcase-header">
           <h4>Marcas, Contas e Veículos Atendidos</h4>
@@ -588,7 +687,7 @@
         </div>
       </div>
 
-      <!-- O Que Eu Faço (4 Pilares) -->
+      <!-- O Que Eu Faço -->
       <h3 class="section-title">Especialidades & Entregas de Motion</h3>
       <div class="what-i-do-grid">
         <div class="service-card">
@@ -624,9 +723,7 @@
         </div>
       </div>
 
-      <!-- =============================================
-           SEÇÃO DETALHADA (DESTINO DO "SAIBA MAIS")
-           ============================================= -->
+      <!-- Destino do Saiba Mais -->
       <div id="bio-detalhes" class="bio-extended-section">
         <h3>Trajetória Profissional & Formação</h3>
         <p>
@@ -763,19 +860,20 @@
           </div>
         </div>
 
+        <!-- Animação Fiocruz -->
         <div class="bento-card col-5">
           <div>
-            <span class="card-tag">Brand Motion</span>
+            <span class="card-tag tag-tech">Motion Institucional & Ciência</span>
             <div class="video-wrapper">
-              <iframe src="https://drive.google.com/file/d/1V5qf3jr2tyDam9Y4klgECmjEVzAKncdJ/preview" allow="autoplay"></iframe>
+              <iframe src="https://drive.google.com/file/d/1SGaH2NlS1lZSAoildob3fR0bLaPaYOKp/preview" allow="autoplay"></iframe>
             </div>
-            <h3 class="card-title">G&S — Revelação de Marca</h3>
-            <p class="card-desc">Vinheta animada de logo reveal com foco em elegância, profundidade visual e curvas de aceleração orgânicas.</p>
+            <h3 class="card-title">Instituto Fiocruz — Biodiversidade</h3>
+            <p class="card-desc">Série de animações e motion design desenvolvidos para divulgação científica e institucional do Instituto Fiocruz.</p>
           </div>
           <div>
             <div class="card-meta">
-              <span class="pill">Logo Reveal</span>
-              <span class="pill">After Effects</span>
+              <span class="pill">Motion Educativo</span>
+              <span class="pill">Fiocruz</span>
             </div>
           </div>
         </div>
@@ -892,95 +990,243 @@
       </div>
     </section>
 
-    <!-- 5. ABA: HiperCap Brasil -->
+    <!-- 5. ABA: HiperCap Brasil COM OS 3 CARROSSEIS INTERATIVOS -->
     <section id="tab-hipercap" class="tab-content">
-      <div class="bento-grid">
-        <div class="bento-card col-7">
+      
+      <div class="hero-pitch-card" style="padding: 24px; margin-bottom: 24px;">
+        <span class="pitch-tag">HiperCap Brasil</span>
+        <h2 class="pitch-title" style="font-size: 1.8rem; margin-bottom: 6px;">Trabalhos HiperCap Brasil — Realizados por Barbara Camarotti</h2>
+        <p class="pitch-text" style="font-size: 0.94rem; margin-bottom: 0;">
+          Navegue pelas 3 categorias de produções de grande escala: Telões de estúdio, Comerciais nacionais de TV e Matérias de histórias de ganhadores.
+        </p>
+      </div>
+
+      <!-- ==============================================
+           SESSÃO 1: TELÃO JOVEM PAN (CARROSSEL INTERATIVO)
+           ============================================== -->
+      <div class="slider-section">
+        <div class="slider-header">
           <div>
-            <span class="card-tag tag-ai">VFX Avançado & IA Híbrida</span>
-            <h3 class="card-title">Hiper Cap Brasil — Natal: Magia na Pós-Produção</h3>
-            <p class="card-desc">
-              Pós-produção complexa com chroma key no <strong>DaVinci Resolve</strong>, montagem rítmica no <strong>Premiere Pro</strong> e criação de cenários virtuais utilizando IA generativa integrados via VFX e partículas no <strong>After Effects</strong>.
+            <span class="card-tag tag-tech">Painéis LED & Estúdio</span>
+            <h3 class="slider-title">Telão Jovem Pan</h3>
+            <p class="slider-category-desc">
+              Motion graphics, loops visuais e cartelas de alta definição adaptadas para os painéis de estúdio da Jovem Pan durante as transmissões do programa.
             </p>
           </div>
-          <div>
-            <div class="card-meta">
-              <span class="pill">DaVinci Resolve</span>
-              <span class="pill">Chroma Key / Composição</span>
-              <span class="pill">Cenários por IA</span>
-              <span class="pill">After Effects VFX</span>
-            </div>
-            <div class="card-links">
-              <a href="https://www.behance.net/barbaracamarot" target="_blank" class="card-link-btn">Ver Case no Behance ↗</a>
-            </div>
+          <div class="slider-counter" id="counter-telao">Vídeo 1 de 8</div>
+        </div>
+
+        <div class="slider-stage">
+          <div class="video-wrapper">
+            <iframe id="iframe-telao" src="https://drive.google.com/file/d/1NFIXDuSIF-WJBX2TTBp4J2_ySzcijApP/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <div class="slider-video-meta">
+            <h4 class="slider-v-title" id="title-telao">#TELAO JOVEM PAN - 28/05 (MEIO MILHÃO)</h4>
+            <p class="slider-v-desc" id="desc-telao">Grafismo animado para telão de LED destacando a rodada especial de meio milhão de reais.</p>
           </div>
         </div>
 
-        <div class="bento-card col-5">
-          <div>
-            <span class="card-tag">Comercial de TV & Varejo</span>
-            <div class="video-wrapper">
-              <iframe src="https://drive.google.com/file/d/19fY4C7SbiIAABqyrcB8AFHA1xm_JAv6Z/preview" allow="autoplay"></iframe>
-            </div>
-            <h3 class="card-title">O Rei do Litoral — Vale Cap Litoral</h3>
-            <p class="card-desc">
-              Edição comercial de alto dinamismo com cartelas de premiação, locução enérgica e ritmo de alta conversão para TV aberta e redes sociais.
-            </p>
-          </div>
-          <div>
-            <div class="card-meta">
-              <span class="pill">TV & Digital</span>
-              <span class="pill">Varejo de Alta Performance</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="bento-card col-6">
-          <div>
-            <span class="card-tag">Veiculação em TV</span>
-            <div class="video-wrapper">
-              <iframe src="https://www.youtube.com/embed/TtLaYbqH3UY" allowfullscreen></iframe>
-            </div>
-            <h3 class="card-title">HiperCap Litoral — Campanha Promocional</h3>
-            <p class="card-desc">
-              Comercial produzido para veiculação no litoral paulista, sincronizando apresentação de prêmios com storytelling popular.
-            </p>
-          </div>
-          <div>
-            <div class="card-meta">
-              <span class="pill">Comercial TV</span>
-              <span class="pill">Montagem & Grafismos</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="bento-card col-6">
-          <div>
-            <span class="card-tag">Didática & Tutorial</span>
-            <h3 class="card-title">Instruções HiperCap</h3>
-            <p class="card-desc">
-              Série de vídeos em motion design ensinando o usuário a consultar títulos, conferir sorteios e cadastrar o Pix automático no aplicativo.
-            </p>
-          </div>
-          <div>
-            <div class="card-meta">
-              <span class="pill">Motion Didático</span>
-              <span class="pill">Interface & App</span>
-            </div>
-          </div>
+        <div class="slider-controls">
+          <button class="nav-slider-btn" onclick="prevSlide('telao')">❮ Anterior</button>
+          <button class="nav-slider-btn" onclick="nextSlide('telao')">Próximo ❯</button>
         </div>
       </div>
+
+      <!-- ==============================================
+           SESSÃO 2: COMERCIAIS (CARROSSEL COM 29 VÍDEOS)
+           ============================================== -->
+      <div class="slider-section">
+        <div class="slider-header">
+          <div>
+            <span class="card-tag">TV Aberta & Digital</span>
+            <h3 class="slider-title">Comerciais</h3>
+            <p class="slider-category-desc">
+              Comerciais de alto dinamismo com cartelas de premiação, montagem rítmica, inserts de produtos e chamadas de venda para veiculação nacional.
+            </p>
+          </div>
+          <div class="slider-counter" id="counter-comerciais">Vídeo 1 de 29</div>
+        </div>
+
+        <div class="slider-stage">
+          <div class="video-wrapper">
+            <iframe id="iframe-comerciais" src="https://www.youtube.com/embed/K5JGDsgCqSY" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <div class="slider-video-meta">
+            <h4 class="slider-v-title" id="title-comerciais">Comercial — 17/07/2024</h4>
+            <p class="slider-v-desc" id="desc-comerciais">Comercial de varejo com foco em prêmios e apresentação dinâmica para TV.</p>
+          </div>
+        </div>
+
+        <div class="slider-controls">
+          <button class="nav-slider-btn" onclick="prevSlide('comerciais')">❮ Anterior</button>
+          <button class="nav-slider-btn" onclick="nextSlide('comerciais')">Próximo ❯</button>
+        </div>
+      </div>
+
+      <!-- ==============================================
+           SESSÃO 3: MATÉRIAS (CARROSSEL COM 9 VÍDEOS)
+           ============================================== -->
+      <div class="slider-section">
+        <div class="slider-header">
+          <div>
+            <span class="card-tag tag-ai">Reportagens & Storytelling</span>
+            <h3 class="slider-title">Matérias</h3>
+            <p class="slider-category-desc">
+              Reportagens e documentários especiais mostrando histórias de superação, entregas de prêmios e impacto social na vida dos ganhadores.
+            </p>
+          </div>
+          <div class="slider-counter" id="counter-materias">Vídeo 1 de 9</div>
+        </div>
+
+        <div class="slider-stage">
+          <div class="video-wrapper">
+            <iframe id="iframe-materias" src="https://www.youtube.com/embed/vhuQgJuOO_c" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <div class="slider-video-meta">
+            <h4 class="slider-v-title" id="title-materias">História de Ganhador 01</h4>
+            <p class="slider-v-desc" id="desc-materias">Reportagem especial acompanhando a entrega de prêmios e a emoção da família contemplada.</p>
+          </div>
+        </div>
+
+        <div class="slider-controls">
+          <button class="nav-slider-btn" onclick="prevSlide('materias')">❮ Anterior</button>
+          <button class="nav-slider-btn" onclick="nextSlide('materias')">Próximo ❯</button>
+        </div>
+      </div>
+
     </section>
 
   </main>
 
   <script>
+    // Gerenciador de Abas
     function switchTab(tabId, buttonElement) {
       document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
 
       document.getElementById(tabId).classList.add('active');
       buttonElement.classList.add('active');
+    }
+
+    // ============================================
+    // DADOS DOS 3 CARROSSEIS DO HIPERCAP BRASIL
+    // ============================================
+    const slidersData = {
+      telao: {
+        index: 0,
+        items: [
+          {
+            title: "#TELAO JOVEM PAN - 28/05 (MEIO MILHÃO)",
+            desc: "Grafismo animado para telão de LED destacando a rodada especial de meio milhão de reais.",
+            src: "https://drive.google.com/file/d/1NFIXDuSIF-WJBX2TTBp4J2_ySzcijApP/preview"
+          },
+          {
+            title: "TELAO JOVEM PAN - 28/05",
+            desc: "Identidade visual em movimento e vinhetas adaptadas para o estúdio da rádio e TV Jovem Pan.",
+            src: "https://drive.google.com/file/d/1o-9KZYnQXbqR0hndjP2br1Mv-8srXCs6/preview"
+          },
+          {
+            title: "TELAO JOVEM PAN - 14/05",
+            desc: "Animação de fundo de palco e transições para a transmissão dominical ao vivo.",
+            src: "https://drive.google.com/file/d/18s6Xci3TPPn-cF7-RS3Myv4-sn1hkSdf/preview"
+          },
+          {
+            title: "TELAO JOVEM PAN - 30/04",
+            desc: "Conteúdo visual com destaque para as premiações principais e chamadas de compra.",
+            src: "https://drive.google.com/file/d/1wJt3f1HTXJFLnveuujgx9tIK29Gg4f5n/preview"
+          },
+          {
+            title: "TELAO JOVEM PAN - 23/04",
+            desc: "Composição de vinhetas e loops visuais adaptados para painéis digitais de grande formato.",
+            src: "https://drive.google.com/file/d/1OXQFtz3YLCCGPJ1fO_Li8x2YLsw20w2s/preview"
+          },
+          {
+            title: "TELAO JOVEM PAN - 16/04",
+            desc: "Animações sincronizadas para inserção ao vivo durante a programação do HiperCap.",
+            src: "https://drive.google.com/file/d/1w3-nlxvLR9zRF3SHNElQ39m3jcrciOAR/preview"
+          },
+          {
+            title: "TELAO JOVEM PAN - 09/04",
+            desc: "Motion design institucional e cartelas de premiação para exibição em estúdio.",
+            src: "https://drive.google.com/file/d/1FA4Tz1XviQJ3edtRtjGvZMbT2sUhwoKm/preview"
+          },
+          {
+            title: "TELAO JOVEM PAN - 02/04",
+            desc: "Vinheta e cartelas promocionais para telões do estúdio com alto dinamismo e contraste.",
+            src: "https://drive.google.com/file/d/1SfKuuLHpw3bUUPu4vtJQebBPdxhRM1hl/preview"
+          }
+        ]
+      },
+      comerciais: {
+        index: 0,
+        items: [
+          { title: "Comercial — 17/07/2024", desc: "Comercial de varejo com foco em prêmios e apresentação dinâmica para TV.", src: "https://www.youtube.com/embed/K5JGDsgCqSY" },
+          { title: "Comercial — 24/07/2024", desc: "Edição com cortes rítmicos e cartelas de premiação de alta conversão.", src: "https://www.youtube.com/embed/vFr5UgK0rwY" },
+          { title: "Comercial — 31/07/2024", desc: "Campanha semanal de prêmios com animações tipográficas e reforço visual.", src: "https://www.youtube.com/embed/0k-jjlliXoU" },
+          { title: "Campanha Correios", desc: "Campanha nacional focada na rede de vendas dos Correios em todo o Brasil.", src: "https://www.youtube.com/embed/WtCTLH9oPCc" },
+          { title: "Comercial — 04/12/2024", desc: "Comercial de fim de ano com ritmo acelerado e grafismos de celebração.", src: "https://www.youtube.com/embed/fmuqxfJplec" },
+          { title: "Comercial — 12/12/2024", desc: "Peça de alta performance para TV e redes com ofertas de fim de ano.", src: "https://www.youtube.com/embed/IVxPqvUsSVQ" },
+          { title: "Comercial — 08/01/2025", desc: "Comercial de início de ano com metas, renovação e destaque aos prêmios principais.", src: "https://www.youtube.com/embed/7XFi5-vZT5M" },
+          { title: "Comercial — 29/01/2025", desc: "Edição para TV com cortes dinâmicos e reforço do aplicativo oficial.", src: "https://www.youtube.com/embed/D8QGsNcXYcY" },
+          { title: "Comercial — 19/02/2025", desc: "Campanha de prêmios com animações tipográficas e ritmo comercial.", src: "https://www.youtube.com/embed/eQdLAKAIWC8" },
+          { title: "Comercial — 19/03/2025", desc: "Comercial semanal com foco em histórias de ganhadores e chamada de ação.", src: "https://www.youtube.com/embed/rLA1WnsnjME" },
+          { title: "Comercial — 04/04/2025", desc: "Edição expressa de varejo para veiculação multiplataforma.", src: "https://www.youtube.com/embed/mSSNpPxx5C4" },
+          { title: "Comercial — 23/04/2025", desc: "Comercial de TV com cartelas dinâmicas e sincronia com trilha sonora.", src: "https://www.youtube.com/embed/fSxMKvM6484" },
+          { title: "Comercial — 30/04/2025", desc: "Peça promocional com chamadas de prêmios e pontos de venda físicos.", src: "https://www.youtube.com/embed/X0sRWRv4Ar0" },
+          { title: "Comercial — 14/04/2025", desc: "Edição de alta conversão para TV aberta e redes sociais.", src: "https://www.youtube.com/embed/1zU8OazW8-0" },
+          { title: "Campanha Mudança R$ 2,00 (23/05/2025)", desc: "Campanha da mudança de preço para R$ 2,00, com forte narrativa e apelo popular.", src: "https://www.youtube.com/embed/0hhMuKlxWz4" },
+          { title: "Comercial — 02/07/2025", desc: "Comercial de TV com grafismos de alto contraste e foco no prêmio principal.", src: "https://www.youtube.com/embed/XHd191WiDio" },
+          { title: "Comercial — 07/07/2025", desc: "Edição com cortes rápidos e ênfase na facilidade de compra via Pix.", src: "https://www.youtube.com/embed/y2mWfu0J0z8" },
+          { title: "Comercial — 14/07/2025", desc: "Campanha semanal com inserts de prêmios e storytelling comercial.", src: "https://www.youtube.com/embed/_-q4QaCASXo" },
+          { title: "Comercial — 30/07/2025", desc: "Comercial promocional com foco em premiação de meio milhão de reais.", src: "https://www.youtube.com/embed/PIBhb-s29ms" },
+          { title: "Comercial — 03/09/2025", desc: "Edição dinâmica para TV e digital com cartelas de premiação.", src: "https://www.youtube.com/embed/N7MoUw-2Zio" },
+          { title: "Comercial — 05/11/2025", desc: "Comercial semanal com ritmo acelerado e grafismos de reforço de marca.", src: "https://www.youtube.com/embed/PT1zaFwDxEg" },
+          { title: "Comercial — 19/11/2025", desc: "Peça de varejo com foco em entrega expressa e múltiplos ganhadores.", src: "https://www.youtube.com/embed/r7wo4JzIXsI" },
+          { title: "Comercial — 26/11/2025", desc: "Comercial de TV aberta com foco nas premiações de fim de ano.", src: "https://www.youtube.com/embed/o27uzALKstg" },
+          { title: "Comercial — 03/12/2025", desc: "Campanha festiva com elementos visuais de Natal e premiações especiais.", src: "https://www.youtube.com/embed/kXoIQegQXPQ" },
+          { title: "Comercial — 10/12/2025", desc: "Comercial de TV com alta energia e foco na realização de sonhos.", src: "https://www.youtube.com/embed/VqtBc5E6jA4" },
+          { title: "Especial de Natal — 24/12/2025", desc: "Comercial especial de Natal com efeitos visuais e pós-produção avançada.", src: "https://www.youtube.com/embed/qmMOsHa9_TQ" },
+          { title: "Comercial — 01/03/2026", desc: "Comercial de abertura de temporada com nova identidade e chamadas de venda.", src: "https://www.youtube.com/embed/gm0KtBq5JOU" },
+          { title: "Comercial — 22/03/2026", desc: "Edição comercial com foco no sorteio principal e premiações secundárias.", src: "https://www.youtube.com/embed/L7ZL5v_BKyI" },
+          { title: "Comercial — 19/04/2026", desc: "Campanha de alta performance veiculada em TV e plataformas digitais.", src: "https://www.youtube.com/embed/BJQjBu8eCMc" }
+        ]
+      },
+      materias: {
+        index: 0,
+        items: [
+          { title: "História de Ganhador 01", desc: "Reportagem especial documentando a entrega de prêmio e a transformação na vida do ganhador.", src: "https://www.youtube.com/embed/vhuQgJuOO_c" },
+          { title: "História de Ganhador 02", desc: "História real de superação e conquista viabilizada pelo HiperCap Brasil.", src: "https://www.youtube.com/embed/cGAJ4sT0GOw" },
+          { title: "História de Ganhador 03", desc: "Matéria com depoimentos de familiares e cobertura da entrega do prêmio principal.", src: "https://www.youtube.com/embed/t87r9Y6HSIM" },
+          { title: "História de Ganhador 04", desc: "Reportagem institucional mostrando o impacto social e a ajuda ao Hospital de Amor.", src: "https://www.youtube.com/embed/X2fSu0kBaYA" },
+          { title: "História de Ganhador 05", desc: "História de ganhador no interior de São Paulo com cobertura documental e entrevistas.", src: "https://www.youtube.com/embed/9oyiK_gAsGw" },
+          { title: "História de Ganhador 06", desc: "Matéria especial com montagem dinâmica focando na reação do ganhador ao vivo.", src: "https://www.youtube.com/embed/hM3S2aeSBxc" },
+          { title: "História de Ganhador 07", desc: "Cobertura especial da entrega de veículos e premiações em dinheiro.", src: "https://www.youtube.com/embed/mH9F5wsGW1M" },
+          { title: "História de Ganhador 08", desc: "Reportagem emocional conectando a compra do título aos sonhos realizados.", src: "https://www.youtube.com/embed/LHakPjkGvs8" },
+          { title: "História de Ganhador 09", desc: "História de conquista com depoimento emocionante do ganhador e da família.", src: "https://www.youtube.com/embed/bwpW98BEYzM" }
+        ]
+      }
+    };
+
+    function updateSliderUI(category) {
+      const slider = slidersData[category];
+      const current = slider.items[slider.index];
+
+      document.getElementById(`iframe-${category}`).src = current.src;
+      document.getElementById(`title-${category}`).innerText = current.title;
+      document.getElementById(`desc-${category}`).innerText = current.desc;
+      document.getElementById(`counter-${category}`).innerText = `Vídeo ${slider.index + 1} de ${slider.items.length}`;
+    }
+
+    function nextSlide(category) {
+      const slider = slidersData[category];
+      slider.index = (slider.index + 1) % slider.items.length;
+      updateSliderUI(category);
+    }
+
+    function prevSlide(category) {
+      const slider = slidersData[category];
+      slider.index = (slider.index - 1 + slider.items.length) % slider.items.length;
+      updateSliderUI(category);
     }
   </script>
 
