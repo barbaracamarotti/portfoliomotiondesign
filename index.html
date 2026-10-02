@@ -13,8 +13,8 @@
       --card-bg: rgba(22, 24, 35, 0.7);
       --card-border: rgba(255, 255, 255, 0.08);
       --card-hover: rgba(255, 255, 255, 0.16);
-      --accent: #8b5cf6;
-      --accent-glow: rgba(139, 92, 246, 0.35);
+      --accent: #7c3aed;
+      --accent-glow: rgba(124, 58, 237, 0.35);
       --pink: #ff2a7a;
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
@@ -30,7 +30,7 @@
       line-height: 1.6;
       overflow-x: hidden;
       background-image: 
-        radial-gradient(circle at 15% 10%, rgba(139, 92, 246, 0.12), transparent 40%),
+        radial-gradient(circle at 15% 10%, rgba(124, 58, 237, 0.14), transparent 40%),
         radial-gradient(circle at 85% 25%, rgba(255, 42, 122, 0.08), transparent 45%),
         radial-gradient(circle at 50% 70%, rgba(6, 182, 212, 0.05), transparent 50%);
       background-attachment: fixed;
@@ -77,16 +77,16 @@
       text-decoration: none; transition: all 0.25s ease; cursor: pointer; border: none;
     }
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), #7c3aed);
+      background: linear-gradient(135deg, var(--accent), #6d28d9);
       color: #fff; box-shadow: 0 4px 18px var(--accent-glow);
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(139, 92, 246, 0.5); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(124, 58, 237, 0.5); }
     .btn-secondary {
       background: rgba(255, 255, 255, 0.05); border: 1px solid var(--card-border); color: var(--text-main);
     }
     .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.2); }
 
-    /* Estilo das Abas (inspirado na referência) */
+    /* Barra de Abas */
     .tabs-bar {
       margin: 36px 0 28px;
       border-bottom: 1px solid var(--card-border);
@@ -110,23 +110,17 @@
       cursor: pointer;
       transition: all 0.2s ease;
       white-space: nowrap;
-      position: relative;
     }
+    .tab-btn:hover { color: #fff; background: rgba(255, 255, 255, 0.04); }
 
-    .tab-btn:hover {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    /* Aba Ativa com destaque roxo da referência */
+    /* Aba Ativa (Pílula Roxa como na referência) */
     .tab-btn.active {
       color: #fff;
-      background: #7c3aed;
+      background: var(--accent);
       font-weight: 700;
       box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4);
     }
 
-    /* Conteúdo das Abas */
     .tab-content {
       display: none;
       animation: fadeIn 0.3s ease;
@@ -135,13 +129,28 @@
     .tab-content.active { display: block; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* Bento Grid dos Projetos */
+    /* Video Player Embed Wrapper */
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #000;
+      margin-bottom: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .video-wrapper iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+
+    /* Bento Grid */
     .bento-grid {
       display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; margin-top: 16px;
     }
     .bento-card {
       background: var(--card-bg); border: 1px solid var(--card-border);
-      border-radius: var(--radius); padding: 26px; position: relative;
+      border-radius: var(--radius); padding: 24px; position: relative;
       overflow: hidden; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       display: flex; flex-direction: column; justify-content: space-between;
     }
@@ -154,7 +163,6 @@
     .col-7 { grid-column: span 7; }
     .col-6 { grid-column: span 6; }
     .col-5 { grid-column: span 5; }
-    .col-4 { grid-column: span 4; }
 
     .card-tag {
       display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px;
@@ -181,16 +189,14 @@
     }
     .card-link-btn:hover { background: var(--accent); }
 
-    /* Seção da Aba Apresentação */
+    /* Aba Apresentação */
     .about-hero {
       background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(255, 42, 122, 0.08));
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
-      padding: 40px;
-      margin-bottom: 32px;
+      border: 1px solid var(--card-border); border-radius: var(--radius);
+      padding: 40px; margin-bottom: 32px;
     }
     .about-hero h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 16px; }
-    .about-hero p { font-size: 1.05rem; color: #cbd5e1; max-width: 860px; margin-bottom: 24px; line-height: 1.7; }
+    .about-hero p { font-size: 1.05rem; color: #cbd5e1; max-width: 900px; margin-bottom: 24px; line-height: 1.7; }
 
     .stats-row {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;
@@ -214,7 +220,7 @@
     .skill-list li::before { content: "•"; color: var(--accent); margin-right: 8px; font-weight: bold; }
 
     @media (max-width: 900px) {
-      .col-7, .col-6, .col-5, .col-4 { grid-column: span 12; }
+      .col-7, .col-6, .col-5 { grid-column: span 12; }
       .about-hero { padding: 24px; }
       .about-hero h2 { font-size: 1.8rem; }
     }
@@ -243,17 +249,99 @@
 
   <main class="container">
 
-    <!-- Barra de Abas Estilizada -->
+    <!-- Navegação em Abas (Apresentação como 1ª e Destaques em seguida) -->
     <nav class="tabs-bar">
-      <button class="tab-btn active" onclick="switchTab('tab-motion', this)">Motion Design</button>
+      <button class="tab-btn active" onclick="switchTab('tab-apresentacao', this)">Apresentação</button>
+      <button class="tab-btn" onclick="switchTab('tab-destaques', this)">Destaques</button>
+      <button class="tab-btn" onclick="switchTab('tab-motion', this)">Motion Design</button>
       <button class="tab-btn" onclick="switchTab('tab-edicao', this)">Edição + Motion</button>
       <button class="tab-btn" onclick="switchTab('tab-hipercap', this)">HiperCap Brasil</button>
-      <button class="tab-btn" onclick="switchTab('tab-apresentacao', this)">Apresentação</button>
     </nav>
 
-    <!-- ABA 1: Motion Design -->
-    <section id="tab-motion" class="tab-content active">
+    <!-- 1. ABA PRINCIPAL: Apresentação -->
+    <section id="tab-apresentacao" class="tab-content active">
+      <div class="about-hero">
+        <h2>Olá, eu sou a Barbara Camarotti 👋</h2>
+        <p>
+          Sou Motion Designer, Editora de Vídeo e Artista 3D. Minha proposta profissional é unir direção de arte consistente, narrativa visual rítmica e domínio técnico avançado para produzir animações e peças de alto impacto comercial e institucional.
+        </p>
+        <p>
+          Tenho experiência comprovada em agência, produtora e grandes contas nacionais, incluindo atendimento audiovisual direto para <strong>Vivo</strong>, <strong>Caixa</strong> e <strong>HiperCap Brasil</strong> (campanhas com Fernanda Gentil e Ciro Bottini). Além disso, desenvolvo simulações em 3D no Blender voltadas para experiência do usuário e conversão, e integro ferramentas de IA generativa de forma controlada para acelerar a pós-produção e composição visual.
+        </p>
+        <div>
+          <a href="mailto:barbaracamarotti@hotmail.com" class="btn btn-primary">Fale Comigo por E-mail</a>
+          <a href="https://www.behance.net/barbaracamarot" target="_blank" class="btn btn-secondary">Ver Portfólio no Behance</a>
+        </div>
+      </div>
+
+      <!-- Métricas -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <h3>+1 Milhão</h3>
+          <p>Views em Campanha Nacional</p>
+        </div>
+        <div class="stat-card">
+          <h3>25+ Vídeos</h3>
+          <p>Entregas Semanais de Alta Complexidade</p>
+        </div>
+        <div class="stat-card">
+          <h3>TV Aberta</h3>
+          <p>Exibição em Band, RedeTV! e NGT</p>
+        </div>
+        <div class="stat-card">
+          <h3>Cultura & Editais</h3>
+          <p>Documentários da Lei Paulo Gustavo</p>
+        </div>
+      </div>
+
+      <!-- Competências & Formação -->
+      <div class="skills-grid">
+        <div class="skill-box">
+          <h3>Motion 2D & Vetorial</h3>
+          <ul class="skill-list">
+            <li>Adobe After Effects (avançado / expressões)</li>
+            <li>Adobe Illustrator (criação de telas e assets)</li>
+            <li>Adobe Photoshop (texturas e preparação de recorte)</li>
+            <li>Tipografia cinética e microinterações</li>
+          </ul>
+        </div>
+
+        <div class="skill-box">
+          <h3>3D, Pós-Produção & Cor</h3>
+          <ul class="skill-list">
+            <li>Blender (modelagem, shaders fotorrealistas e render)</li>
+            <li>DaVinci Resolve (color grading e chroma key avançado)</li>
+            <li>Adobe Premiere Pro (montagem rítmica e sound design)</li>
+            <li>Composição multicamadas e tracking</li>
+          </ul>
+        </div>
+
+        <div class="skill-box">
+          <h3>IA no Pipeline Criativo</h3>
+          <ul class="skill-list">
+            <li>Midjourney & Higgsfield (concept art e matte painting)</li>
+            <li>Tripo AI (geração de malhas e suporte a 3D)</li>
+            <li>Extensão de cenários e cenários virtuais</li>
+            <li>Aceleração de produção e fluxos híbridos</li>
+          </ul>
+        </div>
+
+        <div class="skill-box">
+          <h3>Formação & Localização</h3>
+          <ul class="skill-list">
+            <li>Design de Animação — Universidade Anhembi Morumbi</li>
+            <li>Comunicação Visual — SENAI Theobaldo di Nigris</li>
+            <li>Localização: Poá, São Paulo — Brasil</li>
+            <li>Inglês intermediário para projetos e equipes globais</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ABA: Destaques -->
+    <section id="tab-destaques" class="tab-content">
       <div class="bento-grid">
+        <!-- Linha de Enobrecimentos 3D -->
         <div class="bento-card col-7">
           <div>
             <span class="card-tag tag-3d">★ Destaque 3D & E-commerce</span>
@@ -265,7 +353,7 @@
           <div>
             <div class="card-meta">
               <span class="pill">Blender 3D</span>
-              <span class="pill">Shaders Fotorrealistas</span>
+              <span class="pill">Shaders Físicos</span>
               <span class="pill">Iluminação de Estúdio</span>
               <span class="pill">UX & Conversão</span>
             </div>
@@ -275,7 +363,28 @@
           </div>
         </div>
 
+        <!-- G&S Nova Logo com Player -->
         <div class="bento-card col-5">
+          <div>
+            <span class="card-tag">Brand Motion & Reveal</span>
+            <div class="video-wrapper">
+              <iframe src="https://drive.google.com/file/d/1V5qf3jr2tyDam9Y4klgECmjEVzAKncdJ/preview" allow="autoplay"></iframe>
+            </div>
+            <h3 class="card-title">G&S — Revelação de Marca (Logo Reveal)</h3>
+            <p class="card-desc">
+              Vinheta de abertura com reveal refinado de logotipo, enfatizando elegância, profundidade visual e curvas de aceleração orgânicas.
+            </p>
+          </div>
+          <div>
+            <div class="card-meta">
+              <span class="pill">After Effects</span>
+              <span class="pill">Identidade Visual</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Microsoft Copilot -->
+        <div class="bento-card col-6">
           <div>
             <span class="card-tag tag-tech">Tech Explainer & Animação 2D</span>
             <h3 class="card-title">Microsoft Copilot — Explicando o Futuro</h3>
@@ -287,66 +396,91 @@
             <div class="card-meta">
               <span class="pill">After Effects</span>
               <span class="pill">Illustrator</span>
-              <span class="pill">Character Rigging</span>
+              <span class="pill">Character Rig</span>
             </div>
             <div class="card-links">
-              <a href="https://www.behance.net/barbaracamarot" target="_blank" class="card-link-btn">Ver Detalhes ↗</a>
+              <a href="https://www.behance.net/barbaracamarot" target="_blank" class="card-link-btn">Ver Detalhes no Behance ↗</a>
             </div>
           </div>
         </div>
 
+        <!-- Seleção de Impressos com Player -->
         <div class="bento-card col-6">
           <div>
-            <span class="card-tag">Identidade Visual & Reveal</span>
-            <h3 class="card-title">G&S — Revelação de Marca (Logo Reveal)</h3>
+            <span class="card-tag tag-ai">Alta Performance & IA</span>
+            <div class="video-wrapper">
+              <iframe src="https://drive.google.com/file/d/1f72Cf3WlEbYGNh0K2CAQHWWYfQVEVmbX/preview" allow="autoplay"></iframe>
+            </div>
+            <h3 class="card-title">Seleção de IMpressos (FuturaIM)</h3>
             <p class="card-desc">
-              Vinheta institucional desenvolvida para reveal sofisticado de logotipo. Trabalho focado em elegância, profundidade visual, ritmo e suavidade nas curvas de animação (*easing*).
+              Apresentação dinâmica dos produtos mais vendidos da gráfica em clima esportivo, conciliando prazo curto com After Effects e suporte de ferramentas de IA generativa.
             </p>
           </div>
           <div>
             <div class="card-meta">
               <span class="pill">After Effects</span>
-              <span class="pill">Brand Motion</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="bento-card col-6">
-          <div>
-            <span class="card-tag">Marketing & Teoria das Cores</span>
-            <h3 class="card-title">Graficamente: Chuteira Rosa</h3>
-            <p class="card-desc">
-              Motion educativo e rítmico analisando como o contraste das chuteiras rosas na Copa do Mundo foi uma estratégia visual de marketing, aplicando os mesmos conceitos a materiais gráficos e fachadas.
-            </p>
-          </div>
-          <div>
-            <div class="card-meta">
-              <span class="pill">Tipografia Cinética</span>
-              <span class="pill">Psicologia Visual</span>
-              <span class="pill">Retenção de Audiência</span>
+              <span class="pill">IA Generativa</span>
+              <span class="pill">E-commerce</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ABA 2: Edição + Motion -->
-    <section id="tab-edicao" class="tab-content">
+    <!-- 3. ABA: Motion Design -->
+    <section id="tab-motion" class="tab-content">
       <div class="bento-grid">
-        <div class="bento-card col-6">
+        <div class="bento-card col-7">
           <div>
-            <span class="card-tag tag-cutout">Direção de Arte & Colagem</span>
-            <h3 class="card-title">Zé Luiz — Presente nos Bairros</h3>
+            <span class="card-tag tag-3d">★ Destaque 3D & Produto</span>
+            <h3 class="card-title">Linha de Enobrecimentos — Simulação 3D no Blender</h3>
             <p class="card-desc">
-              Animação autoral com técnica de recorte e colagem digital (*cutout motion*). Storyboard detalhado e animação de cada tela, traduzindo mensagem política e comunitária de forma estética e moderna.
+              Modelagem, sombreamento e simulação física fotorrealista no Blender para reproduzir acabamentos gráficos (Hot Stamping, Verniz Localizado, Soft Touch e Laminação Fosca). Utilizado no e-commerce da FuturaIM para guiar a compra e reduzir dúvidas e devoluções.
             </p>
           </div>
           <div>
             <div class="card-meta">
-              <span class="pill">Colagem Digital</span>
+              <span class="pill">Blender 3D</span>
+              <span class="pill">Shading Físico</span>
+              <span class="pill">Texturização Realista</span>
+            </div>
+            <div class="card-links">
+              <a href="https://www.behance.net/barbaracamarot" target="_blank" class="card-link-btn">Ver Case no Behance ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- G&S Nova Logo com Player -->
+        <div class="bento-card col-5">
+          <div>
+            <span class="card-tag">Brand Motion</span>
+            <div class="video-wrapper">
+              <iframe src="https://drive.google.com/file/d/1V5qf3jr2tyDam9Y4klgECmjEVzAKncdJ/preview" allow="autoplay"></iframe>
+            </div>
+            <h3 class="card-title">G&S — Revelação de Marca</h3>
+            <p class="card-desc">Vinheta animada de logo reveal com foco em elegância, profundidade visual e curvas de aceleração orgânicas.</p>
+          </div>
+          <div>
+            <div class="card-meta">
+              <span class="pill">Logo Reveal</span>
               <span class="pill">After Effects</span>
-              <span class="pill">Photoshop Cutout</span>
-              <span class="pill">Storyboard</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-card col-6">
+          <div>
+            <span class="card-tag tag-tech">Tech Explainer & 2D</span>
+            <h3 class="card-title">Microsoft Copilot — Explicando o Futuro</h3>
+            <p class="card-desc">
+              Motion didático apresentando as funções da IA da Microsoft. Roteiro estruturado, storyboard, ilustrações vetoriais e animação de personagem guia.
+            </p>
+          </div>
+          <div>
+            <div class="card-meta">
+              <span class="pill">After Effects</span>
+              <span class="pill">Illustrator</span>
+              <span class="pill">Character Rig</span>
             </div>
             <div class="card-links">
               <a href="https://www.behance.net/barbaracamarot" target="_blank" class="card-link-btn">Ver Case no Behance ↗</a>
@@ -356,17 +490,79 @@
 
         <div class="bento-card col-6">
           <div>
-            <span class="card-tag tag-ai">Alta Performance & IA</span>
-            <h3 class="card-title">Seleção de IMpressos (FuturaIM)</h3>
+            <span class="card-tag">Marketing & Teoria</span>
+            <h3 class="card-title">Graficamente: Chuteira Rosa</h3>
+            <p class="card-desc">Análise visual e ritmo dinâmico demonstrando como o contraste das marcas esportivas na Copa do Mundo se traduz em atenção e conversão gráfica.</p>
+          </div>
+          <div>
+            <div class="card-meta">
+              <span class="pill">Tipografia Cinética</span>
+              <span class="pill">Retenção de Audiência</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ABA: Edição + Motion -->
+    <section id="tab-edicao" class="tab-content">
+      <div class="bento-grid">
+        <!-- Zé Luiz com Player -->
+        <div class="bento-card col-6">
+          <div>
+            <span class="card-tag tag-cutout">Direção de Arte & Colagem</span>
+            <div class="video-wrapper">
+              <iframe src="https://drive.google.com/file/d/12b_LbMbtK-5Jwci3acBxq3z_n6KbJ6m2/preview" allow="autoplay"></iframe>
+            </div>
+            <h3 class="card-title">Zé Luiz — Presente nos Bairros</h3>
             <p class="card-desc">
-              Apresentação dinâmica dos produtos mais vendidos da gráfica em clima de seleção. Resolução de prazo curto combinando ferramentas de IA generativa com After Effects e montagem no Premiere Pro.
+              Animação baseada em técnica de recorte e colagem digital (*cutout motion*). Storyboard minucioso e tipografia marcante, traduzindo mensagem comunitária de forma estética e moderna.
             </p>
           </div>
           <div>
             <div class="card-meta">
+              <span class="pill">Colagem Digital</span>
               <span class="pill">After Effects</span>
-              <span class="pill">IA Generativa</span>
+              <span class="pill">Photoshop Cutout</span>
+            </div>
+            <div class="card-links">
+              <a href="https://www.behance.net/barbaracamarot" target="_blank" class="card-link-btn">Ver Case no Behance ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seleção de Impressos com Player -->
+        <div class="bento-card col-6">
+          <div>
+            <span class="card-tag tag-ai">Alta Performance & IA</span>
+            <div class="video-wrapper">
+              <iframe src="https://drive.google.com/file/d/1f72Cf3WlEbYGNh0K2CAQHWWYfQVEVmbX/preview" allow="autoplay"></iframe>
+            </div>
+            <h3 class="card-title">Seleção de IMpressos (FuturaIM)</h3>
+            <p class="card-desc">Vídeo comercial acelerado para FuturaIM unindo After Effects e IA generativa no pipeline criativo para atender a prazos curtos de entrega.</p>
+          </div>
+          <div>
+            <div class="card-meta">
+              <span class="pill">After Effects</span>
               <span class="pill">E-commerce Gráfico</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Comunidade com Player -->
+        <div class="bento-card col-6">
+          <div>
+            <span class="card-tag">Social Media Motion</span>
+            <div class="video-wrapper">
+              <iframe src="https://drive.google.com/file/d/1ixce0OQ_ebdKmrf3GYuRHR54BhSjQbuA/preview" allow="autoplay"></iframe>
+            </div>
+            <h3 class="card-title">Story — Participe da Comunidade</h3>
+            <p class="card-desc">Peça vertical com animação de cards de interface, transições ágeis e microinterações de engajamento para redes sociais.</p>
+          </div>
+          <div>
+            <div class="card-meta">
+              <span class="pill">Vertical Video</span>
+              <span class="pill">Motion para Social</span>
             </div>
           </div>
         </div>
@@ -375,53 +571,35 @@
           <div>
             <span class="card-tag">Cobertura de Evento & Food</span>
             <h3 class="card-title">Akio: Lançamento de Sabores</h3>
-            <p class="card-desc">
-              Cobertura audiovisual do evento de lançamento dos molhos Akio com receitas do chef Paulo Yoller. Montagem sensorial focada na energia do local, reações do público e *apetite appeal*.
-            </p>
+            <p class="card-desc">Cobertura audiovisual do evento de lançamento dos molhos Akio com receitas do chef Paulo Yoller. Edição sensorial focada na energia do evento e no produto.</p>
           </div>
           <div>
             <div class="card-meta">
-              <span class="pill">Edição Comercial</span>
               <span class="pill">Food & Beverage</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="bento-card col-6">
-          <div>
-            <span class="card-tag">Redes Sociais</span>
-            <h3 class="card-title">Story — Participe da Comunidade</h3>
-            <p class="card-desc">
-              Peça vertical em formato story/reels para redes sociais com transições rápidas, microinterações visuais e elementos dinâmicos de engajamento para a comunidade.
-            </p>
-          </div>
-          <div>
-            <div class="card-meta">
-              <span class="pill">Social Media Motion</span>
-              <span class="pill">Vertical Ads</span>
+              <span class="pill">Montagem Sensorial</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ABA 3: HiperCap Brasil -->
+    <!-- 5. ABA: HiperCap Brasil -->
     <section id="tab-hipercap" class="tab-content">
       <div class="bento-grid">
         <div class="bento-card col-7">
           <div>
             <span class="card-tag tag-ai">VFX Avançado & IA Híbrida</span>
-            <h3 class="card-title">Especial de Natal — Magia na Pós-Produção</h3>
+            <h3 class="card-title">Hiper Cap Brasil — Natal: Magia na Pós-Produção</h3>
             <p class="card-desc">
-              Projeto de pós-produção complexa para o comercial de fim de ano: chaveamento de chroma key no DaVinci Resolve, montagem rítmica no Premiere Pro e criação de cenários virtuais utilizando IA generativa integrados via VFX e partículas no After Effects.
+              Pós-produção complexa com chroma key no DaVinci Resolve, montagem rítmica no Premiere Pro e criação de cenários virtuais utilizando IA generativa integrados via VFX e partículas no After Effects.
             </p>
           </div>
           <div>
             <div class="card-meta">
-              <span class="pill">DaVinci Resolve (Chroma)</span>
-              <span class="pill">Matte Painting com IA</span>
+              <span class="pill">DaVinci Resolve</span>
+              <span class="pill">Chroma Key / Composição</span>
+              <span class="pill">Cenários por IA</span>
               <span class="pill">After Effects VFX</span>
-              <span class="pill">Campanha Nacional</span>
             </div>
             <div class="card-links">
               <a href="https://www.behance.net/barbaracamarot" target="_blank" class="card-link-btn">Ver Case no Behance ↗</a>
@@ -429,133 +607,60 @@
           </div>
         </div>
 
+        <!-- Vale Cap Litoral com Player -->
         <div class="bento-card col-5">
           <div>
-            <span class="card-tag">Comercial de TV & Storytelling</span>
-            <h3 class="card-title">HiperCap — Chance de Mudar de Vida</h3>
+            <span class="card-tag">Comercial de TV & Varejo</span>
+            <div class="video-wrapper">
+              <iframe src="https://drive.google.com/file/d/19fY4C7SbiIAABqyrcB8AFHA1xm_JAv6Z/preview" allow="autoplay"></iframe>
+            </div>
+            <h3 class="card-title">O Rei do Litoral — Vale Cap Litoral</h3>
             <p class="card-desc">
-              Comercial de varejo com foco em storytelling e alta conversão. Color grading, inserts de prêmios, cartelas promocionais e entrega ágil para exibição comercial.
+              Edição comercial de alto dinamismo com cartelas de premiação, locução enérgica e ritmo de alta conversão para TV aberta e redes sociais.
             </p>
           </div>
           <div>
             <div class="card-meta">
-              <span class="pill">Comercial TV</span>
-              <span class="pill">Color Grading</span>
+              <span class="pill">TV & Digital</span>
               <span class="pill">Varejo de Alta Performance</span>
             </div>
           </div>
         </div>
 
+        <!-- HiperCap Litoral YouTube Embed -->
         <div class="bento-card col-6">
           <div>
-            <span class="card-tag">Didática & Motion Explicativo</span>
+            <span class="card-tag">Veiculação em TV</span>
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/TtLaYbqH3UY" allowfullscreen></iframe>
+            </div>
+            <h3 class="card-title">HiperCap Litoral — Campanha Promocional</h3>
+            <p class="card-desc">
+              Comercial produzido para veiculação no litoral paulista, sincronizando apresentação de prêmios com storytelling popular.
+            </p>
+          </div>
+          <div>
+            <div class="card-meta">
+              <span class="pill">Comercial TV</span>
+              <span class="pill">Montagem & Grafismos</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-card col-6">
+          <div>
+            <span class="card-tag">Didática & Tutorial</span>
             <h3 class="card-title">Instruções HiperCap</h3>
             <p class="card-desc">
-              Série de vídeos tutoriais e informativos ensinando o público a consultar títulos, utilizar o Pix automático e navegar pelas funcionalidades do aplicativo oficial.
+              Série de vídeos em motion design ensinando o usuário a consultar títulos, conferir sorteios e cadastrar o Pix automático no aplicativo.
             </p>
           </div>
           <div>
             <div class="card-meta">
               <span class="pill">Motion Didático</span>
-              <span class="pill">UI & Cartelas</span>
+              <span class="pill">Interface & App</span>
             </div>
           </div>
-        </div>
-
-        <div class="bento-card col-6">
-          <div>
-            <span class="card-tag">Veiculação Regional & TV</span>
-            <h3 class="card-title">O Rei do Litoral — Vale Cap Litoral</h3>
-            <p class="card-desc">
-              Peça de ritmo acelerado para TV e digital (+ de R$ 200 mil em prêmios), sincronizando locução expressiva, cartelas dinâmicas e grafismos de alto impacto comercial.
-            </p>
-          </div>
-          <div>
-            <div class="card-meta">
-              <span class="pill">Edição Dinâmica</span>
-              <span class="pill">TV & Web</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABA 4: Apresentação (Bio, Métricas, Stack) -->
-    <section id="tab-apresentacao" class="tab-content">
-      <div class="about-hero">
-        <h2>Olá, eu sou a Barbara Camarotti 👋</h2>
-        <p>
-          Sou Motion Designer, Editora de Vídeo e Artista 3D com experiência em agências, produtoras e projetos independentes. Minha atuação une técnica, narrativa visual e direção de arte para criar animações que não apenas decoram, mas solucionam desafios de comunicação, engajamento e vendas.
-        </p>
-        <p>
-          Ao longo da minha trajetória, participei da entrega de campanhas de alcance nacional para marcas como <strong>Vivo</strong>, <strong>Caixa</strong> e <strong>HiperCap Brasil</strong> (incluindo produções com Fernanda Gentil e Ciro Bottini), além de desenvolver soluções em 3D para e-commerce e integrar ferramentas de inteligência artificial de forma controlada no fluxo de pós-produção.
-        </p>
-        <div>
-          <a href="mailto:barbaracamarotti@hotmail.com" class="btn btn-primary">Entrar em Contato</a>
-          <a href="https://www.behance.net/barbaracamarot" target="_blank" class="btn btn-secondary">Acessar Behance</a>
-        </div>
-      </div>
-
-      <!-- Métricas -->
-      <div class="stats-row">
-        <div class="stat-card">
-          <h3>+1 Milhão</h3>
-          <p>Views em Campanha Única</p>
-        </div>
-        <div class="stat-card">
-          <h3>25+ Vídeos</h3>
-          <p>Entregas Semanais de Alta Complexidade</p>
-        </div>
-        <div class="stat-card">
-          <h3>TV Aberta</h3>
-          <p>Exibição em Band, RedeTV e NGT</p>
-        </div>
-        <div class="stat-card">
-          <h3>Cultura & Editais</h3>
-          <p>Documentários da Lei Paulo Gustavo</p>
-        </div>
-      </div>
-
-      <!-- Competências & Formação -->
-      <div class="skills-grid">
-        <div class="skill-box">
-          <h3>Motion 2D & Ilustração</h3>
-          <ul class="skill-list">
-            <li>Adobe After Effects (avançado)</li>
-            <li>Adobe Illustrator (assets e telas)</li>
-            <li>Adobe Photoshop (texturização e colagem)</li>
-            <li>Tipografia cinética e microinterações</li>
-          </ul>
-        </div>
-
-        <div class="skill-box">
-          <h3>3D, Pós-Produção & Cor</h3>
-          <ul class="skill-list">
-            <li>Blender (modelagem, shaders e render)</li>
-            <li>DaVinci Resolve (color grading e chroma key)</li>
-            <li>Adobe Premiere Pro (montagem e ritmo)</li>
-            <li>Composição multicamadas e tracking</li>
-          </ul>
-        </div>
-
-        <div class="skill-box">
-          <h3>IA no Pipeline Criativo</h3>
-          <ul class="skill-list">
-            <li>Midjourney & Higgsfield (matte painting)</li>
-            <li>Tripo AI (malhas e apoio a 3D)</li>
-            <li>Extensão de cenários e concept art</li>
-            <li>Otimização de prazos e direção assistida</li>
-          </ul>
-        </div>
-
-        <div class="skill-box">
-          <h3>Formação Acadêmica</h3>
-          <ul class="skill-list">
-            <li>Design de Animação — Anhembi Morumbi</li>
-            <li>Comunicação Visual — SENAI Theobaldo di Nigris</li>
-            <li>Localização: Poá, São Paulo — Brasil</li>
-            <li>Inglês intermediário para projetos globais</li>
-          </ul>
         </div>
       </div>
     </section>
@@ -564,11 +669,9 @@
 
   <script>
     function switchTab(tabId, buttonElement) {
-      // Remove a classe ativa de todas as abas e botões
       document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
 
-      // Ativa a aba e o botão selecionados
       document.getElementById(tabId).classList.add('active');
       buttonElement.classList.add('active');
     }
