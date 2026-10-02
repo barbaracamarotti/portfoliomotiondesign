@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Barbara Camarotti — Motion Designer & 3D Artist</title>
+  <meta name="description" content="Portfólio de Barbara Camarotti, motion designer. Comerciais e telões LED do Hiper Cap, animação 2D, tipografia cinética e 3D no Blender.">
+
+  <!-- Prévia do link no WhatsApp e LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Barbara Camarotti — Motion Designer & 3D Artist">
+  <meta property="og:description" content="Comerciais e telões LED do Hiper Cap, animação 2D, tipografia cinética e 3D no Blender.">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/18APCu54tJ6LI7LJpO-CQb5YvElQgeRLm">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicon com Ícone BC personalizado -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%237c3aed'/%3E%3Cstop offset='100%25' stop-color='%23ff2a7a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='26' fill='url(%23g)'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='central' font-family='system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif' font-weight='900' font-size='48' fill='%23ffffff'%3EBC%3C/text%3E%3C/svg%3E">
@@ -307,6 +316,18 @@
       transform-origin: 0 0;
     }
 
+    /* Player nativo (vídeos do Drive): timeline embaixo, sem escurecer */
+    .video-wrapper video,
+    .video-wrapper-led video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+      display: block;
+    }
+
     /* 16:9 padrão */
     .video-wrapper {
       aspect-ratio: 16 / 9;
@@ -558,7 +579,7 @@
         </div>
         <div class="brand-info">
           <h1>Barbara Camarotti</h1>
-          <p>Editora de Vídeo & Gestora de Audiovisual | Motion Designer & 3D Artist</p>
+          <p>Motion Designer & 3D Artist</p>
         </div>
       </a>
 
@@ -615,10 +636,10 @@
     <section id="tab-apresentacao" class="tab-content active">
 
       <div class="hero-pitch-card">
-        <span class="pitch-tag">Editora de Vídeo & Gestora de Audiovisual • Motion Designer • 3D Artist</span>
-        <h2 class="pitch-title">Transformo marcas, produtos e conceitos em narrativas visuais que prendem a atenção e vendem.</h2>
+        <span class="pitch-tag">Motion Designer • 3D Artist</span>
+        <h2 class="pitch-title">Motion design que prende a atenção na TV, no telão e no feed.</h2>
         <p class="pitch-text">
-          Atualmente <strong>Editora de Vídeo e Gestora de Audiovisual na FuturaIM</strong>, liderando equipe criativa, garantindo controle de qualidade e desenvolvendo soluções inovadoras em <strong>3D no Blender (UX/UI)</strong> e <strong>IA generativa</strong>. Experiência sólida na construção e manutenção de identidade de marca, direção em set e histórico comprovado em grandes contas nacionais como <strong>HiperCap Brasil</strong>, <strong>Vivo</strong> e <strong>Caixa Econômica</strong>.
+          Motion designer há 4 anos, com foco em comerciais de TV, telões de LED e redes sociais. Na Inspira Comunicação Integrada, criei o motion de <strong>29 comerciais nacionais do Hiper Cap</strong>, as cartelas de premiação e as vinhetas dos <strong>telões da Jovem Pan</strong> exibidas ao vivo. Conheço a identidade da marca, o ritmo das campanhas e o volume de entrega semanal. Hoje somo a isso modelagem <strong>3D no Blender</strong> e <strong>IA generativa</strong> no pipeline de animação.
         </p>
         <a href="#bio-detalhes" class="learn-more-link">Saiba mais sobre minha trajetória profissional ▾</a>
         <div class="hero-actions-bar">
@@ -630,9 +651,8 @@
 
       <div class="brands-showcase-box">
         <div class="brands-showcase-header">
-          <h4>Marcas, Contas e Veículos Atendidos</h4>
-          <span>Passe o mouse para pausar ➔</span>
-        </div>
+          <h4>Marcas e veículos atendidos</h4>
+                  </div>
 
         <div class="marquee-container">
           <div class="marquee-track">
@@ -667,24 +687,24 @@
 
       <div class="big-stats-grid">
         <div class="big-stat-box">
+          <div class="big-stat-num">29</div>
+          <div class="big-stat-label">Comerciais Hiper Cap</div>
+        </div>
+        <div class="big-stat-box">
+          <div class="big-stat-num">13</div>
+          <div class="big-stat-label">Telões LED ao vivo</div>
+        </div>
+        <div class="big-stat-box">
           <div class="big-stat-num">+1M</div>
           <div class="big-stat-label">Visualizações</div>
         </div>
         <div class="big-stat-box">
           <div class="big-stat-num">25</div>
-          <div class="big-stat-label">Peças / Semana</div>
+          <div class="big-stat-label">Peças / semana</div>
         </div>
         <div class="big-stat-box">
-          <div class="big-stat-num">Gestão</div>
-          <div class="big-stat-label">Equipe & Set</div>
-        </div>
-        <div class="big-stat-box">
-          <div class="big-stat-num">3D</div>
-          <div class="big-stat-label">Blender + UX/UI</div>
-        </div>
-        <div class="big-stat-box">
-          <div class="big-stat-num">IA</div>
-          <div class="big-stat-label">Generativa</div>
+          <div class="big-stat-num">4</div>
+          <div class="big-stat-label">Anos de motion</div>
         </div>
       </div>
 
@@ -694,7 +714,7 @@
           <div class="service-num">01</div>
           <h4 class="service-title">Motion Design</h4>
           <p class="service-desc">
-            Animação vetorial 2D e grafismos dinâmicos no <strong>After Effects</strong>. Criação de identidades visuais em movimento, vinhetas institucionais, character rigging, cartelas animadas de premiação e tipografia cinética fluida para TV, redes sociais e formatos digitais de alta retenção.
+            Animação 2D e grafismos no <strong>After Effects</strong>: cartelas de premiação, tipografia cinética, vinhetas, logo reveals e character rig. Adaptação da mesma peça para 16:9, 9:16 e painéis ultra-wide de 4.800 × 768 px.
           </p>
         </div>
 
@@ -702,15 +722,15 @@
           <div class="service-num">02</div>
           <h4 class="service-title">Modelagem e texturização 3D</h4>
           <p class="service-desc">
-            Criação de modelos 3D, materiais fotorrealistas e física de iluminação no <strong>Blender</strong>. Especialidade em visualização de produtos e enobrecimentos gráficos para e-commerce (UX/UI), permitindo ao cliente compreender texturas, reflexos e acabamentos reais antes da compra.
+            Modelagem, materiais e iluminação no <strong>Blender</strong> para animação de produto. Simulação de acabamentos como hot stamping, verniz e laminação, com reflexos e texturas que a foto estática não mostra.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-num">03</div>
-          <h4 class="service-title">Ritmo e Corte</h4>
+          <h4 class="service-title">Edição e ritmo</h4>
           <p class="service-desc">
-            Edição audiovisual de precisão no <strong>Premiere Pro</strong> e <strong>DaVinci Resolve</strong>. Montagem com timing apurado para comerciais de TV acelerados, reportagens jornalísticas de storytelling emocional, videoclipes e conteúdos de alto impacto com sound design e color grading refinado.
+            Montagem no <strong>Premiere Pro</strong> e <strong>DaVinci Resolve</strong>, com o motion sincronizado à trilha e à locução. Comerciais de 15 e 30 segundos, reportagens com ganhadores e documentários, incluindo color e sound design.
           </p>
         </div>
 
@@ -718,19 +738,19 @@
           <div class="service-num">04</div>
           <h4 class="service-title">IA Generativa</h4>
           <p class="service-desc">
-            Aplicação prática e controlada de ferramentas de inteligência artificial (<strong>Midjourney</strong>, <strong>Higgsfield</strong> e <strong>Rabbits AI</strong>) integradas ao pipeline de produção. Geração de concept art, cenários virtuais (<em>matte painting</em>) e expansão criativa com alto padrão estético.
+            <strong>Midjourney</strong>, <strong>Higgsfield</strong> e <strong>Rabbits AI</strong> usados como apoio ao motion: concept art, cenários, texturas e elementos de cena, sempre finalizados no After Effects.
           </p>
         </div>
       </div>
 
       <div id="bio-detalhes" class="bio-extended-section">
-        <h3>Mais Sobre Mim & Trajetória Profissional</h3>
+        <h3>Sobre mim e trajetória</h3>
         <p>
-          Profissional de comunicação visual e audiovisual com atuação destacada em <strong>Motion Design</strong>, <strong>edição de vídeo</strong>, <strong>identidade visual</strong> e <strong>gestão de produção audiovisual</strong>. Experiência comprovada na liderança e delegação de tarefas de equipe, controle de qualidade, direção em gravações externas e de estúdio, além da aplicação avançada de <strong>3D no Blender</strong> e <strong>IA generativa</strong> em soluções de comunicação e experiência do usuário (UX/UI).
+          Comecei em comunicação visual no SENAI e hoje curso Design de Animação na Anhembi Morumbi. Minha base é o After Effects aplicado à publicidade: peças com prazo curto, volume alto e veiculação nacional. Nos últimos anos acrescentei 3D no Blender e IA generativa ao meu processo, sempre a serviço da animação.
         </p>
 
         <h4 style="font-size: 1.15rem; color: #fff; margin: 24px 0 12px; display: flex; align-items: center; gap: 8px;">
-          💼 Experiência & Histórico Profissional
+          💼 Experiência
         </h4>
 
         <div class="career-timeline">
@@ -738,14 +758,14 @@
           <div class="career-item" style="border-left-color: var(--pink);">
             <div class="career-header">
               <div>
-                <span class="career-role">Editora de Vídeo & Gestora de Audiovisual</span>
+                <span class="career-role">Editora de Vídeo</span>
                 <span style="color: var(--text-muted); margin: 0 6px;">•</span>
                 <span class="career-company" style="color: #fda4af;">FuturaIM</span>
               </div>
-              <span class="career-period" style="background: rgba(255, 42, 122, 0.15); color: #fda4af; border: 1px solid rgba(255, 42, 122, 0.3);">MAI 2026 — ATUAL (POSIÇÃO ATUAL)</span>
+              <span class="career-period" style="background: rgba(255, 42, 122, 0.15); color: #fda4af; border: 1px solid rgba(255, 42, 122, 0.3);">MAI 2026 — ATUAL</span>
             </div>
             <p class="career-desc">
-              Gestão direta da equipe de audiovisual, delegação de tarefas e acompanhamento de prazos e fluxo de entregas. Responsável pelo controle de qualidade e aprovação final de todos os materiais em vídeo. Gestão e manutenção contínua da identidade visual da marca em todos os canais. Direção em gravações externas e de estúdio com operação de câmera e gimbal. Desenvolvimento do projeto em destaque de <strong>visualizações 3D realistas no Blender</strong> para o e-commerce gráfico, aprimorando a experiência do usuário (UX/UI) e alavancando a taxa de conversão ao permitir ao cliente visualizar com fidelidade o resultado dos acabamentos gráficos antes da compra.
+              Motion e edição para o e-commerce e as redes sociais da gráfica. Destaque para a <strong>linha de enobrecimentos em 3D no Blender</strong>: animações que simulam hot stamping, verniz e laminações, mostrando ao cliente o acabamento antes da compra. Produção de peças com apoio de IA generativa e captação com câmera e gimbal.
             </p>
           </div>
 
@@ -759,7 +779,7 @@
               <span class="career-period">SET 2023 — ABR 2026</span>
             </div>
             <p class="career-desc">
-              Atendimento direto a grandes contas nacionais como <strong>HiperCap Brasil</strong>, <strong>Vivo</strong> e <strong>Caixa Econômica</strong>. Criação de identidades visuais animadas, tipografia cinética, vinhetas institucionais e pós-produção audiovisual completa, com volume de mais de 25 peças semanais. Destaque para comerciais nacionais com <strong>Fernanda Gentil e Ciro Bottini</strong> e campanha especial com mais de <strong>1 milhão de visualizações</strong>.
+              Motion designer da conta <strong>Hiper Cap Brasil</strong>: 29 comerciais nacionais, 13 peças para os telões de LED da Jovem Pan e cartelas de premiação semanais. Também atendi <strong>Vivo</strong> e <strong>Caixa Econômica</strong>, com mais de 25 peças por semana. Destaque para comerciais com <strong>Fernanda Gentil</strong> e <strong>Ciro Bottini</strong> e uma campanha com mais de <strong>1 milhão de visualizações</strong>.
             </p>
           </div>
 
@@ -773,7 +793,7 @@
               <span class="career-period">MAI 2023 — JUL 2023</span>
             </div>
             <p class="career-desc">
-              Criação e animação de peças para campanhas publicitárias e comerciais televisivos de veiculação em rede nacional (<strong>Band</strong>, <strong>RedeTV!</strong> e <strong>NGT</strong>), além de conteúdos em motion graphics para redes sociais voltados à alta conversão.
+              Animação de comerciais veiculados em rede nacional (<strong>Band</strong>, <strong>RedeTV!</strong> e <strong>NGT</strong>) e motion graphics para redes sociais.
             </p>
           </div>
 
@@ -787,7 +807,7 @@
               <span class="career-period">ABR 2022 — MAI 2023</span>
             </div>
             <p class="career-desc">
-              Produção visual estratégica para redes sociais, captação audiovisual de diárias em clientes, gravação e edição de podcasts e acompanhamento técnico de gravações em estúdio.
+              Primeiras peças de motion para redes sociais, além de captação em clientes e edição de podcasts.
             </p>
           </div>
 
@@ -801,7 +821,7 @@
               <span class="career-period">FREELANCE CONTÍNUO</span>
             </div>
             <p class="career-desc">
-              Direção e montagem de documentários culturais contemplados pelo edital da <strong>Lei Paulo Gustavo</strong> em parceria com a Prefeitura de Salesópolis. Produção de vídeos corporativos e coberturas de lançamento oficial para marcas como <strong>Akio Alimentos</strong>.
+              Animações e montagem de documentários culturais da <strong>Lei Paulo Gustavo</strong> com a Prefeitura de Salesópolis, incluindo os mapas animados da Ilha Anchieta. Vídeos corporativos para marcas como <strong>Akio Alimentos</strong>.
             </p>
           </div>
 
@@ -817,11 +837,11 @@
             </ul>
           </div>
           <div class="skill-box">
-            <h4>Gestão, Produção & Set</h4>
+            <h4>Motion na prática</h4>
             <ul class="skill-list">
-              <li><strong>Gestão:</strong> Liderança de equipe • Delegação • Controle de qualidade • Planejamento</li>
-              <li><strong>Produção & Set:</strong> Direção em set • Operação de câmera • Gimbal</li>
-              <li><strong>Estratégia:</strong> Identidade de marca • UX/UI aplicada</li>
+              <li><strong>Animação:</strong> Tipografia cinética • Cartelas de premiação • Logo reveal • Character rig</li>
+              <li><strong>Formatos:</strong> TV 16:9 • Stories 9:16 • Painel LED 4.800 × 768</li>
+              <li><strong>Captação:</strong> Câmera • Gimbal</li>
             </ul>
           </div>
           <div class="skill-box">
@@ -846,10 +866,10 @@
       <div class="slider-section">
         <div class="slider-header">
           <div>
-            <span class="card-tag tag-3d">★ Destaque 3D & E-commerce (Blender)</span>
+            <span class="card-tag tag-3d">★ Destaque 3D (Blender)</span>
             <h3 class="slider-title">Linha de Enobrecimentos — Simulação 3D no Blender</h3>
             <p class="slider-category-desc">
-              Modelagem, materiais fotorrealistas e física de iluminação no <strong>Blender</strong> para o e-commerce da FuturaIM. Cada acabamento foi desenvolvido para transmitir textura e reflexo no digital, reduzindo dúvidas na compra e alavancando a conversão.
+              Modelagem, materiais e iluminação no <strong>Blender</strong> para o e-commerce da FuturaIM. Cada animação mostra como a luz reage ao acabamento, algo que a foto estática não consegue mostrar.
             </p>
           </div>
           <div class="slider-counter counter-enobrecimento">Acabamento 1 de 12</div>
@@ -861,7 +881,7 @@
           </div>
           <div class="slider-video-meta">
             <h4 class="slider-v-title title-enobrecimento">Laminação Fosca com Verniz Localizado</h4>
-            <div class="slider-v-impact impact-enobrecimento">Impacto no E-commerce: Redução de dúvidas sobre contraste e alta conversão de impressos corporativos.</div>
+            <div class="slider-v-impact impact-enobrecimento">Objetivo: mostrar o contraste entre a base fosca e o brilho do verniz.</div>
             <p class="slider-v-desc desc-enobrecimento">Simulação física precisa contrastando a base aveludada sem reflexos com o brilho espelhado do verniz localizado.</p>
             <div style="margin-top: 8px;">
               <a class="card-link-btn link-enobrecimento" href="https://drive.google.com/file/d/1PMN73iRKX_MB5fHzJ7ODH5Ww76e0a5nZ/view?usp=drivesdk" target="_blank">Abrir Vídeo em Alta Resolução ↗</a>
@@ -884,7 +904,7 @@
             <span class="card-tag tag-led">Painel LED • 4.800 × 768 px (Ultra-Wide)</span>
             <h3 class="slider-title">Telões Jovem Pan</h3>
             <p class="slider-category-desc">
-              Motion graphics, vinhetas e cartelas adaptadas na proporção ultra-wide nativa (<strong>4.800 × 768 px</strong>) para os painéis de estúdio da Jovem Pan durante transmissões ao vivo.
+              Vinhetas e cartelas de premiação animadas no formato nativo dos painéis do estúdio da Jovem Pan (<strong>4.800 × 768 px</strong>), exibidas durante o sorteio ao vivo.
             </p>
           </div>
           <div class="slider-counter counter-telao">Vídeo 1 de 13</div>
@@ -918,7 +938,7 @@
             <span class="card-tag tag-tech">Divulgação Científica & Motion Educativo</span>
             <h3 class="slider-title">Série Biodiversidade — Instituto Fiocruz</h3>
             <p class="slider-category-desc">
-              Série completa de animações educativas e motion design para divulgação científica da Fundação Oswaldo Cruz, abordando preservação ambiental e equilíbrio ecológico.
+              Série de 7 animações educativas para divulgação científica da Fundação Oswaldo Cruz.
             </p>
           </div>
           <div class="slider-counter counter-fiocruz">Episódio 1 de 7</div>
@@ -955,7 +975,7 @@
           </div>
           <h3 class="card-title">Story — Participe da Comunidade</h3>
           <p class="card-desc">
-            Peça vertical com animação de cards de interface, transições ágeis e microinterações de engajamento para redes sociais.
+            Story vertical com animação de cards de interface e transições rápidas.
           </p>
           <div class="card-meta">
             <span class="pill">After Effects</span>
@@ -975,7 +995,7 @@
             </div>
             <h3 class="card-title">O Rei do Litoral Tá On...</h3>
             <p class="card-desc">
-              Peça comercial promocional com animação de tipografia cinética, motion graphics vibrante e edição com foco em energia, engajamento e vendas.
+              Peça promocional com tipografia cinética e cortes no ritmo da trilha.
             </p>
           </div>
           <div>
@@ -997,7 +1017,7 @@
           </div>
           <h3 class="card-title">G&S — Revelação de Marca (Logo Reveal)</h3>
           <p class="card-desc">
-            Vinheta vertical de abertura com reveal refinado de logotipo, enfatizando elegância, profundidade visual e curvas de aceleração orgânicas.
+            Vinheta vertical de revelação de logotipo, com curvas de aceleração suaves e camadas de profundidade.
           </p>
           <div class="card-meta">
             <span class="pill">After Effects</span>
@@ -1010,13 +1030,13 @@
         </div>
 
         <div class="bento-card card-vertical col-6">
-          <span class="card-tag tag-ai">Alta Performance & IA</span>
+          <span class="card-tag tag-ai">Motion + IA</span>
           <div class="video-wrapper portrait">
             <iframe src="https://drive.google.com/file/d/1f72Cf3WlEbYGNh0K2CAQHWWYfQVEVmbX/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
           </div>
           <h3 class="card-title">Seleção de IMpressos (FuturaIM)</h3>
           <p class="card-desc">
-            Apresentação dinâmica dos produtos mais vendidos da gráfica em clima esportivo, conciliando After Effects e suporte de ferramentas de IA generativa.
+            Os produtos mais vendidos da gráfica apresentados em clima esportivo. Animação no After Effects com elementos gerados por IA.
           </p>
           <div class="card-meta">
             <span class="pill">After Effects</span>
@@ -1036,7 +1056,7 @@
             </div>
             <h3 class="card-title">Microsoft Copilot — Explicando o Futuro</h3>
             <p class="card-desc">
-              Vídeo didático e fluido para apresentar a IA da Microsoft. Roteiro estruturado, storyboard, ilustrações vetoriais no <strong>Illustrator</strong> e animação rítmica com personagem guia no <strong>After Effects</strong>.
+              Explainer sobre a IA da Microsoft. Fiz roteiro, storyboard, ilustrações no <strong>Illustrator</strong> e animação de personagem no <strong>After Effects</strong>.
             </p>
           </div>
           <div>
@@ -1059,7 +1079,7 @@
             </div>
             <h3 class="card-title">Zé Luiz — Presente nos Bairros</h3>
             <p class="card-desc">
-              Animação baseada em técnica de recorte e colagem digital (<em>cutout motion</em>). Storyboard minucioso e tipografia marcante, traduzindo mensagem comunitária de forma estética e moderna.
+              Animação em colagem digital (<em>cutout</em>), com storyboard próprio e tipografia como elemento principal.
             </p>
           </div>
           <div>
@@ -1082,7 +1102,7 @@
             </div>
             <h3 class="card-title">Animação Ilha Anchieta</h3>
             <p class="card-desc">
-              Sequências animadas e mapas gráficos explicativos desenvolvidos para contextualizar fatos históricos e reconstruir a narrativa do documentário sobre a Ilha Anchieta.
+              Mapas animados e sequências gráficas que situam os fatos históricos do documentário sobre a Ilha Anchieta.
             </p>
           </div>
           <div>
@@ -1113,7 +1133,7 @@
             <span class="card-tag">TV Aberta & Digital • Motion + Composição Visual</span>
             <h3 class="slider-title">Comerciais HiperCap</h3>
             <p class="slider-category-desc">
-              Comerciais de alto dinamismo unindo <strong>motion design</strong> e <strong>composição visual</strong>: cartelas de premiação animadas, ritmo acelerado, inserts de produtos e montagem rítmica para veiculação nacional.
+              Motion e composição dos comerciais semanais para TV aberta e redes: cartelas de premiação, tipografia animada e ritmo sincronizado com a locução.
             </p>
           </div>
           <div class="slider-counter counter-comerciais">Vídeo 1 de 29</div>
@@ -1331,10 +1351,10 @@
     <section id="tab-hipercap" class="tab-content">
 
       <div class="bento-card" style="margin-bottom: 24px;">
-        <span class="card-tag tag-led">Campanhas Completas • TV, Estúdio & Digital</span>
-        <h3 class="card-title" style="font-size: 1.35rem; margin-top: 6px;">Hiper Cap — Produção Audiovisual & Motion Design Integrados</h3>
+        <span class="card-tag tag-led">TV, telão ao vivo e digital</span>
+        <h3 class="card-title" style="font-size: 1.35rem; margin-top: 6px;">Meu trabalho no Hiper Cap</h3>
         <p class="card-desc" style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 0;">
-          Durante minha atuação na Win 10 Comunicação, liderei e executei a pós-produção e o motion design para as campanhas do <strong>Hiper Cap</strong>. O trabalho abrangeu desde a criação de vinhetas e cartelas para os telões de LED da <strong>Jovem Pan</strong> em formato ultra-wide, passando pela montagem e grafismos de mais de <strong>29 comerciais de TV e redes sociais</strong>, até a edição de <strong>reportagens documentais emocionantes</strong> com os ganhadores dos prêmios.
+          Pela Inspira Comunicação Integrada, criei o motion design das campanhas do <strong>Hiper Cap</strong>: as vinhetas e cartelas dos <strong>telões de LED da Jovem Pan</strong> no formato ultra-wide, os grafismos e a montagem de <strong>29 comerciais</strong> para TV e redes sociais, e a edição das <strong>reportagens com ganhadores</strong>.
         </p>
       </div>
 
@@ -1345,7 +1365,7 @@
             <span class="card-tag tag-led">Painel LED • 4.800 × 768 px (Ultra-Wide)</span>
             <h3 class="slider-title">Telões Jovem Pan</h3>
             <p class="slider-category-desc">
-              Motion graphics, vinhetas e cartelas adaptadas na proporção ultra-wide nativa (<strong>4.800 × 768 px</strong>) para os painéis de estúdio da Jovem Pan durante transmissões ao vivo.
+              Vinhetas e cartelas de premiação animadas no formato nativo dos painéis do estúdio da Jovem Pan (<strong>4.800 × 768 px</strong>), exibidas durante o sorteio ao vivo.
             </p>
           </div>
           <div class="slider-counter counter-telao">Vídeo 1 de 13</div>
@@ -1379,7 +1399,7 @@
             <span class="card-tag">TV Aberta & Digital • Motion + Composição Visual</span>
             <h3 class="slider-title">Comerciais HiperCap</h3>
             <p class="slider-category-desc">
-              Comerciais de alto dinamismo unindo <strong>motion design</strong> e <strong>composição visual</strong>: cartelas de premiação animadas, ritmo acelerado, inserts de produtos e montagem rítmica para veiculação nacional.
+              Motion e composição dos comerciais semanais para TV aberta e redes: cartelas de premiação, tipografia animada e ritmo sincronizado com a locução.
             </p>
           </div>
           <div class="slider-counter counter-comerciais">Vídeo 1 de 29</div>
@@ -1462,6 +1482,8 @@
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
       document.getElementById(tabId).classList.add('active');
       buttonElement.classList.add('active');
+      // Pausa vídeos das abas que saíram de vista
+      document.querySelectorAll('.tab-content:not(.active) video').forEach(v => v.pause());
     }
 
     // ============================================
@@ -1490,6 +1512,59 @@
       iframe.style.transform = s < 1 ? 'scale(' + s + ')' : 'none';
     }
 
+    // ============================================
+    // PLAYER NATIVO PARA VÍDEOS DO DRIVE
+    // Troca o player do Drive pelo player do próprio navegador:
+    // timeline embaixo e sem a tela escura ao dar play.
+    // Se o Drive bloquear o arquivo (ex.: vídeos muito grandes),
+    // volta automaticamente para o player do Drive.
+    // ============================================
+    function driveId(url) {
+      const m = (url || '').match(/\/file\/d\/([^/]+)/);
+      return m ? m[1] : null;
+    }
+
+    function mountPlayer(box, src, extraClass) {
+      const old = box.querySelector('iframe, video');
+      const id = driveId(src);
+
+      // YouTube e outros: mantém iframe
+      if (!id) {
+        if (old && old.tagName === 'IFRAME') { old.src = src; return; }
+        const iframe = makeIframe(src, extraClass);
+        if (old) old.replaceWith(iframe); else box.appendChild(iframe);
+        return;
+      }
+
+      const video = document.createElement('video');
+      if (extraClass) video.className = extraClass;
+      video.controls = true;
+      video.playsInline = true;
+      video.preload = 'none';
+      video.setAttribute('playsinline', '');
+      video.setAttribute('controlslist', 'nodownload');
+      video.poster = 'https://drive.google.com/thumbnail?id=' + id + '&sz=w1280';
+      video.src = 'https://drive.usercontent.google.com/download?id=' + id + '&export=download&confirm=t';
+
+      video.addEventListener('error', () => {
+        const iframe = makeIframe('https://drive.google.com/file/d/' + id + '/preview', extraClass);
+        video.replaceWith(iframe);
+        fitVideo(box);
+      }, { once: true });
+
+      if (old) old.replaceWith(video); else box.appendChild(video);
+    }
+
+    function makeIframe(src, extraClass) {
+      const iframe = document.createElement('iframe');
+      if (extraClass) iframe.className = extraClass;
+      iframe.src = src;
+      iframe.allow = 'autoplay; fullscreen';
+      iframe.allowFullscreen = true;
+      iframe.loading = 'lazy';
+      return iframe;
+    }
+
     const videoObserver = new ResizeObserver(entries => {
       entries.forEach(entry => fitVideo(entry.target));
     });
@@ -1503,84 +1578,84 @@
         items: [
           {
             title: "Laminação Fosca com Verniz Localizado",
-            impact: "Impacto no E-commerce: Redução de dúvidas sobre contraste e alta conversão de impressos corporativos.",
+            impact: "Objetivo: mostrar o contraste entre a base fosca e o brilho do verniz.",
             desc: "Simulação física precisa contrastando a base aveludada sem reflexos com o brilho espelhado do verniz localizado.",
             src: "https://drive.google.com/file/d/1PMN73iRKX_MB5fHzJ7ODH5Ww76e0a5nZ/preview",
             link: "https://drive.google.com/file/d/1PMN73iRKX_MB5fHzJ7ODH5Ww76e0a5nZ/view?usp=drivesdk"
           },
           {
             title: "Hot Stamping Dourado",
-            impact: "Impacto no E-commerce: Aumento do ticket médio ao demonstrar acabamento nobre de luxo.",
+            impact: "Objetivo: mostrar o brilho metálico e o relevo do dourado.",
             desc: "Renderização de reflexos dourados e relevo físico simulando a folha metálica sob a luz de estúdio.",
             src: "https://drive.google.com/file/d/1u0HCrp5C5bH4QIy0urPMpAordsaCVNrs/preview",
             link: "https://drive.google.com/file/d/1u0HCrp5C5bH4QIy0urPMpAordsaCVNrs/view?usp=drivesdk"
           },
           {
             title: "Hot Stamping Prata",
-            impact: "Impacto no E-commerce: Demonstração de sofisticação moderna para identidades visuais minimalistas.",
+            impact: "Objetivo: diferenciar o prata do dourado sob a mesma luz.",
             desc: "Efeito metalizado prateado com dispersão de luz fria e textura de prensa térmica fiel à produção gráfica.",
             src: "https://drive.google.com/file/d/1EU_STh9ZM79s1Tp4MTIDrDrg6LiN5wej/preview",
             link: "https://drive.google.com/file/d/1EU_STh9ZM79s1Tp4MTIDrDrg6LiN5wej/view?usp=drivesdk"
           },
           {
             title: "Hot Stamping Arco-Íris (Holográfico)",
-            impact: "Impacto no E-commerce: Revela o efeito furta-cor dinâmico que fotos estáticas não conseguiam transmitir.",
+            impact: "Objetivo: mostrar o furta-cor, que muda com o ângulo e não aparece em foto.",
             desc: "Transições prismáticas de cor que variam conforme o movimento e a incidência da iluminação ambiente.",
             src: "https://drive.google.com/file/d/1BZzXk_lnBLBDhMGqSYlBRiGh1EOflJ81/preview",
             link: "https://drive.google.com/file/d/1BZzXk_lnBLBDhMGqSYlBRiGh1EOflJ81/view?usp=drivesdk"
           },
           {
             title: "Hot Stamping Azul",
-            impact: "Impacto no E-commerce: Expansão de catálogo mostrando opções de cores metálicas exclusivas.",
+            impact: "Objetivo: apresentar a opção de cor azul no catálogo de metálicos.",
             desc: "Foil metálico azul vibrante com microtextura reflexiva para embalagens e convites de destaque.",
             src: "https://drive.google.com/file/d/13cgC3T72vXTSnNWRuwUU3gIn7G2T-JWY/preview",
             link: "https://drive.google.com/file/d/13cgC3T72vXTSnNWRuwUU3gIn7G2T-JWY/view?usp=drivesdk"
           },
           {
             title: "Hot Stamping Vermelho",
-            impact: "Impacto no E-commerce: Alta atratividade para campanhas sazonais e datas comemorativas.",
+            impact: "Objetivo: mostrar o vermelho metálico sem estourar a cor.",
             desc: "Efeito brilhante escarlate com saturação controlada para evitar estourar os tons de vermelho.",
             src: "https://drive.google.com/file/d/10zogNvsfOL4vwC8UsowJXO7dIBiJQvkQ/preview",
             link: "https://drive.google.com/file/d/10zogNvsfOL4vwC8UsowJXO7dIBiJQvkQ/view?usp=drivesdk"
           },
           {
             title: "Laminação Soft Touch",
-            impact: "Impacto no E-commerce: Traduz pelo olhar a sensação aveludada do toque humano.",
+            impact: "Objetivo: comunicar pelo visual a textura aveludada do soft touch.",
             desc: "Dispersão de luz ultra suave simulando a textura de toque aveludado e sofisticado.",
             src: "https://drive.google.com/file/d/1UWLSx9z8kqIuX54JdTOSuOugdwwHM2yc/preview",
             link: "https://drive.google.com/file/d/1UWLSx9z8kqIuX54JdTOSuOugdwwHM2yc/view?usp=drivesdk"
           },
           {
             title: "Verniz Localizado Frente",
-            impact: "Impacto no E-commerce: Elimina erros de fechamento de arquivo de máscara de verniz pelo cliente.",
+            impact: "Objetivo: mostrar onde o verniz aparece e onde não aparece.",
             desc: "Camada transparente com espessura perceptível criando profundidade e destaque óptico na peça.",
             src: "https://drive.google.com/file/d/1ZxndEBGf6Jwn1X-xpFj_ACh6jeE8Uc9x/preview",
             link: "https://drive.google.com/file/d/1ZxndEBGf6Jwn1X-xpFj_ACh6jeE8Uc9x/view?usp=drivesdk"
           },
           {
             title: "Verniz Total Brilho Frente e Verso",
-            impact: "Impacto no E-commerce: Esclarece a diferença entre verniz localizado e verniz total.",
+            impact: "Objetivo: deixar clara a diferença entre verniz total e localizado.",
             desc: "Acabamento vitrificado e espelhado cobrindo integralmente as superfícies com proteção e brilho intenso.",
             src: "https://drive.google.com/file/d/1YoqkiftlNd06lOITMUA-dhEubhnIecf9/preview",
             link: "https://drive.google.com/file/d/1YoqkiftlNd06lOITMUA-dhEubhnIecf9/view?usp=drivesdk"
           },
           {
             title: "Laminação Fosca Frente e Verso",
-            impact: "Impacto no E-commerce: Garantia de leitura clara e aparência corporativa uniforme.",
+            impact: "Objetivo: mostrar a superfície sem reflexo da laminação fosca.",
             desc: "Filme fosco uniforme que remove qualquer reflexo especular indesejado, valorizando a tipografia.",
             src: "https://drive.google.com/file/d/1C7vlAok-ePb5dwMqoLmyGmtO-h13W75v/preview",
             link: "https://drive.google.com/file/d/1C7vlAok-ePb5dwMqoLmyGmtO-h13W75v/view?usp=drivesdk"
           },
           {
             title: "Laminação Holográfica",
-            impact: "Impacto no E-commerce: Perfeito para adesivos e cartões com apelo jovem e colecionável.",
+            impact: "Objetivo: mostrar o padrão holográfico se movendo com a luz.",
             desc: "Malha de micropadrões difrativos que decompõem a luz em feixes coloridos e dinâmicos.",
             src: "https://drive.google.com/file/d/12w-5SzYN3tZcq9aFs_t8sPS_RrI6ZOU7/preview",
             link: "https://drive.google.com/file/d/12w-5SzYN3tZcq9aFs_t8sPS_RrI6ZOU7/view?usp=drivesdk"
           },
           {
             title: "Sem Enobrecimento (Base Comparativa)",
-            impact: "Impacto no E-commerce: Serve como parâmetro antes/depois para o cliente ver o valor de investir no acabamento.",
+            impact: "Objetivo: servir de comparação para os outros acabamentos.",
             desc: "Papel couché puro com acabamento padrão de impressão offset, demonstrando a base natural do material.",
             src: "https://drive.google.com/file/d/1Rsvpbk5P78eE8mosdEHzFA2RD8pbWORy/preview",
             link: "https://drive.google.com/file/d/1Rsvpbk5P78eE8mosdEHzFA2RD8pbWORy/view?usp=drivesdk"
@@ -1621,11 +1696,11 @@
         index: 0,
         items: [
           { title: "Comercial — 17/07/2024", desc: "Comercial de TV unindo motion design dinâmico, animações tipográficas e composição visual.", src: "https://www.youtube.com/embed/K5JGDsgCqSY", yt: "K5JGDsgCqSY" },
-          { title: "Comercial — 24/07/2024", desc: "Montagem rítmica com cartelas de premiação de alta conversão e motion graphics.", src: "https://www.youtube.com/embed/vFr5UgK0rwY", yt: "vFr5UgK0rwY" },
+          { title: "Comercial — 24/07/2024", desc: "Montagem rítmica com cartelas de premiação animadas.", src: "https://www.youtube.com/embed/vFr5UgK0rwY", yt: "vFr5UgK0rwY" },
           { title: "Comercial — 31/07/2024", desc: "Motion design e composição de produto em campanha semanal de prêmios.", src: "https://www.youtube.com/embed/0k-jjlliXoU", yt: "0k-jjlliXoU" },
           { title: "Campanha Correios", desc: "Composição visual de alcance nacional destacando a rede de vendas dos Correios.", src: "https://www.youtube.com/embed/WtCTLH9oPCc", yt: "WtCTLH9oPCc" },
           { title: "Comercial — 04/12/2024", desc: "Motion festivo de fim de ano com ritmo acelerado e grafismos de celebração.", src: "https://www.youtube.com/embed/fmuqxfJplec", yt: "fmuqxfJplec" },
-          { title: "Comercial — 12/12/2024", desc: "Peça de alta performance para TV e redes com composição de ofertas de fim de ano.", src: "https://www.youtube.com/embed/IVxPqvUsSVQ", yt: "IVxPqvUsSVQ" },
+          { title: "Comercial — 12/12/2024", desc: "Comercial de fim de ano para TV e redes.", src: "https://www.youtube.com/embed/IVxPqvUsSVQ", yt: "IVxPqvUsSVQ" },
           { title: "Comercial — 08/01/2025", desc: "Comercial de início de ano com metas, renovação e destaque aos prêmios principais.", src: "https://www.youtube.com/embed/7XFi5-vZT5M", yt: "7XFi5-vZT5M" },
           { title: "Comercial — 29/01/2025", desc: "Edição para TV com cortes dinâmicos e reforço do aplicativo oficial.", src: "https://www.youtube.com/embed/D8QGsNcXYcY", yt: "D8QGsNcXYcY" },
           { title: "Comercial — 19/02/2025", desc: "Campanha de prêmios com animações tipográficas e ritmo comercial.", src: "https://www.youtube.com/embed/eQdLAKAIWC8", yt: "eQdLAKAIWC8" },
@@ -1633,7 +1708,7 @@
           { title: "Comercial — 04/04/2025", desc: "Edição expressa de varejo para veiculação multiplataforma.", src: "https://www.youtube.com/embed/mSSNpPxx5C4", yt: "mSSNpPxx5C4" },
           { title: "Comercial — 23/04/2025", desc: "Comercial de TV com cartelas dinâmicas e sincronia com trilha sonora.", src: "https://www.youtube.com/embed/fSxMKvM6484", yt: "fSxMKvM6484" },
           { title: "Comercial — 30/04/2025", desc: "Peça promocional com chamadas de prêmios e pontos de venda físicos.", src: "https://www.youtube.com/embed/X0sRWRv4Ar0", yt: "X0sRWRv4Ar0" },
-          { title: "Comercial — 14/04/2025", desc: "Edição de alta conversão para TV aberta e redes sociais.", src: "https://www.youtube.com/embed/1zU8OazW8-0", yt: "1zU8OazW8-0" },
+          { title: "Comercial — 14/04/2025", desc: "Comercial para TV aberta e redes sociais.", src: "https://www.youtube.com/embed/1zU8OazW8-0", yt: "1zU8OazW8-0" },
           { title: "Campanha Mudança R$ 2,00 (23/05/2025)", desc: "Campanha da mudança de preço para R$ 2,00, com forte narrativa e apelo popular.", src: "https://www.youtube.com/embed/0hhMuKlxWz4", yt: "0hhMuKlxWz4" },
           { title: "Comercial — 02/07/2025", desc: "Comercial de TV com grafismos de alto contraste e foco no prêmio principal.", src: "https://www.youtube.com/embed/XHd191WiDio", yt: "XHd191WiDio" },
           { title: "Comercial — 07/07/2025", desc: "Edição com cortes rápidos e ênfase na facilidade de compra via Pix.", src: "https://www.youtube.com/embed/y2mWfu0J0z8", yt: "y2mWfu0J0z8" },
@@ -1648,7 +1723,7 @@
           { title: "Especial de Natal — 24/12/2025", desc: "Comercial especial de Natal com efeitos visuais e pós-produção avançada.", src: "https://www.youtube.com/embed/qmMOsHa9_TQ", yt: "qmMOsHa9_TQ" },
           { title: "Comercial — 01/03/2026", desc: "Comercial de abertura de temporada com nova identidade e chamadas de venda.", src: "https://www.youtube.com/embed/gm0KtBq5JOU", yt: "gm0KtBq5JOU" },
           { title: "Comercial — 22/03/2026", desc: "Edição comercial com foco no sorteio principal e premiações secundárias.", src: "https://www.youtube.com/embed/L7ZL5v_BKyI", yt: "L7ZL5v_BKyI" },
-          { title: "Comercial — 19/04/2026", desc: "Campanha de alta performance veiculada em TV e plataformas digitais.", src: "https://www.youtube.com/embed/BJQjBu8eCMc", yt: "BJQjBu8eCMc" }
+          { title: "Comercial — 19/04/2026", desc: "Comercial veiculado em TV e plataformas digitais.", src: "https://www.youtube.com/embed/BJQjBu8eCMc", yt: "BJQjBu8eCMc" }
         ]
       },
       materias: {
@@ -1701,9 +1776,10 @@
       if (!slider) return;
       const current = slider.items[slider.index];
 
-      document.querySelectorAll('.iframe-' + category).forEach(iframe => {
-        iframe.src = current.src;
-        fitVideo(iframe.parentElement);
+      document.querySelectorAll('.iframe-' + category).forEach(el => {
+        const box = el.parentElement;
+        mountPlayer(box, current.src, 'iframe-' + category);
+        fitVideo(box);
       });
 
       document.querySelectorAll('.title-' + category).forEach(el => { el.innerText = current.title; });
@@ -1752,6 +1828,12 @@
 
     // Inicialização (o script está no fim do body, o HTML já existe)
     Object.keys(slidersData).forEach(cat => renderDots(cat));
+
+    // Converte todos os players do Drive para o player nativo
+    document.querySelectorAll('.video-wrapper iframe, .video-wrapper-led iframe').forEach(iframe => {
+      const src = iframe.getAttribute('src');
+      if (driveId(src)) mountPlayer(iframe.parentElement, src, iframe.className);
+    });
     document.querySelectorAll('.video-wrapper, .video-wrapper-led').forEach(box => videoObserver.observe(box));
   </script>
 
